@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis Garcia — Mechanical Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#000;--bg2:#0a0a0a;--bg3:#111;--bg4:#161616;--bg5:#1c1c1c;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --text:#f5f5f7;--text2:#a1a1a6;--text3:#6e6e73;--text4:#3d3d40;
+  --accent:#2997ff;--accent2:rgba(41,151,255,0.1);
+  --green:#30d158;--green2:rgba(48,209,88,0.1);
+  --r:12px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter',BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:52px;background:rgba(0,0,0,0.8);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 40px 80px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(41,151,255,0.07) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-inner{position:relative;max-width:760px}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border2);border-radius:980px;padding:6px 14px;font-size:12px;color:var(--text2);margin-bottom:32px}
+.chip-dot{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 8px rgba(48,209,88,.6);flex-shrink:0}
+.hero-title{font-size:clamp(48px,7vw,86px);font-weight:600;letter-spacing:-0.04em;line-height:1.05;color:var(--text);margin-bottom:20px}
+.hero-title span{background:linear-gradient(135deg,#2997ff,#5ac8fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;color:var(--text2);line-height:1.65;max-width:520px;margin:0 auto 40px;font-weight:300}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-fill{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;padding:12px 24px;border-radius:980px;text-decoration:none;transition:opacity .2s,transform .2s}
+.btn-fill:hover{opacity:.85;transform:translateY(-1px)}
+.btn-out{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);color:var(--text);font-size:14px;font-weight:500;padding:12px 24px;border-radius:980px;text-decoration:none;border:1px solid var(--border2);transition:background .2s,transform .2s}
+.btn-out:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+.hero-stats{display:flex;justify-content:center;margin-top:64px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;max-width:560px;margin-left:auto;margin-right:auto}
+.h-stat{flex:1;padding:18px 14px;text-align:center;border-right:1px solid var(--border);transition:background .2s}
+.h-stat:last-child{border-right:none}
+.h-stat:hover{background:var(--bg3)}
+.h-num{font-size:24px;font-weight:600;letter-spacing:-0.03em;color:var(--text)}
+.h-num b{color:var(--accent)}
+.h-lbl{font-size:10px;color:var(--text3);margin-top:3px;letter-spacing:.02em}
+
+/* SECTION */
+section{padding:96px 44px}
+.s-chip{display:inline-block;font-size:12px;font-weight:500;color:var(--accent);background:var(--accent2);padding:4px 12px;border-radius:980px;margin-bottom:14px}
+.s-title{font-size:clamp(28px,4vw,46px);font-weight:600;letter-spacing:-0.03em;color:var(--text);line-height:1.1;margin-bottom:10px}
+.s-sub{font-size:15px;color:var(--text2);max-width:500px;line-height:1.65;font-weight:300}
+.s-hdr{margin-bottom:52px}
+
+/* PROJECT CARDS */
+#projects{background:var(--bg)}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.proj-card{background:var(--bg2);position:relative;cursor:pointer;overflow:hidden;transition:background .2s}
+.proj-card:hover{background:var(--bg3)}
+.proj-card.span2{grid-column:span 2}
+
+.proj-cover{width:100%;height:220px;overflow:hidden;position:relative;background:var(--bg4)}
+.proj-cover img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;display:block}
+.proj-card:hover .proj-cover img{transform:scale(1.04)}
+.proj-cover-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(0,0,0,.7) 100%)}
+
+.proj-cover-prop{width:100%;height:220px;background:var(--bg4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;border-bottom:1px solid var(--border)}
+.prop-icon{width:44px;height:44px;border:1px solid var(--border2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.prop-label{font-size:11px;color:var(--text4);letter-spacing:.08em;text-transform:uppercase}
+.prop-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:32px 32px;opacity:.5}
+
+.proj-body{padding:24px 26px 28px}
+.proj-num{font-size:11px;color:var(--text3);font-weight:500;letter-spacing:.04em;margin-bottom:8px}
+.proj-name{font-size:18px;font-weight:600;color:var(--text);letter-spacing:-.02em;line-height:1.25;margin-bottom:8px}
+.proj-desc{font-size:13.5px;color:var(--text2);line-height:1.65;font-weight:300;margin-bottom:14px}
+.proj-metrics{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.metric{display:inline-flex;align-items:center;gap:5px;background:var(--green2);border:1px solid rgba(48,209,88,.2);border-radius:6px;padding:5px 10px;font-size:11px;font-weight:500;color:var(--green)}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tag{font-size:11px;color:var(--text2);background:var(--bg4);border:1px solid var(--border);padding:4px 10px;border-radius:6px}
+.proj-toggle-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--accent);background:none;border:none;cursor:pointer;padding:0}
+.proj-toggle-btn svg{transition:transform .3s}
+.proj-card.expanded .proj-toggle-btn svg{transform:rotate(180deg)}
+
+.proj-expand{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
+.proj-card.expanded .proj-expand{max-height:1400px}
+.proj-expand-inner{border-top:1px solid var(--border);padding:24px 26px 28px;display:flex;flex-direction:column;gap:20px}
+
+.proj-gallery{display:grid;gap:8px}
+.proj-gallery.cols2{grid-template-columns:1fr 1fr}
+.proj-gallery.cols1{grid-template-columns:1fr}
+.gallery-img{width:100%;border-radius:8px;overflow:hidden;background:var(--bg4);border:1px solid var(--border)}
+.gallery-img img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-img.white img{background:#fff;object-fit:contain;padding:12px}
+
+.expand-section-title{font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.expand-bullets{list-style:none;display:flex;flex-direction:column;gap:8px}
+.expand-bullets li{font-size:13.5px;color:var(--text2);line-height:1.65;padding-left:16px;position:relative;font-weight:300}
+.expand-bullets li::before{content:'–';position:absolute;left:0;color:var(--text4)}
+.expand-bullets li strong{color:var(--text);font-weight:500}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-wrap{display:grid;grid-template-columns:280px 1fr;gap:72px;align-items:start}
+.about-photo img{width:260px;height:320px;object-fit:cover;object-position:top;border-radius:16px;filter:brightness(.95)}
+.about-status{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border2);border-radius:980px;padding:8px 16px;font-size:12px;font-weight:500;color:var(--text2);margin-top:16px}
+.about-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300}
+.about-p strong{color:var(--text);font-weight:500}
+.about-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.about-badge{font-size:12px;font-weight:500;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:7px 14px;border-radius:8px}
+.about-resume{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:14px;font-weight:500;color:#fff;background:var(--accent);padding:11px 22px;border-radius:980px;text-decoration:none;transition:opacity .2s}
+.about-resume:hover{opacity:.85}
+
+/* SKILLS */
+#skills{background:var(--bg)}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.skill-col{background:var(--bg2);padding:26px 22px}
+.skill-col-title{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.skill-items{display:flex;flex-direction:column;gap:8px}
+.skill-item{font-size:13px;color:var(--text2);display:flex;align-items:center;gap:8px;font-weight:300}
+.skill-item::before{content:'';width:4px;height:4px;background:var(--text4);border-radius:50%;flex-shrink:0}
+
+/* EXPERIENCE */
+#experience{background:var(--bg2)}
+.exp-list{display:flex;flex-direction:column;gap:10px;max-width:880px}
+.exp-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.exp-hdr{padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;transition:background .2s}
+.exp-hdr:hover{background:rgba(255,255,255,.02)}
+.exp-role{font-size:16px;font-weight:600;color:var(--text);letter-spacing:-.02em;margin-bottom:3px}
+.exp-org{font-size:13px;font-weight:500;color:var(--accent)}
+.exp-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
+.exp-date{font-size:12px;color:var(--text3);white-space:nowrap}
+.exp-tog{width:24px;height:24px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:16px;line-height:1;transition:transform .25s,background .2s}
+.exp-card.open .exp-tog{transform:rotate(45deg);background:var(--accent2);color:var(--accent)}
+.exp-body{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.exp-card.open .exp-body{max-height:800px}
+.exp-body-inner{padding:0 26px 24px;border-top:1px solid var(--border)}
+.exp-sub{margin-top:14px;padding:14px 18px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)}
+.exp-sub-title{font-size:10px;font-weight:600;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.exp-buls{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.exp-buls li{font-size:13.5px;color:var(--text2);line-height:1.65;padding-left:16px;position:relative;font-weight:300}
+.exp-buls li::before{content:'–';position:absolute;left:0;color:var(--text4)}
+.exp-buls li strong{color:var(--text);font-weight:500}
+
+/* CONTACT */
+#contact{background:var(--bg)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.c-links{display:flex;flex-direction:column;gap:10px}
+.c-link{display:flex;align-items:center;gap:16px;padding:18px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);text-decoration:none;transition:border-color .2s,background .2s}
+.c-link:hover{border-color:var(--accent);background:rgba(41,151,255,.04)}
+.c-icon{width:38px;height:38px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.c-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
+.c-val{font-size:14px;color:var(--text)}
+.c-form{display:flex;flex-direction:column;gap:14px}
+.f-grp{display:flex;flex-direction:column;gap:6px}
+.f-lbl{font-size:12px;font-weight:500;color:var(--text3)}
+.f-in,.f-ta{background:var(--bg2);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:14px;font-weight:300;padding:11px 14px;border-radius:10px;outline:none;transition:border-color .2s;width:100%}
+.f-in:focus,.f-ta:focus{border-color:var(--accent)}
+.f-in::placeholder,.f-ta::placeholder{color:var(--text3)}
+.f-ta{resize:vertical;min-height:110px}
+.f-btn{background:var(--accent);color:#fff;font-family:inherit;font-size:14px;font-weight:500;padding:12px 24px;border-radius:980px;border:none;cursor:pointer;transition:opacity .2s}
+.f-btn:hover{opacity:.85}
+
+footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:12px;color:var(--text3)}
+
+/* FADE — visible by default, animate in on scroll */
+.fade{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+
+@media(max-width:1100px){
+  .proj-grid{grid-template-columns:1fr}
+  .proj-card.span2{grid-column:span 1}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .about-wrap{grid-template-columns:1fr;gap:40px}
+  .contact-wrap{grid-template-columns:1fr;gap:40px}
+  nav{padding:0 24px}
+  section{padding:72px 24px}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hero-stats{flex-direction:column}
+  .h-stat{border-right:none;border-bottom:1px solid var(--border)}
+  .h-stat:last-child{border-bottom:none}
+  .skills-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo">Luis Garcia</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-chip"><div class="chip-dot"></div>On co-op · Tesla Fremont · Through Aug 2026</div>
+    <h1 class="hero-title">Engineering<br><span>new solutions.</span></h1>
+    <p class="hero-sub">Mechanical Engineering at WashU — building production-line robotics, humanoid training systems, and physics-informed simulations that hold up in the real world.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-fill">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        View My Work
+      </a>
+      <a href="#contact" class="btn-out">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="h-num"><b>10s</b></div><div class="h-lbl">Cycle Time Reduced</div></div>
+      <div class="h-stat"><div class="h-num">$<b>88K</b></div><div class="h-lbl">OEM Cost Avoided</div></div>
+      <div class="h-stat"><div class="h-num"><b>1000</b>×</div><div class="h-lbl">CFD Speedup (PINNs)</div></div>
+      <div class="h-stat"><div class="h-num"><b>3.79</b></div><div class="h-lbl">GPA · Dean's List</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="s-hdr fade">
+    <div class="s-chip">Featured Projects</div>
+    <h2 class="s-title">Engineering Work</h2>
+    <p class="s-sub">Click any project to expand — real drawings, CAD models, and research outputs.</p>
+  </div>
+  <div class="proj-grid">
+
+    <!-- 01 Tesla BIW -->
+    <div class="proj-card span2 fade" id="p0">
+      <div class="proj-cover">
+        <img src="images/biw.jpg" alt="Tesla Model 3 BIW Production Line">
+        <div class="proj-cover-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">01 — Featured · Tesla Fremont</div>
+        <div class="proj-name">Model 3 BIW Manufacturing Co-Op</div>
+        <p class="proj-desc">Production-line robotics, TCP calibration fixture design, welding cell optimization, and EOAT redesign on the Model 3 Body in White line at Tesla Fremont.</p>
+        <div class="proj-metrics">
+          <span class="metric">↓ 10s cycle time (75→65s)</span>
+          <span class="metric">$88K cost avoidance</span>
+          <span class="metric">&lt;0.25mm TCP correction</span>
+        </div>
+        <div class="proj-tags">
+          <span class="tag">CATIA V5</span><span class="tag">SolidWorks</span><span class="tag">KUKA/FANUC</span><span class="tag">Splunk/SCADA</span><span class="tag">GD&T</span><span class="tag">Root Cause Analysis</span>
+        </div>
+        <button class="proj-toggle-btn" onclick="toggleProj('p0')">
+          Show details
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="proj-expand">
+        <div class="proj-expand-inner">
+          <div>
+            <div class="expand-section-title">What I Built</div>
+            <ul class="expand-bullets">
+              <li>Designed a <strong>Go/No-Go calibration fixture</strong> — chamfered funnel + dowel-pinned L-bracket — resolving a recurring 2.5mm TCP deviation on Tucker stud welding gun swaps, achieving &lt;0.25mm calibration variation and eliminating robot path reprogramming.</li>
+              <li>Re-sequenced a multi-robot spot welding cell to achieve a confirmed <strong>10-second cycle time reduction</strong> (75s → 65s) locked into production program.</li>
+              <li>Reverse-engineered and designed <strong>8 custom fixture clamps in CATIA V5</strong> — avoiding $88,000 in OEM costs and reducing lead time from 10 months to internal machining time.</li>
+              <li>Redesigned EOAT with integrated pneumatic cylinders to dynamically realign parts during transfer, mitigating pick-up faults and reducing material drop rates.</li>
+              <li>Leveraged <strong>Splunk and SCADA</strong> to query real-time fault data across FANUC and KUKA robots — drove root-cause analysis and reduced recurring downtime events.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Optimus Academy -->
+    <div class="proj-card fade" id="p1">
+      <div class="proj-cover">
+        <img src="images/optimus.jpg" alt="Tesla Optimus Humanoid Robot">
+        <div class="proj-cover-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">02 · Tesla Fremont</div>
+        <div class="proj-name">Optimus Academy — Humanoid Robotics Training Facility</div>
+        <p class="proj-desc">Led transformation of a legacy Model S/X production line into a 40-station humanoid robotics training academy. Floor plan, HRC cell design, safety systems specification.</p>
+        <div class="proj-tags">
+          <span class="tag">AutoCAD</span><span class="tag">Facility Design</span><span class="tag">GuardLogix PLC</span><span class="tag">SICK/Keyence</span><span class="tag">HRC Safety</span>
+        </div>
+        <button class="proj-toggle-btn" onclick="toggleProj('p1')">
+          Show details
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="proj-expand">
+        <div class="proj-expand-inner">
+          <div>
+            <div class="expand-section-title">What I Built</div>
+            <ul class="expand-bullets">
+              <li>Led facility transformation of legacy Model S/X line into a <strong>40-station humanoid robotics training academy</strong> for Optimus robot development.</li>
+              <li>Developed <strong>Phase 1 AutoCAD floor plan</strong> from legacy DWG files and on-site measurements; coordinated with architects for permitting sign-off.</li>
+              <li>Designed HRC cells with <strong>36" maintenance and 48" pedestrian clearance zones</strong>, specifying 80/20 extrusion, light curtains, and SICK/Keyence scanners.</li>
+              <li>Mapped and preserved existing 480V drops, pneumatic lines, and <strong>GuardLogix PLC cabinets</strong> to eliminate safety logic reprogramming.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 AIAA DBF -->
+    <div class="proj-card fade" id="p2">
+      <div class="proj-cover">
+        <img src="images/dbf-3view.jpg" alt="DBF Aircraft 3-View">
+        <div class="proj-cover-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">03 · WashU AIAA</div>
+        <div class="proj-name">Design-Build-Fly Team</div>
+        <p class="proj-desc">National aircraft design competition — composite airframe structures, FEA validation, and fabrication. 72" wingspan competition aircraft.</p>
+        <div class="proj-tags">
+          <span class="tag">SolidWorks</span><span class="tag">ANSYS FEA</span><span class="tag">Composite Fabrication</span><span class="tag">Aircraft Design</span>
+        </div>
+        <button class="proj-toggle-btn" onclick="toggleProj('p2')">
+          Show details
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="proj-expand">
+        <div class="proj-expand-inner">
+          <div class="proj-gallery cols2" style="margin-bottom:16px">
+            <div class="gallery-img white" style="height:220px"><img src="images/dbf-3view.jpg" alt="Aircraft 3-View"></div>
+            <div class="gallery-img white" style="height:220px"><img src="images/dbf-missions.jpg" alt="Mission Accommodations"></div>
+            <div class="gallery-img white" style="height:200px"><img src="images/dbf-release.jpg" alt="X-1 Release Mechanism"></div>
+          </div>
+          <div>
+            <div class="expand-section-title">What I Built</div>
+            <ul class="expand-bullets">
+              <li>Designed load-bearing composite wing and fuselage structures in SolidWorks — 72" wingspan, full 3-view drawings at 1:16 scale.</li>
+              <li>Performed FEA in ANSYS to validate load paths and safety factors while <strong>optimizing for minimum takeoff weight</strong>.</li>
+              <li>Designed the <strong>X-1 test vehicle release mechanism</strong> for in-flight payload deployment and pylon system for multi-mission integration.</li>
+              <li>Led fabrication and destructive testing of composite prototypes, correlating experimental data with FEA models.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 CAD Projects -->
+    <div class="proj-card fade" id="p3">
+      <div class="proj-cover">
+        <img src="images/cad-assembly.jpg" alt="Foosball Table CAD">
+        <div class="proj-cover-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">04 · CAD Projects</div>
+        <div class="proj-name">Computer-Aided Design Portfolio</div>
+        <p class="proj-desc">Full assembly, sub-assembly, detail drawings and exploded views per ASME Y14.5 GD&T standards. Foosball table full mechanical design.</p>
+        <div class="proj-tags">
+          <span class="tag">SolidWorks</span><span class="tag">GD&T</span><span class="tag">Technical Drawings</span><span class="tag">Assembly Design</span>
+        </div>
+        <button class="proj-toggle-btn" onclick="toggleProj('p3')">
+          Show details
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="proj-expand">
+        <div class="proj-expand-inner">
+          <div class="proj-gallery cols2" style="margin-bottom:16px">
+            <div class="gallery-img white" style="height:200px"><img src="images/cad-assembly.jpg" alt="Assembly Drawing"></div>
+            <div class="gallery-img white" style="height:200px"><img src="images/cad-exploded.jpg" alt="Exploded View"></div>
+            <div class="gallery-img white" style="height:200px"><img src="images/cad-frame.jpg" alt="Frame Detail"></div>
+            <div class="gallery-img white" style="height:200px"><img src="images/cad-rod.jpg" alt="Player Rod Sub-Assembly"></div>
+          </div>
+          <div>
+            <div class="expand-section-title">What I Built</div>
+            <ul class="expand-bullets">
+              <li>Full mechanical design of a foosball table — <strong>main assembly, exploded view, sub-assemblies, and detail drawings</strong> per ASME Y14.5 GD&T.</li>
+              <li>Designed and dimensioned the table frame (84" × 36"), player rod sub-assembly, and all 10 BOM line items with part numbers and quantities.</li>
+              <li>Applied proper tolerancing standards throughout; modeled all components in SolidWorks including standard hardware.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 CFD + PINNs -->
+    <div class="proj-card span2 fade" id="p4">
+      <div class="proj-cover" style="height:280px">
+        <img src="images/cfd-poster.jpg" alt="CFD Research Poster" style="object-fit:contain;background:#fff;padding:8px">
+        <div class="proj-cover-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">05 · Computational Mechanics & AI Lab · WashU</div>
+        <div class="proj-name">CFD + Machine Learning — Hemodynamic Simulations</div>
+        <p class="proj-desc">Physics-Informed Neural Networks (PINNs) in PyTorch for cardiovascular fluid simulations. Coupled 3D CFD with 0D cardiovascular models. 1000× speedup vs. traditional solvers. Presented at symposium.</p>
+        <div class="proj-metrics">
+          <span class="metric">1000× CFD speedup</span>
+          <span class="metric">Symposium presentation</span>
+        </div>
+        <div class="proj-tags">
+          <span class="tag">Python/PyTorch</span><span class="tag">PINNs</span><span class="tag">CFD</span><span class="tag">Runge-Kutta</span><span class="tag">Fortran→Python</span>
+        </div>
+        <button class="proj-toggle-btn" onclick="toggleProj('p4')">
+          Show details
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="proj-expand">
+        <div class="proj-expand-inner">
+          <div class="proj-gallery cols2" style="margin-bottom:16px">
+            <div class="gallery-img white" style="height:240px"><img src="images/cfd-diagram.jpg" alt="3D-0D Coupling Diagram"></div>
+            <div class="gallery-img white" style="height:240px"><img src="images/cfd-poster.jpg" alt="Symposium Poster"></div>
+          </div>
+          <div>
+            <div class="expand-section-title">What I Built</div>
+            <ul class="expand-bullets">
+              <li>Architected <strong>PINNs in PyTorch</strong> for hemodynamic simulations — 1000× reduction in simulation time vs. traditional CFD.</li>
+              <li>Coupled 3D fluid dynamics solver with a <strong>0D cardiovascular circulation model</strong> for physiologically accurate pressure cycle reproduction.</li>
+              <li>Translated legacy Fortran solvers to Python — RK4 integrators, Newton iterations, time-varying valve logic.</li>
+              <li>Validated cardiac valve pressure waveforms against expected systolic/diastolic behavior; presented at WUSEF symposium.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 WUSAT -->
+    <div class="proj-card fade" id="p5">
+      <div class="proj-cover">
+        <img src="images/wusat-plots.jpg" alt="Magnetorquer Optimization">
+        <div class="proj-cover-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">06 · WashU Satellite · MOPS Team</div>
+        <div class="proj-name">CubeSat Mission Operations Engineering</div>
+        <p class="proj-desc">Full-mission simulations for CubeSat feasibility. Magnetorquer design optimization across wire gauges using MATLAB and ModelSpace (ATTX).</p>
+        <div class="proj-tags">
+          <span class="tag">ModelSpace (ATTX)</span><span class="tag">MATLAB</span><span class="tag">Systems Engineering</span><span class="tag">CubeSat</span>
+        </div>
+        <button class="proj-toggle-btn" onclick="toggleProj('p5')">
+          Show details
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div class="proj-expand">
+        <div class="proj-expand-inner">
+          <div class="proj-gallery cols1" style="margin-bottom:16px">
+            <div class="gallery-img" style="height:300px"><img src="images/wusat-plots.jpg" alt="Magnetorquer Design Optimization"></div>
+          </div>
+          <div>
+            <div class="expand-section-title">What I Built</div>
+            <ul class="expand-bullets">
+              <li>Full-mission simulations using <strong>ModelSpace (ATTX)</strong> to evaluate CubeSat feasibility and support spacecraft operations planning.</li>
+              <li>Magnetorquer design optimization — sweeping AWG 32–40 for magnetic moment, mass, and power trade-offs; identified <strong>AWG 36 as optimal</strong>.</li>
+              <li>Generated design space plots mapping valid/invalid/optimal configurations across mass, power, and geometry constraints.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="s-hdr fade">
+    <div class="s-chip">About</div>
+    <h2 class="s-title">Who I Am</h2>
+  </div>
+  <div class="about-wrap">
+    <div class="about-photo fade">
+      <img src="images/photo.jpg" alt="Luis Garcia">
+      <div class="about-status"><div class="chip-dot"></div>Available Aug 2026</div>
+    </div>
+    <div class="fade">
+      <p class="about-p"><strong>Mechanical Engineering student at Washington University in St. Louis</strong> (McKelvey School of Engineering, Minors in Robotics & Mechatronics and Aerospace Engineering, expected Dec 2027). GPA: 3.79 · Dean's List · HSF Scholar.</p>
+      <p class="about-p">Currently on extended co-op at <strong>Tesla Fremont</strong> through August 2026 — running two concurrent engineering projects: Model 3 BIW production line optimization and the Optimus Academy humanoid robotics training facility.</p>
+      <p class="about-p">My approach is physics-first. I care about designs that are manufacturable, measurable, and maintainable — not just functional on paper.</p>
+      <div class="about-badges">
+        <span class="about-badge">HSF Scholar</span>
+        <span class="about-badge">CSWA — SolidWorks</span>
+        <span class="about-badge">McKelvey School</span>
+        <span class="about-badge">Dean's List</span>
+        <span class="about-badge">U.S. Citizen</span>
+      </div>
+      <a class="about-resume" href="images/resume.pdf" download="LuisGarciaR_Resume.pdf">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+        Download Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="s-hdr fade">
+    <div class="s-chip">Capabilities</div>
+    <h2 class="s-title">Technical Skills</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-col fade">
+      <div class="skill-col-title">Design & CAD</div>
+      <div class="skill-items">
+        <div class="skill-item">CATIA V5</div>
+        <div class="skill-item">SolidWorks (CSWA)</div>
+        <div class="skill-item">AutoCAD</div>
+        <div class="skill-item">GD&T / DFM</div>
+        <div class="skill-item">3D Printing</div>
+        <div class="skill-item">Machining (Lathe/Mill)</div>
+      </div>
+    </div>
+    <div class="skill-col fade">
+      <div class="skill-col-title">Data & Programming</div>
+      <div class="skill-items">
+        <div class="skill-item">Python (PyTorch, NumPy, Pandas)</div>
+        <div class="skill-item">MATLAB</div>
+        <div class="skill-item">Splunk / SCADA</div>
+        <div class="skill-item">C++ / Arduino</div>
+        <div class="skill-item">OEE / RCA / DOE</div>
+        <div class="skill-item">Linux</div>
+      </div>
+    </div>
+    <div class="skill-col fade">
+      <div class="skill-col-title">Simulation & Analysis</div>
+      <div class="skill-items">
+        <div class="skill-item">ANSYS (FEA / CFD)</div>
+        <div class="skill-item">Physics-Informed Neural Networks</div>
+        <div class="skill-item">ModelSpace (ATTX)</div>
+        <div class="skill-item">Thermodynamics</div>
+        <div class="skill-item">Numerical Methods</div>
+      </div>
+    </div>
+    <div class="skill-col fade">
+      <div class="skill-col-title">Automation & Controls</div>
+      <div class="skill-items">
+        <div class="skill-item">KUKA / FANUC Robotics</div>
+        <div class="skill-item">Allen-Bradley GuardLogix PLC</div>
+        <div class="skill-item">SICK / Keyence Sensors</div>
+        <div class="skill-item">Light Curtains / Pneumatics</div>
+        <div class="skill-item">Composite Fabrication</div>
+        <div class="skill-item">Embedded Systems</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="s-hdr fade">
+    <div class="s-chip">Experience</div>
+    <h2 class="s-title">Work History</h2>
+  </div>
+  <div class="exp-list">
+    <div class="exp-card open fade" id="e0">
+      <div class="exp-hdr" onclick="toggleExp('e0')">
+        <div><div class="exp-role">Manufacturing Equipment Engineer Co-Op</div><div class="exp-org">Tesla · Fremont, CA</div></div>
+        <div class="exp-right"><div class="exp-date">Jan 2026 – Aug 2026</div><div class="exp-tog">+</div></div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-body-inner">
+          <div class="exp-sub">
+            <div class="exp-sub-title">Project 1 — Model 3 Body in White (BIW)</div>
+            <ul class="exp-buls">
+              <li>Designed <strong>Go/No-Go calibration fixture</strong> achieving &lt;0.25mm TCP deviation correction, eliminating robot path reprogramming.</li>
+              <li>Re-sequenced welding cell: <strong>10s cycle time reduction</strong> (75→65s) locked into production.</li>
+              <li>Designed <strong>8 custom CATIA V5 fixture clamps</strong> — $88K cost avoidance, lead time from 10 months to internal machining.</li>
+              <li>Leveraged Splunk and SCADA for real-time fault querying and root cause analysis.</li>
+              <li>Redesigned EOAT with pneumatic cylinders to reduce material drop rates.</li>
+            </ul>
+          </div>
+          <div class="exp-sub" style="margin-top:10px">
+            <div class="exp-sub-title">Project 2 — Optimus Academy</div>
+            <ul class="exp-buls">
+              <li>Led facility transformation into <strong>40-station humanoid robotics training academy</strong>.</li>
+              <li>Developed Phase 1 AutoCAD floor plan; coordinated with architects for permitting sign-off.</li>
+              <li>Designed HRC cells specifying 80/20 extrusion, light curtains, SICK/Keyence scanners, GuardLogix PLCs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card fade" id="e1">
+      <div class="exp-hdr" onclick="toggleExp('e1')">
+        <div><div class="exp-role">Mission Operations Engineer</div><div class="exp-org">WashU Satellite (WUSAT) · MOPS Team</div></div>
+        <div class="exp-right"><div class="exp-date">Sep 2025 – Present</div><div class="exp-tog">+</div></div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-body-inner">
+          <ul class="exp-buls" style="margin-top:14px">
+            <li>Full-mission simulations using <strong>ModelSpace (ATTX)</strong> for CubeSat feasibility and design trade studies.</li>
+            <li>Magnetorquer design optimization — AWG 32–40 sweep for magnetic moment, mass, and power trade-offs.</li>
+            <li>Collaborating with interdisciplinary subteams to ensure system-wide model accuracy.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card fade" id="e2">
+      <div class="exp-hdr" onclick="toggleExp('e2')">
+        <div><div class="exp-role">Undergraduate Researcher</div><div class="exp-org">Computational Mechanics & AI Lab · WashU</div></div>
+        <div class="exp-right"><div class="exp-date">May 2025 – Aug 2025</div><div class="exp-tog">+</div></div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-body-inner">
+          <ul class="exp-buls" style="margin-top:14px">
+            <li>Architected <strong>PINNs in PyTorch</strong> — 1000× reduction in simulation time vs. traditional CFD.</li>
+            <li>Translated legacy Fortran solvers to Python with RK4 integrators and Newton iterations.</li>
+            <li>Presented findings at WUSEF symposium.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-card fade" id="e3">
+      <div class="exp-hdr" onclick="toggleExp('e3')">
+        <div><div class="exp-role">Structures Engineer</div><div class="exp-org">WashU Design/Build/Fly · AIAA</div></div>
+        <div class="exp-right"><div class="exp-date">Aug 2024 – Present</div><div class="exp-tog">+</div></div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-body-inner">
+          <ul class="exp-buls" style="margin-top:14px">
+            <li>Composite structures in SolidWorks; ANSYS FEA for safety factors and minimum takeoff weight.</li>
+            <li>Fabrication and destructive testing of composite prototypes correlated with FEA models.</li>
+            <li>Designed X-1 release mechanism and pylon system for multi-mission payload integration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="s-hdr fade">
+    <div class="s-chip">Contact</div>
+    <h2 class="s-title">Let's Connect</h2>
+    <p class="s-sub">Open to full-time roles after August 2026 — manufacturing systems, robotics, aerospace engineering.</p>
+  </div>
+  <div class="contact-wrap">
+    <div class="c-links fade">
+      <a href="mailto:garciarivera@wustl.edu" class="c-link">
+        <div class="c-icon">✉</div>
+        <div><div class="c-lbl">Email</div><div class="c-val">garciarivera@wustl.edu</div></div>
+      </a>
+      <a href="https://linkedin.com/in/luisgr1" target="_blank" class="c-link">
+        <div class="c-icon" style="font-size:13px;font-weight:700">in</div>
+        <div><div class="c-lbl">LinkedIn</div><div class="c-val">linkedin.com/in/luisgr1</div></div>
+      </a>
+      <a href="https://github.com/luisgriv" target="_blank" class="c-link">
+        <div class="c-icon" style="font-size:13px;font-weight:700">gh</div>
+        <div><div class="c-lbl">GitHub</div><div class="c-val">github.com/luisgriv</div></div>
+      </a>
+    </div>
+    <div class="c-form fade">
+      <div class="f-grp"><label class="f-lbl">Name</label><input class="f-in" type="text" placeholder="Your name"></div>
+      <div class="f-grp"><label class="f-lbl">Email</label><input class="f-in" type="email" placeholder="your@email.com"></div>
+      <div class="f-grp"><label class="f-lbl">Message</label><textarea class="f-ta" placeholder="What's on your mind?"></textarea></div>
+      <button class="f-btn" onclick="alert('Connect to Formspree.io to activate.')">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Luis Garcia · Kansas City, MO</p>
+  <p>ME · WashU McKelvey · Tesla Fremont · HSF Scholar</p>
+</footer>
+
+<script>
+// Scroll fade-in
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const fadeSiblings = Array.from(entry.target.parentElement?.children || []).filter(c => c.classList.contains('fade'));
+      const i = Math.min(fadeSiblings.indexOf(entry.target), 4);
+      setTimeout(() => entry.target.classList.add('in'), i * 80);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade').forEach(el => {
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight) {
+    el.classList.add('in');
+  } else {
+    obs.observe(el);
+  }
+});
+
+// Project expand
+function toggleProj(id) {
+  const card = document.getElementById(id);
+  const isOpen = card.classList.contains('expanded');
+  card.classList.toggle('expanded');
+  const btn = card.querySelector('.proj-toggle-btn');
+  btn.firstChild.textContent = isOpen ? 'Show details' : 'Hide details';
+}
+
+// Experience accordion
+function toggleExp(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+</body>
+</html>
