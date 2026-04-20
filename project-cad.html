@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer-Aided Design Portfolio — Luis Garcia</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#000;--bg2:#0a0a0a;--bg3:#111;--bg4:#161616;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --text:#f5f5f7;--text2:#a1a1a6;--text3:#6e6e73;--text4:#3d3d40;
+  --accent:#2997ff;--accent2:rgba(41,151,255,0.1);
+  --green:#30d158;--green2:rgba(48,209,88,0.1);
+  --r:12px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter',BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:52px;background:rgba(0,0,0,0.85);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--text)}
+.nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+
+/* HERO */
+.proj-hero{width:100%;margin-top:52px;position:relative;overflow:hidden}
+.proj-hero img{width:100%;display:block;max-height:520px;object-fit:cover;object-position:center}
+.proj-hero.whitebg img{object-fit:contain;background:#f0ede8;padding:40px;max-height:460px}
+.proj-hero.darkbg img{object-fit:cover;background:#000}
+.proj-hero.letterbox img{object-fit:cover;object-position:center 40%;max-height:420px}
+.proj-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.8) 100%)}
+.proj-hero-title{position:absolute;bottom:0;left:0;right:0;padding:40px 60px}
+.proj-hero-label{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.proj-hero-name{font-size:clamp(28px,4vw,48px);font-weight:600;color:#fff;letter-spacing:-.03em;line-height:1.1}
+
+/* CONTENT */
+.proj-content{max-width:900px;margin:0 auto;padding:64px 44px 96px}
+.proj-section{margin-bottom:56px}
+.proj-section-label{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.proj-section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* metrics row */
+.metrics-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.big-metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;min-width:160px}
+.big-metric-num{font-size:28px;font-weight:600;color:var(--accent);letter-spacing:-.03em;line-height:1}
+.big-metric-label{font-size:12px;color:var(--text3);margin-top:4px}
+
+/* tags */
+.tags-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
+.tag{font-size:11px;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:5px 12px;border-radius:6px}
+
+/* text */
+.proj-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300}
+.proj-p strong{color:var(--text);font-weight:500}
+
+/* bullets */
+.proj-buls{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.proj-buls li{font-size:14px;color:var(--text2);line-height:1.7;padding-left:18px;position:relative;font-weight:300}
+.proj-buls li::before{content:'–';position:absolute;left:0;color:var(--text4)}
+.proj-buls li strong{color:var(--text);font-weight:500}
+
+/* image gallery */
+.img-grid{display:grid;gap:12px;margin-bottom:8px}
+.img-grid.cols2{grid-template-columns:1fr 1fr}
+.img-grid.cols3{grid-template-columns:1fr 1fr 1fr}
+.img-grid.cols1{grid-template-columns:1fr}
+.img-box{border-radius:10px;overflow:hidden;background:var(--bg2);border:1px solid var(--border)}
+.img-box img{width:100%;display:block;object-fit:cover}
+.img-box.white img{object-fit:contain;background:#f5f5f0;padding:16px}
+.img-caption{font-size:11px;color:var(--text3);margin-top:6px;text-align:center;letter-spacing:.01em}
+
+/* lessons */
+.lesson-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
+.lesson-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.lesson-body{font-size:13px;color:var(--text2);line-height:1.65;font-weight:300}
+
+/* nav bottom */
+.proj-nav-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:32px;margin-top:48px}
+.proj-nav-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;transition:color .2s}
+.proj-nav-link:hover{color:var(--accent)}
+
+footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between}
+footer p{font-size:12px;color:var(--text3)}
+
+.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .proj-hero-title{padding:24px}
+  .proj-content{padding:40px 20px 72px}
+  .img-grid.cols2,.img-grid.cols3{grid-template-columns:1fr}
+  .metrics-row{gap:8px}
+  footer{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    All Projects
+  </a>
+  <a href="index.html" class="nav-logo">Luis Garcia</a>
+  <a href="index.html#contact" class="nav-cta">Contact</a>
+</nav>
+
+<div class="proj-hero whitebg">
+  <img src="images/cad-assembly.jpg" alt="Computer-Aided Design Portfolio">
+  <div class="proj-hero-overlay"></div>
+  <div class="proj-hero-title">
+    <div class="proj-hero-label">06 · CAD Projects · SolidWorks · GD&T</div>
+    <div class="proj-hero-name">Computer-Aided Design Portfolio</div>
+  </div>
+</div>
+
+<div class="proj-content">
+
+  <div class="proj-section fade">
+    <div class="tags-row">
+      <span class="tag">SolidWorks</span><span class="tag">GD&T / ASME Y14.5</span><span class="tag">Assembly Design</span>
+      <span class="tag">Technical Drawings</span><span class="tag">BOM</span><span class="tag">DFM</span>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Overview</div>
+    <p class="proj-p">A collection of CAD design work demonstrating proficiency in SolidWorks, full drawing packages per ASME Y14.5 GD&T standards, and assembly design with BOM documentation. The featured project is a complete mechanical design of a foosball table — from concept through fabrication-ready drawings.</p>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Foosball Table — Full Design Package</div>
+    <div class="img-grid cols2 fade">
+      <div class="img-box white"><img src="images/cad-assembly.jpg" alt="Assembly Drawing"><div class="img-caption">Main assembly drawing with full BOM — 10 line items, part numbers, quantities</div></div>
+      <div class="img-box white"><img src="images/cad-exploded.jpg" alt="Exploded View"><div class="img-caption">Exploded view drawing — Scale 1:28</div></div>
+      <div class="img-box white"><img src="images/cad-frame.jpg" alt="Frame Detail"><div class="img-caption">Table frame detail drawing — balsa, 84" × 36", #12-24 tapped holes, cup holders</div></div>
+      <div class="img-box white"><img src="images/cad-rod.jpg" alt="Player Rod Sub-Assembly"><div class="img-caption">Player rod sub-assembly — foosball pole, grip, players, neoprene bumpers</div></div>
+    </div>
+    <ul class="proj-buls">
+      <li>Complete main assembly with <strong>10-item BOM</strong> including standard hardware sourced from McMaster-Carr (part numbers included)</li>
+      <li>Exploded view drawing at Scale 1:28 showing assembly sequence</li>
+      <li>Table frame detailed with all critical dimensions, tapped holes, and tolerances — fractional ±1/20–1/32", angular ±0.0001°, two/three-place decimal per ASME</li>
+      <li>Player rod sub-assembly modeled including neoprene bumpers, handle grips, and needle-roller thrust bearings</li>
+      <li>All parts modeled in SolidWorks; drawings produced to ASME Y14.5 GD&T standard</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Lessons Learned</div>
+    <div class="lesson-card">
+      <div class="lesson-title">A drawing is a manufacturing contract</div>
+      <div class="lesson-body">Every dimension and tolerance on a drawing is a commitment to the machinist. Under-tolerancing creates parts that don't fit; over-tolerancing drives up cost unnecessarily. Learning to apply GD&T intentionally — not just to pass a course — meant understanding what each callout actually controls on the manufactured part.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">Source hardware before you model it</div>
+      <div class="lesson-body">I modeled a custom needle-roller thrust bearing before checking McMaster-Carr. The standard part was cheaper, available next day, and already had a CAD model. Default to standard hardware and only go custom when you have to.</div>
+    </div>
+  </div>
+
+
+  <div class="proj-nav-row fade">
+    <a href="project-wusat.html" class="proj-nav-link">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      CubeSat Mission Ops
+    </a>
+    <a href="index.html#projects" class="proj-nav-link">All projects</a>
+    <a href="project-biw.html" class="proj-nav-link">
+      BIW Co-Op
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Luis Garcia · Kansas City, MO</p>
+  <p>ME · WashU McKelvey · Tesla Fremont · HSF Scholar</p>
+</footer>
+<script>
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const s=Array.from(e.target.parentElement?.children||[]).filter(c=>c.classList.contains('fade'));
+      const i=Math.min(s.indexOf(e.target),4);
+      setTimeout(()=>e.target.classList.add('in'),i*80);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>{
+  const r=el.getBoundingClientRect();
+  if(r.top<window.innerHeight){el.classList.add('in');}else{obs.observe(el);}
+});
+</script>
+</body>
+</html>
