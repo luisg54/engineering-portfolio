@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Model 3 BIW Manufacturing Co-Op — Luis Garcia</title>
+<title>Model 3 BIW Manufacturing Equipment - Luis Garcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -87,6 +87,25 @@ footer p{font-size:12px;color:var(--text3)}
 .fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .fade.in{opacity:1;transform:translateY(0)}
 
+
+/* NDA-safe project detail components */
+.nda-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:18px 22px;margin-bottom:32px}
+.nda-card p{font-size:13px;color:var(--text2);line-height:1.75;font-weight:300;margin:0}
+.nda-card strong{color:var(--text);font-weight:500}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+.detail-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px}
+.detail-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;letter-spacing:-.01em}
+.detail-body{font-size:13px;color:var(--text2);line-height:1.75;font-weight:300}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 8px}
+.process-step{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px 14px;min-height:128px}
+.step-num{font-size:11px;color:var(--accent);font-weight:600;margin-bottom:8px;letter-spacing:.04em}
+.step-title{font-size:13px;color:var(--text);font-weight:600;margin-bottom:6px;line-height:1.3}
+.step-text{font-size:12px;color:var(--text2);line-height:1.6;font-weight:300}
+.status-row{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 24px}
+.status-pill{font-size:11px;color:var(--green);background:var(--green2);border:1px solid rgba(48,209,88,.22);padding:5px 11px;border-radius:980px;font-weight:500}
+@media(max-width:900px){.process-grid{grid-template-columns:1fr 1fr}.split-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.process-grid{grid-template-columns:1fr}}
+
 @media(max-width:768px){
   nav{padding:0 20px}
   .proj-hero-title{padding:24px}
@@ -111,8 +130,8 @@ footer p{font-size:12px;color:var(--text3)}
   <img src="images/biw.jpg" alt="Model 3 BIW Manufacturing Co-Op">
   <div class="proj-hero-overlay"></div>
   <div class="proj-hero-title">
-    <div class="proj-hero-label">01 · Tesla Fremont · Jan 2026 – Aug 2026</div>
-    <div class="proj-hero-name">Model 3 BIW Manufacturing Co-Op</div>
+    <div class="proj-hero-label">01 &middot; Tesla Fremont &middot; Manufacturing Equipment Engineering</div>
+    <div class="proj-hero-name">Model 3 BIW Manufacturing Equipment</div>
   </div>
 </div>
 
@@ -120,80 +139,87 @@ footer p{font-size:12px;color:var(--text3)}
 
   <div class="proj-section fade">
     <div class="metrics-row">
-      <div class="big-metric"><div class="big-metric-num">10s</div><div class="big-metric-label">Cycle time reduction (75→65s)</div></div>
-      <div class="big-metric"><div class="big-metric-num">$88K</div><div class="big-metric-label">OEM cost avoidance</div></div>
-      <div class="big-metric"><div class="big-metric-num">&lt;0.25mm</div><div class="big-metric-label">TCP deviation achieved</div></div>
-      <div class="big-metric"><div class="big-metric-num">8</div><div class="big-metric-label">Custom clamps designed in CATIA V5</div></div>
+      <div class="big-metric"><div class="big-metric-num">5-fig</div><div class="big-metric-label">external cost avoidance</div></div>
+      <div class="big-metric"><div class="big-metric-num">CATIA</div><div class="big-metric-label">reverse engineering + fixture design</div></div>
+      <div class="big-metric"><div class="big-metric-num">TCP</div><div class="big-metric-label">stud-gun certification fixture</div></div>
+      <div class="big-metric"><div class="big-metric-num">PRD</div><div class="big-metric-label">production-readiness documentation</div></div>
     </div>
     <div class="tags-row">
-      <span class="tag">CATIA V5</span><span class="tag">SolidWorks</span><span class="tag">KUKA/FANUC</span>
-      <span class="tag">Splunk/SCADA</span><span class="tag">GD&T</span><span class="tag">Root Cause Analysis</span><span class="tag">Pneumatics</span>
+      <span class="tag">CATIA V5</span><span class="tag">GD&amp;T</span><span class="tag">Fixture Design</span>
+      <span class="tag">NAAMS-style Tooling</span><span class="tag">Dimensional Engineering</span><span class="tag">Manufacturing Equipment</span>
     </div>
+    <div class="nda-card"><p><strong>NDA-safe summary:</strong> This page intentionally generalizes internal station names, exact geometry, layout images, reviewer names, supplier details, and proprietary process information. The focus is on engineering ownership, constraints, and public-safe impact.</p></div>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Overview</div>
-    <p class="proj-p">As a Manufacturing Equipment Engineer Co-Op at Tesla Fremont, I worked directly on the <strong>Model 3 Body in White (BIW) production line</strong> — one of the highest-throughput automotive manufacturing environments in the world. My work spanned fixture design, robot cell optimization, and data-driven root cause analysis on live production equipment.</p>
-    <p class="proj-p">Every change had to be validated against interference zones, cleared with production, and locked into the program without stopping the line. Nothing theoretical.</p>
+    <p class="proj-p">As a Manufacturing Equipment Engineering Intern supporting Model 3 Body-in-White, I worked on production-adjacent mechanical tooling and fixture problems where the design has to survive real shop-floor constraints: repeatability, serviceability, fabrication path, dimensional verification, and handoff quality.</p>
+    <p class="proj-p">The strongest theme across my BIW work is moving from CAD output to <strong>production readiness</strong>: understanding the problem, translating engineer feedback into design changes, documenting decisions, and building a path from concept to fabricated and validated tooling.</p>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Go/No-Go TCP Calibration Fixture</div>
-    <p class="proj-p">Tucker stud welding guns on the BIW line were experiencing a <strong>recurring 2.5mm TCP deviation</strong> during swap events — enough to cause weld misses and trigger robot path reprogramming after every gun change.</p>
-    <p class="proj-p">I designed a <strong>Go/No-Go calibration fixture</strong> using a chamfered funnel alignment constraint and a dowel-pinned L-bracket to passively correct TCP position during swap. The result: <strong>sub-0.25mm deviation</strong>, eliminating the need for any robot path reprogramming post-swap.</p>
+    <div class="proj-section-label">Stud-Gun TCP Certification Fixture</div>
+    <p class="proj-p">I am designing a checking/certification fixture for stud-gun TCP alignment. The problem is not simply creating a part; the fixture has to help certify repeatable tool positioning, support dimensional verification, and be usable by the team after I leave.</p>
     <ul class="proj-buls">
-      <li>Chamfered funnel provides passive self-alignment — no operator skill dependency</li>
-      <li>Dowel-pinned L-bracket ensures repeatable datum reference across all gun swaps</li>
-      <li>Go/No-Go tolerance check built in — operators get immediate pass/fail feedback</li>
-      <li>Designed and toleranced in SolidWorks; validated on the line before production release</li>
+      <li>Created a multi-part fixture concept in <strong>CATIA V5</strong> for one-time certification of a reference gun and comparison of other guns against that certified condition.</li>
+      <li>Used standard locating-block logic, shim adjustability, and dowel locking so the final certified position can be adjusted, verified, and preserved.</li>
+      <li>Working with dimensional engineering to challenge assumptions around datum strategy, repeatability, access, and what must be measured before the design is frozen.</li>
+      <li>Building the project toward a physical deliverable: requirements, CAD, drawings, review feedback, fabrication path, fit check, validation plan, and final handoff package.</li>
+    </ul>
+    <div class="status-row"><span class="status-pill">Final design phase</span><span class="status-pill">Dimensional feedback in progress</span><span class="status-pill">Goal: produced before internship end</span></div>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-num">01</div><div class="step-title">Requirements</div><div class="step-text">Define what the fixture must locate, adjust, certify, and document.</div></div>
+      <div class="process-step"><div class="step-num">02</div><div class="step-title">Design Review</div><div class="step-text">Use manufacturing and dimensional feedback to remove weak assumptions before release.</div></div>
+      <div class="process-step"><div class="step-num">03</div><div class="step-title">Fabrication Path</div><div class="step-text">Convert the model into drawings, material notes, open issues, and build-ready information.</div></div>
+      <div class="process-step"><div class="step-num">04</div><div class="step-title">Validation</div><div class="step-text">Fit check, repeatability review, user feedback, and final handoff documentation.</div></div>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Reverse-Engineered Production Hardware</div>
+    <p class="proj-p">A legacy clamping fixture system had no usable supplier drawing package available, creating a long-lead-time and high-cost replacement risk. I reverse-engineered the system in CATIA V5 and produced internal-machining drawings so the team would not be locked into the original vendor path.</p>
+    <ul class="proj-buls">
+      <li>Captured geometry from physical hardware and rebuilt the fixture system as a usable CATIA model and drawing package.</li>
+      <li>Created a lasting internal asset for future machining instead of relying on supplier availability.</li>
+      <li>For the immediate need, supported the lower-cost repair path rather than over-building new hardware when replacement was not necessary.</li>
+      <li>Reduced long-lead vendor dependency and avoided a five-figure external replacement cost.</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Welding Cell Optimization</div>
-    <p class="proj-p">Re-sequenced weld point assignments across a multi-robot spot welding cell, redistributing work to eliminate inter-robot wait states. Validated all interference zones against the existing robot coordination logic before committing changes.</p>
-    <ul class="proj-buls">
-      <li><strong>10-second cycle time reduction</strong> confirmed (75s → 65s) — locked into production program</li>
-      <li>Validated zone handoff timing and coordination logic against interference analysis</li>
-      <li>Changes required sign-off through Tesla's engineering change process</li>
-    </ul>
+    <div class="proj-section-label">Manufacturing Equipment Learning System</div>
+    <p class="proj-p">Because my time is split across BIW and Optimus work, I treat passdowns, line walks, and engineer conversations as an intentional learning system. Instead of trying to absorb everything, I track patterns and ask targeted questions around real equipment issues.</p>
+    <div class="split-grid">
+      <div class="detail-card"><div class="detail-title">What I track</div><div class="detail-body">Recurring issue themes, likely failure modes, mechanical vs. controls boundaries, temporary vs. permanent countermeasures, and open questions for engineers.</div></div>
+      <div class="detail-card"><div class="detail-title">What it builds</div><div class="detail-body">Production awareness, better design judgment, practical troubleshooting vocabulary, and stronger questions during reviews and floor conversations.</div></div>
+    </div>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Custom Fixture Clamps — CATIA V5</div>
-    <p class="proj-p">Eight fixture clamps on the BIW line required replacement. OEM lead time was <strong>10 months at $88,000</strong>. I reverse-engineered each clamp from the physical parts, modeled them in CATIA V5, and produced drawings for internal machining.</p>
+    <div class="proj-section-label">What This Demonstrates</div>
     <ul class="proj-buls">
-      <li>Full reverse engineering from physical parts — no original CAD files available</li>
-      <li>All 8 clamps modeled in CATIA V5 with GD&T tolerancing for machinability</li>
-      <li>Reduced lead time from 10 months to internal machining cycle</li>
-      <li><strong>$88,000 in OEM costs avoided</strong></li>
-    </ul>
-  </div>
-
-  <div class="proj-section fade">
-    <div class="proj-section-label">EOAT Redesign & Data Tools</div>
-    <ul class="proj-buls">
-      <li>Redesigned End-of-Arm Tooling (EOAT) with integrated pneumatic cylinders to dynamically realign parts during transfer — mitigating pick-up faults and reducing material drop rates on the line</li>
-      <li>Used <strong>Splunk and SCADA</strong> to query real-time fault data across FANUC and KUKA robots — identified recurring fault patterns and drove targeted root-cause analysis to reduce unplanned downtime</li>
+      <li><strong>Ownership beyond CAD:</strong> requirements, stakeholder feedback, build path, validation, and final handoff.</li>
+      <li><strong>Manufacturing judgment:</strong> choosing repair or internal machining when that is more practical than replacing hardware.</li>
+      <li><strong>Dimensional awareness:</strong> designing around repeatability, adjustment, datums, and verification instead of only nominal geometry.</li>
+      <li><strong>Execution discipline:</strong> documenting decisions and open issues so the project can keep moving even when people are busy.</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Lessons Learned</div>
     <div class="lesson-card">
-      <div class="lesson-title">Tolerance stack-up matters more than you think on live tooling</div>
-      <div class="lesson-body">The TCP fixture taught me that a 0.25mm target sounds easy until you account for datum shift, thermal expansion, and operator variance. Designing the passive funnel alignment was the insight that made the tolerance achievable without depending on perfect operator technique every time.</div>
+      <div class="lesson-title">Production readiness is the real deliverable</div>
+      <div class="lesson-body">A fixture is not done when the CAD looks clean. It is done when the team understands how it is built, checked, adjusted, used, maintained, and handed off.</div>
     </div>
     <div class="lesson-card">
-      <div class="lesson-title">Data first, hypothesis second</div>
-      <div class="lesson-body">On a production line, gut feel gets you nowhere. Every decision — cycle time changes, EOAT modifications — had to be backed by Splunk fault data and OEE metrics before anyone would approve a change. Learning to pull and interpret that data fast was as important as the mechanical design work.</div>
+      <div class="lesson-title">Dimensional feedback changes the design</div>
+      <div class="lesson-body">The dimensional review forces the fixture to answer harder questions: what is the reference, how repeatable is the setup, what can move, and what proves the final condition is acceptable?</div>
     </div>
     <div class="lesson-card">
-      <div class="lesson-title">Change management is a real engineering skill</div>
-      <div class="lesson-body">Getting a change onto a live production line involves coordinating with operators, process engineers, and controls — not just submitting a drawing. Understanding how to communicate a change, validate it, and get sign-off was something I had to learn on the job.</div>
+      <div class="lesson-title">Cost savings can come from judgment, not just redesign</div>
+      <div class="lesson-body">The best engineering move is sometimes creating the drawing package and choosing a smaller repair path for the immediate problem, while leaving the team with a stronger long-term option.</div>
     </div>
   </div>
-
 
   <div class="proj-nav-row fade">
     <a href="project-cad.html" class="proj-nav-link">

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Optimus Academy — Humanoid Robotics Training Facility — Luis Garcia</title>
+<title>Optimus Academy Factory Layout - Luis Garcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -87,6 +87,25 @@ footer p{font-size:12px;color:var(--text3)}
 .fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .fade.in{opacity:1;transform:translateY(0)}
 
+
+/* NDA-safe project detail components */
+.nda-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:18px 22px;margin-bottom:32px}
+.nda-card p{font-size:13px;color:var(--text2);line-height:1.75;font-weight:300;margin:0}
+.nda-card strong{color:var(--text);font-weight:500}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+.detail-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px}
+.detail-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;letter-spacing:-.01em}
+.detail-body{font-size:13px;color:var(--text2);line-height:1.75;font-weight:300}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 8px}
+.process-step{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px 14px;min-height:128px}
+.step-num{font-size:11px;color:var(--accent);font-weight:600;margin-bottom:8px;letter-spacing:.04em}
+.step-title{font-size:13px;color:var(--text);font-weight:600;margin-bottom:6px;line-height:1.3}
+.step-text{font-size:12px;color:var(--text2);line-height:1.6;font-weight:300}
+.status-row{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 24px}
+.status-pill{font-size:11px;color:var(--green);background:var(--green2);border:1px solid rgba(48,209,88,.22);padding:5px 11px;border-radius:980px;font-weight:500}
+@media(max-width:900px){.process-grid{grid-template-columns:1fr 1fr}.split-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.process-grid{grid-template-columns:1fr}}
+
 @media(max-width:768px){
   nav{padding:0 20px}
   .proj-hero-title{padding:24px}
@@ -111,8 +130,8 @@ footer p{font-size:12px;color:var(--text3)}
   <img src="images/optimus.jpg" alt="Optimus Academy — Humanoid Robotics Training Facility">
   <div class="proj-hero-overlay"></div>
   <div class="proj-hero-title">
-    <div class="proj-hero-label">02 · Tesla Fremont · Mar 2026 – Aug 2026</div>
-    <div class="proj-hero-name">Optimus Academy — Humanoid Robotics Training Facility</div>
+    <div class="proj-hero-label">02 &middot; Tesla Fremont &middot; Factory Layout and Handoff Systems</div>
+    <div class="proj-hero-name">Optimus Academy Factory Layout</div>
   </div>
 </div>
 
@@ -120,64 +139,109 @@ footer p{font-size:12px;color:var(--text3)}
 
   <div class="proj-section fade">
     <div class="metrics-row">
-      <div class="big-metric"><div class="big-metric-num">40</div><div class="big-metric-label">Training stations designed</div></div>
-      <div class="big-metric"><div class="big-metric-num">v4</div><div class="big-metric-label">Floor plan revision sent to architect</div></div>
-      <div class="big-metric"><div class="big-metric-num">480V</div><div class="big-metric-label">Electrical drops preserved in place</div></div>
+      <div class="big-metric"><div class="big-metric-num">Layout</div><div class="big-metric-label">foundational AutoCAD system</div></div>
+      <div class="big-metric"><div class="big-metric-num">Field</div><div class="big-metric-label">validated tagging convention</div></div>
+      <div class="big-metric"><div class="big-metric-num">Demo</div><div class="big-metric-label">contractor-ready guide package</div></div>
+      <div class="big-metric"><div class="big-metric-num">Controls</div><div class="big-metric-label">integration documentation support</div></div>
     </div>
     <div class="tags-row">
-      <span class="tag">AutoCAD</span><span class="tag">Facility Design</span><span class="tag">Allen-Bradley GuardLogix</span>
-      <span class="tag">SICK/Keyence</span><span class="tag">Light Curtains</span><span class="tag">HRC Safety</span><span class="tag">80/20 Extrusion</span>
+      <span class="tag">AutoCAD</span><span class="tag">Factory Layout</span><span class="tag">Equipment Tracking</span>
+      <span class="tag">Demo Planning</span><span class="tag">Controls Support</span><span class="tag">Handoff Systems</span>
     </div>
+    <div class="nda-card"><p><strong>NDA-safe summary:</strong> This case study removes internal names, station identifiers, direct quotes, exact layout images, and proprietary installation details. It focuses on the engineering system I built: layout, identification, tracking, field adoption, and handoff.</p></div>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Overview</div>
-    <p class="proj-p">Concurrently with BIW work, I was assigned to lead the engineering side of the <strong>Optimus Academy</strong> — Tesla's initiative to transform a legacy Model S/X production line into a dedicated training facility for Optimus humanoid robots.</p>
-    <p class="proj-p">The scope covered everything from floor plan development and station layout to HRC (Human-Robot Collaboration) safety cell specification and coordination with the architect for permitting sign-off.</p>
+    <p class="proj-p">In parallel with Model 3 BIW work, I supported an internal Optimus training-facility project by building the layout and equipment-control system needed to move from a legacy manufacturing area toward a reusable robotics training environment.</p>
+    <p class="proj-p">The main challenge was not just drawing a floor plan. The project needed a common language across CAD layouts, equipment trackers, field labels, contractor demo guides, and future install documentation so teams could find the right assets under time pressure.</p>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Facility Design & Floor Plan</div>
+    <div class="proj-section-label">Foundational Factory Layout</div>
+    <p class="proj-p">I built the first usable AutoCAD layout foundation on a compressed schedule, learning the required workflows as I went and then revising the layout through stakeholder feedback.</p>
     <ul class="proj-buls">
-      <li>Developed <strong>Phase 1 AutoCAD floor plan</strong> from legacy DWG files and on-site measurements — the existing drawings were incomplete and required field verification</li>
-      <li>Iterated through 4 floor plan revisions coordinating with architects; v4 sent for permitting sign-off</li>
-      <li>Laid out <strong>40 training stations</strong> within the existing facility footprint, optimizing for robot task variety and pedestrian flow</li>
-      <li>Mapped and preserved all existing <strong>480V electrical drops, pneumatic lines, and PLC cabinet locations</strong> to avoid costly infrastructure changes</li>
+      <li>Converted incomplete legacy information and field observations into a layout system that could support planning, equipment tracking, demo guides, and future installation references.</li>
+      <li>Used the layout as the base artifact for downstream project documents so updates could stay connected to one spatial source of truth.</li>
+      <li>Iterated the layout through multiple review cycles while preserving the project logic: station identity, equipment ownership, flow, and install-readiness.</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">HRC Safety Cell Design</div>
-    <p class="proj-p">Human-Robot Collaboration cells require a specific safety architecture — any gap in the specification means the safety logic either fails to protect or trips too conservatively and kills productivity.</p>
+    <div class="proj-section-label">Equipment Tagging & Recovery System</div>
+    <p class="proj-p">I proposed and implemented a unified tagging convention for Optimus-bound equipment so demo crews, engineers, and trackers all referred to the same assets in the same way. The system linked physical labels to CAD layouts and spreadsheet trackers.</p>
     <ul class="proj-buls">
-      <li>Specified <strong>36" maintenance clearance zones</strong> and <strong>48" pedestrian clearance zones</strong> per ISO/TS 15066 HRC guidelines</li>
-      <li>Specified 80/20 extrusion cell framing, light curtains, and <strong>SICK/Keyence safety scanners</strong> for each station</li>
-      <li>Preserved existing <strong>Allen-Bradley GuardLogix PLC cabinets</strong> — avoiding complete safety logic reprogramming by mapping new sensor inputs to existing cabinet I/O</li>
-      <li>Coordinated sensor placement with sight-line analysis to eliminate blind zones within each cell</li>
+      <li>Designed a station-based identification convention that could scale across many pieces of equipment without depending on memory or tribal knowledge.</li>
+      <li>Built supporting tracker logic and a written guide so the system could be adopted by others without me interpreting it in person.</li>
+      <li>Validated the system during field demo activity when crews were able to locate equipment using the guide package and labels.</li>
+      <li>Identified and escalated missing critical controls hardware during a line walk before it could be lost during removal activity.</li>
+    </ul>
+    <div class="split-grid">
+      <div class="detail-card"><div class="detail-title">Engineering problem</div><div class="detail-body">Two overlapping field activities created a race condition: equipment needed for the future facility had to be separated from assets scheduled for removal.</div></div>
+      <div class="detail-card"><div class="detail-title">My solution</div><div class="detail-body">A common ID system tying together layouts, trackers, labels, field guides, and future install documentation.</div></div>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Contractor-Ready Demo Guide Package</div>
+    <p class="proj-p">I created station-level guide layouts intended to be used directly by demo teams and contractors. The standard was not whether the drawings looked polished; it was whether someone could find equipment in the field without me there.</p>
+    <ul class="proj-buls">
+      <li>Built field-reference layouts that showed what equipment belonged to the future training facility and how it should be identified.</li>
+      <li>Designed the pages as standalone artifacts with enough context for field use rather than internal-only documentation.</li>
+      <li>The guide package was adopted by the demo team and used by contractor crews as a reference during selective demo work.</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Controls Integration Support</div>
+    <p class="proj-p">I supported a senior controls engineer on integration documentation for repurposed conveyor and controls assets. My role was to own the structural sections I could complete independently and learn the electrical/control logic well enough to support the formal deliverable.</p>
+    <ul class="proj-buls">
+      <li>Documented mechanical/layout portions of the integration package and helped organize information for install-team use.</li>
+      <li>Worked through electrical/control sections with senior-engineer guidance, learning how controls hardware, operator interfaces, safety I/O, PLC cabinets, and power-distribution components fit into the overall equipment package.</li>
+      <li>Built confidence contributing to a formal controls-adjacent deliverable without pretending to be the controls owner.</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">System Architecture</div>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-num">01</div><div class="step-title">Layout</div><div class="step-text">AutoCAD plan becomes the spatial source of truth.</div></div>
+      <div class="process-step"><div class="step-num">02</div><div class="step-title">Identification</div><div class="step-text">Station-based IDs give every future-use asset a common name.</div></div>
+      <div class="process-step"><div class="step-num">03</div><div class="step-title">Field Guides</div><div class="step-text">Contractor-ready pages translate the plan into demo execution.</div></div>
+      <div class="process-step"><div class="step-num">04</div><div class="step-title">Install Handoff</div><div class="step-text">Trackers and documentation preserve decisions for the next phase.</div></div>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">What This Demonstrates</div>
+    <ul class="proj-buls">
+      <li><strong>Systems thinking:</strong> a naming convention can be an engineering control when multiple teams share physical assets.</li>
+      <li><strong>Field validation:</strong> the guide package worked under real demo conditions, not just in a planning meeting.</li>
+      <li><strong>Cross-functional execution:</strong> deliverables had to serve managers, demo crews, contractors, manufacturing engineers, and controls stakeholders.</li>
+      <li><strong>Ownership under ambiguity:</strong> I built the structure first, then used feedback and field results to improve it.</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Lessons Learned</div>
     <div class="lesson-card">
-      <div class="lesson-title">Legacy infrastructure is a constraint, not a problem to solve</div>
-      <div class="lesson-body">The instinct is to rip out the old electrical and start clean. The reality is that preserving existing 480V drops and PLC cabinets saved weeks of permitting and tens of thousands in electrical work. Working around constraints creatively is a real engineering skill.</div>
+      <div class="lesson-title">A good naming system prevents physical mistakes</div>
+      <div class="lesson-body">When assets are being moved, removed, or saved, ambiguity becomes expensive. The ID convention worked because it connected the digital plan to the physical floor.</div>
     </div>
     <div class="lesson-card">
-      <div class="lesson-title">Safety specs have to be right before anything else gets built</div>
-      <div class="lesson-body">Getting the HRC clearance zones and scanner placement wrong means the whole cell either fails safety audit or shuts down constantly from false trips. I learned to read the safety standards directly rather than assume someone else had already interpreted them correctly.</div>
+      <div class="lesson-title">Handoff quality is measured when you are not there</div>
+      <div class="lesson-body">The demo guides were successful because teams could use them directly. That became my standard for future handoff packages: understandable without the author standing next to the user.</div>
     </div>
     <div class="lesson-card">
-      <div class="lesson-title">Facility design is a coordination problem as much as a technical one</div>
-      <div class="lesson-body">The floor plan went through 4 revisions not because the engineering changed, but because architect requirements, permitting feedback, and operational constraints kept evolving. Managing that iteration loop without losing track of the design intent was the real challenge.</div>
+      <div class="lesson-title">Field walks catch what trackers miss</div>
+      <div class="lesson-body">The tracker creates intent, but the floor confirms reality. Walking the area during demo made it possible to catch missing critical hardware while it could still be recovered.</div>
     </div>
   </div>
-
 
   <div class="proj-nav-row fade">
     <a href="project-biw.html" class="proj-nav-link">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      BIW Co-Op
+      BIW Equipment
     </a>
     <a href="index.html#projects" class="proj-nav-link">All projects</a>
     <a href="project-dbf.html" class="proj-nav-link">
