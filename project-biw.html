@@ -103,6 +103,9 @@ footer p{font-size:12px;color:var(--text3)}
 .step-text{font-size:12px;color:var(--text2);line-height:1.6;font-weight:300}
 .status-row{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 24px}
 .status-pill{font-size:11px;color:var(--green);background:var(--green2);border:1px solid rgba(48,209,88,.22);padding:5px 11px;border-radius:980px;font-weight:500}
+
+.reference-gallery{margin:24px 0 22px}.reference-gallery .img-box img{height:190px;object-fit:cover}.reference-note{font-size:11px;color:var(--text3);line-height:1.6;margin-top:8px}.callout-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 24px}.callout-card{background:linear-gradient(180deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:var(--r);padding:20px 22px}.callout-kicker{font-size:10px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}.callout-text{font-size:13px;color:var(--text2);line-height:1.75;font-weight:300}.callout-text strong{color:var(--text);font-weight:500}
+@media(max-width:900px){.callout-grid{grid-template-columns:1fr}.reference-gallery .img-box img{height:auto}}
 @media(max-width:900px){.process-grid{grid-template-columns:1fr 1fr}.split-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.process-grid{grid-template-columns:1fr}}
 
@@ -127,7 +130,7 @@ footer p{font-size:12px;color:var(--text3)}
 </nav>
 
 <div class="proj-hero letterbox">
-  <img src="images/biw.jpg" alt="Model 3 BIW Manufacturing Co-Op">
+  <img src="images/public-biw-cell-reference.jpg" alt="Public reference image of robotic BIW manufacturing cell">
   <div class="proj-hero-overlay"></div>
   <div class="proj-hero-title">
     <div class="proj-hero-label">01 &middot; Tesla Fremont &middot; Manufacturing Equipment Engineering</div>
@@ -167,6 +170,16 @@ footer p{font-size:12px;color:var(--text3)}
       <li>Building the project toward a physical deliverable: requirements, CAD, drawings, review feedback, fabrication path, fit check, validation plan, and final handoff package.</li>
     </ul>
     <div class="status-row"><span class="status-pill">Final design phase</span><span class="status-pill">Dimensional feedback in progress</span><span class="status-pill">Goal: produced before internship end</span></div>
+    <div class="img-grid cols3 reference-gallery">
+      <div><div class="img-box"><img src="images/public-stud-gun-reference.jpg" alt="Public reference image of robotic stud welding gun" loading="lazy" decoding="async"></div><div class="img-caption">Public reference image of a robotic stud gun; used only to explain the type of tooling context.</div></div>
+      <div><div class="img-box"><img src="images/public-biw-cell-reference.jpg" alt="Public reference image of BIW robots" loading="lazy" decoding="async"></div><div class="img-caption">Public body-shop cell imagery; not internal Tesla equipment or layout.</div></div>
+      <div><div class="img-box"><img src="images/public-model3-reference.jpg" alt="Public reference image of Tesla Model 3" loading="lazy" decoding="async"></div><div class="img-caption">Public Model 3 imagery connects the tooling work to the final product context.</div></div>
+    </div>
+    <div class="reference-note">Image note: keep this section public-reference only. Do not upload internal station photos, CAD screenshots, Outlook snippets, equipment trackers, station IDs, or floor images.</div>
+    <div class="callout-grid">
+      <div class="callout-card"><div class="callout-kicker">Production target</div><div class="callout-text">The goal is not just a clean CAD model. The target is a <strong>fabricated, checked, and handoff-ready fixture</strong> before the internship ends.</div></div>
+      <div class="callout-card"><div class="callout-kicker">Execution risk</div><div class="callout-text">The critical path is design freeze, drawing release, fabrication path, fit check, dimensional review, and validation criteria. This is the schedule I am actively managing.</div></div>
+    </div>
     <div class="process-grid">
       <div class="process-step"><div class="step-num">01</div><div class="step-title">Requirements</div><div class="step-text">Define what the fixture must locate, adjust, certify, and document.</div></div>
       <div class="process-step"><div class="step-num">02</div><div class="step-title">Design Review</div><div class="step-text">Use manufacturing and dimensional feedback to remove weak assumptions before release.</div></div>
@@ -192,6 +205,15 @@ footer p{font-size:12px;color:var(--text3)}
     <div class="split-grid">
       <div class="detail-card"><div class="detail-title">What I track</div><div class="detail-body">Recurring issue themes, likely failure modes, mechanical vs. controls boundaries, temporary vs. permanent countermeasures, and open questions for engineers.</div></div>
       <div class="detail-card"><div class="detail-title">What it builds</div><div class="detail-body">Production awareness, better design judgment, practical troubleshooting vocabulary, and stronger questions during reviews and floor conversations.</div></div>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Production Readiness Package</div>
+    <p class="proj-p">For the stud-gun fixture, the final deliverable is being structured as a build-and-handoff package rather than only a CAD file. The package is intended to make the fixture understandable to another engineer, machinist, technician, or reviewer after my internship.</p>
+    <div class="split-grid">
+      <div class="detail-card"><div class="detail-title">Build package</div><div class="detail-body">Requirements, CAD/drawings, material or fabrication notes, assembly logic, decision log, open questions, and owner list.</div></div>
+      <div class="detail-card"><div class="detail-title">Validation package</div><div class="detail-body">Fit-check plan, repeatability/dimensional checks, user-feedback notes, pass/fail criteria, and final next steps.</div></div>
     </div>
   </div>
 

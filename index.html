@@ -62,6 +62,20 @@ section{padding:96px 44px}
 .proof-pill{font-size:11px;color:var(--green);background:var(--green2);border:1px solid rgba(48,209,88,.22);padding:4px 9px;border-radius:6px;font-weight:500}
 .nda-note{margin-top:28px;background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:16px 18px;color:var(--text2);font-size:13px;line-height:1.7;font-weight:300}
 .nda-note strong{color:var(--text);font-weight:500}
+
+.ref-strip{display:grid;grid-template-columns:1.25fr .9fr .9fr;gap:12px;margin:34px 0 10px}
+.ref-card{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--border);background:var(--bg3);min-height:190px}
+.ref-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(1.03);transition:transform .5s ease}
+.ref-card:hover img{transform:scale(1.025)}
+.ref-card.wide{min-height:220px}
+.ref-caption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(0,0,0,.62);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:8px 10px;font-size:11px;color:rgba(245,245,247,.78);line-height:1.45}
+.ref-caption strong{display:block;color:#fff;font-size:11px;font-weight:600;margin-bottom:2px;letter-spacing:.01em}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:28px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+.contact-card-kicker{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.contact-card-title{font-size:24px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:12px;color:var(--text)}
+.contact-card-text{font-size:14px;color:var(--text2);line-height:1.75;font-weight:300;margin-bottom:20px}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px}.contact-actions a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;text-decoration:none;border-radius:980px;padding:10px 16px}.contact-actions .primary{background:var(--accent);color:#fff}.contact-actions .secondary{background:rgba(255,255,255,.07);border:1px solid var(--border2);color:var(--text)}
+@media(max-width:900px){.ref-strip{grid-template-columns:1fr}.ref-card,.ref-card.wide{min-height:220px}}
 @media(max-width:900px){.focus-grid{grid-template-columns:1fr}.focus-card{min-height:auto}}
 
 #projects{background:var(--bg)}
@@ -211,7 +225,12 @@ footer p{font-size:12px;color:var(--text3)}
       <div class="focus-proof"><span class="proof-pill">Stakeholder feedback</span><span class="proof-pill">Production readiness</span><span class="proof-pill">Handoff quality</span></div>
     </div>
   </div>
-  <div class="nda-note fade"><strong>NDA note:</strong> Tesla project summaries intentionally remove internal names, exact layouts, station identifiers, direct quotes, and proprietary process details. Metrics are generalized where appropriate.</div>
+  <div class="ref-strip fade" aria-label="Public visual context for Tesla manufacturing work">
+    <div class="ref-card wide"><img src="images/public-model3-reference.jpg" alt="Public reference image of Tesla Model 3" loading="lazy" decoding="async"><div class="ref-caption"><strong>End product context</strong>Public Model 3 imagery; not an internal factory photo.</div></div>
+    <div class="ref-card"><img src="images/public-biw-cell-reference.jpg" alt="Public reference image of robotic BIW cell" loading="lazy" decoding="async"><div class="ref-caption"><strong>BIW cell context</strong>Public robotic body-shop reference image.</div></div>
+    <div class="ref-card"><img src="images/public-stud-gun-reference.jpg" alt="Public reference image of robotic stud welding gun" loading="lazy" decoding="async"><div class="ref-caption"><strong>Tooling context</strong>Public stud-gun reference image; not a Tesla internal asset.</div></div>
+  </div>
+  <div class="nda-note fade"><strong>NDA note:</strong> Tesla project summaries intentionally remove internal names, exact layouts, station identifiers, direct quotes, and proprietary process details. Public reference images are used only for context and should be replaced with assets you have permission to publish.</div>
 </section>
 
 <section id="projects">
@@ -223,7 +242,7 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="proj-grid">
 
     <a class="proj-card featured fade" href="project-biw.html">
-      <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Tesla BIW"><div class="proj-cover-overlay"></div></div>
+      <div class="proj-cover letterbox"><img src="images/public-biw-cell-reference.jpg" alt="Public reference image of BIW robotic manufacturing cell" loading="lazy" decoding="async"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">01 - Featured &middot; Tesla Fremont</div>
         <div class="proj-name">Model 3 BIW Manufacturing Equipment</div>
@@ -399,11 +418,13 @@ footer p{font-size:12px;color:var(--text3)}
       <a href="https://linkedin.com/in/luisgr1" target="_blank" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">in</div><div><div class="c-lbl">LinkedIn</div><div class="c-val">linkedin.com/in/luisgr1</div></div></a>
       <a href="https://github.com/luisgriv" target="_blank" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">gh</div><div><div class="c-lbl">GitHub</div><div class="c-val">github.com/luisgriv</div></div></a>
     </div>
-    <div class="c-form fade">
-      <div class="f-grp"><label class="f-lbl">Name</label><input class="f-in" type="text" placeholder="Your name"></div>
-      <div class="f-grp"><label class="f-lbl">Email</label><input class="f-in" type="email" placeholder="your@email.com"></div>
-      <div class="f-grp"><label class="f-lbl">Message</label><textarea class="f-ta" placeholder="What's on your mind?"></textarea></div>
-      <button class="f-btn" onclick="alert('Connect to Formspree.io to activate.')">Send Message</button>
+    <div class="contact-card fade">
+      <div>
+        <div class="contact-card-kicker">Best fit</div>
+        <div class="contact-card-title">Manufacturing equipment, robotics, and production systems.</div>
+        <p class="contact-card-text">I am especially interested in roles where mechanical design, controls awareness, factory layout, and hands-on validation meet. For recruiters or engineers reviewing this portfolio, the strongest matches are manufacturing equipment, body-in-white, automation, robotics, aerospace structures, and systems engineering.</p>
+      </div>
+      <div class="contact-actions"><a class="primary" href="mailto:garciarivera@wustl.edu?subject=Portfolio%20-%20Luis%20Garcia">Email me</a><a class="secondary" href="images/resume.pdf" download="LuisGarciaR_Resume.pdf">Download resume</a></div>
     </div>
   </div>
 </section>
