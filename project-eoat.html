@@ -24,7 +24,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .proj-hero-title{position:absolute;bottom:0;left:0;right:0;padding:32px 60px;z-index:3;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,transparent 100%)}
 .proj-hero-label{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
 .proj-hero-name{font-size:clamp(22px,3vw,40px);font-weight:600;color:#fff;letter-spacing:-.03em;line-height:1.1}
-.status-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,179,0,0.12);border:1px solid rgba(255,179,0,0.25);border-radius:980px;padding:5px 14px;font-size:11px;font-weight:500;color:#ffb300;margin-top:10px;}
+.status-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,179,0,0.12);border:1px solid rgba(255,179,0,0.25);border-radius:980px;padding:5px 14px;font-size:11px;font-weight:500;color:#ffb300;}
 .status-dot{width:5px;height:5px;background:#ffb300;border-radius:50%;box-shadow:0 0 6px rgba(255,179,0,.8)}
 .proj-content{max-width:960px;margin:0 auto;padding:64px 44px 96px}
 .proj-section{margin-bottom:56px}
@@ -73,17 +73,17 @@ footer p{font-size:12px;color:var(--text3)}
   <a href="index.html#contact" class="nav-cta">Contact</a>
 </nav>
 
-<div class="proj-hero">
-  <div class="hero-prop-grid"></div>
-  <div class="hero-prop-content">
-    <div class="hero-lock">🔒</div>
-    <div class="hero-prop-label">Proprietary · Images Withheld</div>
-    <div class="hero-prop-sub">PSH-030 · Robot 01 · EOAT · Tesla Fremont</div>
-  </div>
+<div class="proj-hero" style="margin-top:52px;position:relative;overflow:hidden;background:#000">
+  <img src="images/eoat-cover.jpg" alt="KUKA robots on automotive BIW line" style="width:100%;max-height:500px;object-fit:cover;object-position:center 40%;display:block;opacity:0.85">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.92) 100%)"></div>
+  <div style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:980px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:.04em;backdrop-filter:blur(8px)">Stock image · Actual tooling proprietary</div>
   <div class="proj-hero-title">
     <div class="proj-hero-label">02 · Tesla Fremont · Model 3 BIW · Jun 2026 – Present</div>
     <div class="proj-hero-name">Bowl Feeder EOAT Locating Feature — Model 3 BIW</div>
-    <div class="status-pill"><div class="status-dot"></div>Design complete · In machining · Install pending</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+      <div class="status-pill" style="background:rgba(48,209,88,0.12);border-color:rgba(48,209,88,0.25);color:#30d158"><div class="status-dot"></div>Chamfer redesign — in production</div>
+      <div class="status-pill"><div class="status-dot"></div>Locating feature — in machining · Install pending</div>
+    </div>
   </div>
 </div>
 
@@ -95,6 +95,7 @@ footer p{font-size:12px;color:var(--text3)}
       <div class="big-metric"><div class="big-metric-num">3</div><div class="big-metric-label">Fixture variants designed</div></div>
       <div class="big-metric"><div class="big-metric-num">2</div><div class="big-metric-label">Custom in-house machined parts</div></div>
       <div class="big-metric"><div class="big-metric-num">100+</div><div class="big-metric-label">Parts picked per cycle daily</div></div>
+      <div class="big-metric" style="border-color:rgba(48,209,88,0.25)"><div class="big-metric-num" style="color:#30d158">✓ Live</div><div class="big-metric-label">Chamfer redesign in production</div></div>
     </div>
     <div class="tags-row">
       <span class="tag">CATIA V5</span><span class="tag">NAAMS Components</span><span class="tag">MISUMI</span>
@@ -173,6 +174,20 @@ footer p{font-size:12px;color:var(--text3)}
       <li>Drop location process analyzed carefully — confirmed no downstream conflict introduced by new feature geometry</li>
       <li>All drawings produced with DFM considerations; design reviewed multiple times with a fellow manufacturing engineer before release</li>
       <li>Machining delayed by Optimus Academy facility work competing for in-house machine time — install trial targeted within 2–3 weeks of machining completion</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Design Iteration — Clamp Chamfer Redesign</div>
+    <div class="solution-box">
+      <div class="solution-box-label">In production</div>
+      <p class="proj-p" style="margin-bottom:0">During the process analysis, a separate existing EOAT clamp — the part that physically grabs the workpiece — was found to be interfering with welds on the ends of the part. The clamp geometry was too thick at the contact face, fouling the weld beads.</p>
+    </div>
+    <ul class="proj-buls">
+      <li><strong>Problem:</strong> Existing clamp face thickness caused interference with weld beads on part ends during pick — not enough clearance for clean engagement</li>
+      <li><strong>Solution:</strong> Added a chamfer to the clamp contact face to thin the geometry at the critical clearance zone — enough material removed to clear the welds without compromising grip strength or part constraint</li>
+      <li>Created drawings for the modified clamp geometry; DFM reviewed before release</li>
+      <li>Part machined in-house and <strong>currently running in production</strong> on the live line</li>
     </ul>
   </div>
 
