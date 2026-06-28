@@ -49,35 +49,6 @@ section{padding:96px 44px}
 .s-title{font-size:clamp(28px,4vw,46px);font-weight:600;letter-spacing:-0.03em;color:var(--text);line-height:1.1;margin-bottom:10px}
 .s-sub{font-size:15px;color:var(--text2);max-width:500px;line-height:1.65;font-weight:300}
 .s-hdr{margin-bottom:52px}
-
-/* Tesla focus section */
-#tesla-focus{background:linear-gradient(180deg,var(--bg),var(--bg2));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
-.focus-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:24px;min-height:220px;transition:border-color .2s,transform .2s,background .2s}
-.focus-card:hover{border-color:var(--border2);transform:translateY(-2px);background:var(--bg3)}
-.focus-kicker{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
-.focus-title{font-size:17px;font-weight:600;color:var(--text);letter-spacing:-.02em;margin-bottom:10px;line-height:1.25}
-.focus-text{font-size:13px;color:var(--text2);line-height:1.75;font-weight:300}
-.focus-proof{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.proof-pill{font-size:11px;color:var(--green);background:var(--green2);border:1px solid rgba(48,209,88,.22);padding:4px 9px;border-radius:6px;font-weight:500}
-.nda-note{margin-top:28px;background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:16px 18px;color:var(--text2);font-size:13px;line-height:1.7;font-weight:300}
-.nda-note strong{color:var(--text);font-weight:500}
-
-.ref-strip{display:grid;grid-template-columns:1.25fr .9fr .9fr;gap:12px;margin:34px 0 10px}
-.ref-card{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--border);background:var(--bg3);min-height:190px}
-.ref-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(1.03);transition:transform .5s ease}
-.ref-card:hover img{transform:scale(1.025)}
-.ref-card.wide{min-height:220px}
-.ref-caption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(0,0,0,.62);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:8px 10px;font-size:11px;color:rgba(245,245,247,.78);line-height:1.45}
-.ref-caption strong{display:block;color:#fff;font-size:11px;font-weight:600;margin-bottom:2px;letter-spacing:.01em}
-.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:28px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
-.contact-card-kicker{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
-.contact-card-title{font-size:24px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:12px;color:var(--text)}
-.contact-card-text{font-size:14px;color:var(--text2);line-height:1.75;font-weight:300;margin-bottom:20px}
-.contact-actions{display:flex;flex-wrap:wrap;gap:10px}.contact-actions a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;text-decoration:none;border-radius:980px;padding:10px 16px}.contact-actions .primary{background:var(--accent);color:#fff}.contact-actions .secondary{background:rgba(255,255,255,.07);border:1px solid var(--border2);color:var(--text)}
-@media(max-width:900px){.ref-strip{grid-template-columns:1fr}.ref-card,.ref-card.wide{min-height:220px}}
-@media(max-width:900px){.focus-grid{grid-template-columns:1fr}.focus-card{min-height:auto}}
-
 #projects{background:var(--bg)}
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .proj-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;text-decoration:none;display:block;transition:border-color .25s,transform .25s,background .25s}
@@ -182,73 +153,61 @@ footer p{font-size:12px;color:var(--text3)}
 <section id="home">
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="hero-chip"><div class="chip-dot"></div>Manufacturing Equipment Engineering Intern &middot; Tesla Fremont</div>
-    <h1 class="hero-title">Factory-ready<br><span>engineering.</span></h1>
-    <p class="hero-sub">Mechanical Engineering at WashU. I build production tooling, factory-layout systems, and engineering handoff packages that survive real manufacturing constraints.</p>
+    <div class="hero-chip"><div class="chip-dot"></div>On co-op · Tesla Fremont · Through Aug 2026</div>
+    <h1 class="hero-title">Engineering<br><span>new solutions.</span></h1>
+    <p class="hero-sub">Mechanical Engineering at WashU — building production-line robotics, humanoid training systems, and physics-informed simulations that hold up in the real world.</p>
     <div class="hero-btns">
-      <a href="#projects" class="btn-fill"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View Tesla Work</a>
+      <a href="#projects" class="btn-fill"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View My Work</a>
       <a href="#contact" class="btn-out">Get in Touch</a>
     </div>
     <div class="hero-stats">
-      <div class="h-stat"><div class="h-num"><b>BIW</b></div><div class="h-lbl">Model 3 Body Line</div></div>
-      <div class="h-stat"><div class="h-num"><b>5</b>-fig</div><div class="h-lbl">Cost Avoidance</div></div>
-      <div class="h-stat"><div class="h-num"><b>Field</b></div><div class="h-lbl">Validated Systems</div></div>
-      <div class="h-stat"><div class="h-num"><b>1000</b>x</div><div class="h-lbl">CFD Research Speedup</div></div>
+      <div class="h-stat"><div class="h-num"><b>10s</b></div><div class="h-lbl">Cycle Time Reduced</div></div>
+      <div class="h-stat"><div class="h-num">$<b>88K</b></div><div class="h-lbl">OEM Cost Avoided</div></div>
+      <div class="h-stat"><div class="h-num"><b>1000</b>×</div><div class="h-lbl">CFD Speedup</div></div>
+      <div class="h-stat"><div class="h-num"><b>3.79</b></div><div class="h-lbl">GPA · Dean's List</div></div>
     </div>
   </div>
-</section>
-
-
-<section id="tesla-focus">
-  <div class="s-hdr fade">
-    <div class="s-chip">Tesla Focus</div>
-    <h2 class="s-title">Manufacturing equipment work, framed for impact.</h2>
-    <p class="s-sub">My current internship is split between Model 3 BIW equipment engineering and an internal Optimus training-facility effort. Public details below are intentionally generalized.</p>
-  </div>
-  <div class="focus-grid">
-    <div class="focus-card fade">
-      <div class="focus-kicker">BIW 3</div>
-      <div class="focus-title">Production tooling and fixture design</div>
-      <div class="focus-text">Designing a stud-gun TCP certification fixture in CATIA V5, using standard locating hardware, shim adjustability, dowel-locked calibration, and dimensional-engineering feedback to move the concept toward a physical, validated tool.</div>
-      <div class="focus-proof"><span class="proof-pill">CATIA V5</span><span class="proof-pill">NAAMS-style tooling</span><span class="proof-pill">Dimensional review</span></div>
-    </div>
-    <div class="focus-card fade">
-      <div class="focus-kicker">Factory layout</div>
-      <div class="focus-title">Optimus Academy execution system</div>
-      <div class="focus-text">Built the layout foundation, station-level demo references, and a unified equipment identification system connecting CAD layouts, trackers, field labels, and future install documentation.</div>
-      <div class="focus-proof"><span class="proof-pill">AutoCAD</span><span class="proof-pill">Field handoff</span><span class="proof-pill">Demo support</span></div>
-    </div>
-    <div class="focus-card fade">
-      <div class="focus-kicker">Ownership</div>
-      <div class="focus-title">From artifact to adoption</div>
-      <div class="focus-text">Focused on deliverables that other teams can actually use: clear drawings, naming conventions, tracker logic, review logs, open-item lists, and handoff packages that do not require me to be present to interpret them.</div>
-      <div class="focus-proof"><span class="proof-pill">Stakeholder feedback</span><span class="proof-pill">Production readiness</span><span class="proof-pill">Handoff quality</span></div>
-    </div>
-  </div>
-  <div class="ref-strip fade" aria-label="Public visual context for Tesla manufacturing work">
-    <div class="ref-card wide"><img src="images/public-model3-reference.jpg" alt="Public reference image of Tesla Model 3" loading="lazy" decoding="async"><div class="ref-caption"><strong>End product context</strong>Public Model 3 imagery; not an internal factory photo.</div></div>
-    <div class="ref-card"><img src="images/public-biw-cell-reference.jpg" alt="Public reference image of robotic BIW cell" loading="lazy" decoding="async"><div class="ref-caption"><strong>BIW cell context</strong>Public robotic body-shop reference image.</div></div>
-    <div class="ref-card"><img src="images/public-stud-gun-reference.jpg" alt="Public reference image of robotic stud welding gun" loading="lazy" decoding="async"><div class="ref-caption"><strong>Tooling context</strong>Public stud-gun reference image; not a Tesla internal asset.</div></div>
-  </div>
-  <div class="nda-note fade"><strong>NDA note:</strong> Tesla project summaries intentionally remove internal names, exact layouts, station identifiers, direct quotes, and proprietary process details. Public reference images are used only for context and should be replaced with assets you have permission to publish.</div>
 </section>
 
 <section id="projects">
   <div class="s-hdr fade">
     <div class="s-chip">Featured Projects</div>
     <h2 class="s-title">Engineering Work</h2>
-    <p class="s-sub">Case-study style breakdowns focused on ownership, constraints, tradeoffs, and what changed because of the work.</p>
+    <p class="s-sub">Click any project for the full breakdown — images, technical details, and lessons learned.</p>
   </div>
   <div class="proj-grid">
 
     <a class="proj-card featured fade" href="project-biw.html">
-      <div class="proj-cover letterbox"><img src="images/public-biw-cell-reference.jpg" alt="Public reference image of BIW robotic manufacturing cell" loading="lazy" decoding="async"><div class="proj-cover-overlay"></div></div>
+      <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Tesla BIW"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
-        <div class="proj-num">01 - Featured &middot; Tesla Fremont</div>
-        <div class="proj-name">Model 3 BIW Manufacturing Equipment</div>
-        <p class="proj-desc">Mechanical equipment work on Model 3 Body-in-White: CATIA fixture design, stud-gun TCP certification concept, reverse-engineered production hardware, and production-readiness documentation.</p>
-        <div class="proj-metrics"><span class="metric">5-figure cost avoidance</span><span class="metric">vendor lead-time risk reduced</span><span class="metric">fixture moving toward production</span></div>
-        <div class="proj-tags"><span class="tag">CATIA V5</span><span class="tag">GD&amp;T</span><span class="tag">NAAMS</span><span class="tag">Dimensional Engineering</span></div>
+        <div class="proj-num">01 — Featured · Tesla Fremont</div>
+        <div class="proj-name">Model 3 BIW Manufacturing Co-Op</div>
+        <p class="proj-desc">TCP calibration fixture design, welding cell optimization, 8 custom CATIA V5 clamps, and EOAT locating feature redesign to restore 6-DOF part constraint after bowl feeder installation — all on a live Model 3 production line.</p>
+        <div class="proj-metrics"><span class="metric">↓ 10s cycle time</span><span class="metric">$88K cost avoidance</span><span class="metric">&lt;0.25mm TCP</span></div>
+        <div class="proj-tags"><span class="tag">CATIA V5</span><span class="tag">KUKA/FANUC</span><span class="tag">Splunk/SCADA</span><span class="tag">GD&amp;T</span></div>
+        <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </a>
+
+    <a class="proj-card fade" href="project-eoat.html">
+      <div class="proj-cover-prop" style="aspect-ratio:4/3;width:100%;background:var(--bg4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;border-bottom:1px solid var(--border)">
+        <div style="position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:32px 32px;opacity:.4"></div>
+        <div style="width:44px;height:44px;border:1px solid var(--border2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;position:relative">🔒</div>
+        <div style="font-size:11px;color:var(--text4);letter-spacing:.08em;text-transform:uppercase;position:relative">Proprietary · Images Withheld</div>
+        <div style="position:absolute;bottom:12px;right:14px;font-size:10px;color:var(--text4);font-family:monospace;letter-spacing:.04em">PSH-030 · RB01 · EOAT</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">02 · Tesla Fremont · New</div>
+        <div class="proj-name">Bowl Feeder EOAT Locating Feature — Model 3 BIW</div>
+        <p class="proj-desc">Restored full 6-DOF part constraint on the PSH-30 robot EOAT after bowl feeder installation removed a critical locating feature. Custom CATIA V5 design, NAAMS components, in-house machined parts — drawings released, install pending.</p>
+        <div class="proj-metrics">
+          <span class="metric">6-DOF restored</span>
+          <span class="metric">3 fixture variants</span>
+          <span class="metric">In machining</span>
+        </div>
+        <div class="proj-tags">
+          <span class="tag">CATIA V5</span><span class="tag">NAAMS</span><span class="tag">DFM</span><span class="tag">GD&amp;T</span><span class="tag">17-4 PH S.S.</span><span class="tag">MISUMI</span>
+        </div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
@@ -256,11 +215,10 @@ footer p{font-size:12px;color:var(--text3)}
     <a class="proj-card fade" href="project-optimus.html">
       <div class="proj-cover portrait"><img src="images/optimus.jpg" alt="Optimus"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
-        <div class="proj-num">02 &middot; Tesla Fremont</div>
-        <div class="proj-name">Optimus Academy Factory Layout</div>
-        <p class="proj-desc">Layout and equipment-recovery system for an internal robotics training facility: AutoCAD layout foundation, station-level demo guides, equipment tagging, and controls-integration support.</p>
-        <div class="proj-metrics"><span class="metric">field-validated tagging</span><span class="metric">contractor-ready guides</span></div>
-        <div class="proj-tags"><span class="tag">AutoCAD</span><span class="tag">Factory Layout</span><span class="tag">Controls Support</span><span class="tag">Handoff Docs</span></div>
+        <div class="proj-num">03 · Tesla Fremont</div>
+        <div class="proj-name">Optimus Academy — Humanoid Robotics Training Facility</div>
+        <p class="proj-desc">40-station humanoid robot training facility — floor plan, HRC safety cell design, PLC specification, architect coordination.</p>
+        <div class="proj-tags"><span class="tag">AutoCAD</span><span class="tag">GuardLogix PLC</span><span class="tag">HRC Safety</span><span class="tag">Facility Design</span></div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
@@ -268,9 +226,9 @@ footer p{font-size:12px;color:var(--text3)}
     <a class="proj-card fade" href="project-dbf.html">
       <div class="proj-cover whitebg"><img src="images/dbf-cover.jpg" alt="DBF Aircraft"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
-        <div class="proj-num">03 &middot; WashU AIAA</div>
+        <div class="proj-num">04 · WashU AIAA</div>
         <div class="proj-name">Design-Build-Fly Team</div>
-        <p class="proj-desc">National competition aircraft: composite airframe structures, ANSYS FEA, release mechanism design, fabrication, testing, and engineering drawing packages.</p>
+        <p class="proj-desc">National competition aircraft — composite airframe structures, ANSYS FEA, full engineering drawing package. 72” wingspan.</p>
         <div class="proj-tags"><span class="tag">SolidWorks</span><span class="tag">ANSYS FEA</span><span class="tag">Composite Fabrication</span></div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
@@ -284,10 +242,10 @@ footer p{font-size:12px;color:var(--text3)}
         <div class="proj-cover-overlay"></div>
       </div>
       <div class="proj-body">
-        <div class="proj-num">04 &middot; Computational Mechanics &amp; AI Lab</div>
+        <div class="proj-num">05 · Computational Mechanics &amp; AI Lab</div>
         <div class="proj-name">CFD + Machine Learning Research</div>
-        <p class="proj-desc">Physics-Informed Neural Networks in PyTorch for cardiovascular fluid dynamics. Reduced simulation runtime while preserving physics-based interpretability.</p>
-        <div class="proj-metrics"><span class="metric">1000x CFD speedup</span></div>
+        <p class="proj-desc">Physics-Informed Neural Networks in PyTorch for cardiovascular fluid dynamics. 1000× speedup over traditional CFD. Symposium presentation.</p>
+        <div class="proj-metrics"><span class="metric">1000× CFD speedup</span></div>
         <div class="proj-tags"><span class="tag">PyTorch</span><span class="tag">PINNs</span><span class="tag">CFD</span></div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
@@ -296,9 +254,9 @@ footer p{font-size:12px;color:var(--text3)}
     <a class="proj-card fade" href="project-wusat.html">
       <div class="proj-cover darkbg"><img src="images/wusat-cover.jpg" alt="WUSAT"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
-        <div class="proj-num">05 &middot; WashU Satellite &middot; MOPS</div>
+        <div class="proj-num">06 · WashU Satellite · MOPS</div>
         <div class="proj-name">CubeSat Mission Operations Engineering</div>
-        <p class="proj-desc">Full-mission simulations and magnetorquer trade studies for CubeSat operations using ModelSpace and MATLAB.</p>
+        <p class="proj-desc">Full-mission simulations and magnetorquer design optimization for CubeSat operations using ModelSpace (ATTX) and MATLAB.</p>
         <div class="proj-tags"><span class="tag">ModelSpace</span><span class="tag">MATLAB</span><span class="tag">Systems Engineering</span></div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
@@ -307,9 +265,9 @@ footer p{font-size:12px;color:var(--text3)}
     <a class="proj-card fade" href="project-cad.html">
       <div class="proj-cover whitebg"><img src="images/cad-assembly.jpg" alt="CAD"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
-        <div class="proj-num">06 &middot; CAD Portfolio</div>
+        <div class="proj-num">07 · CAD Portfolio</div>
         <div class="proj-name">Computer-Aided Design Projects</div>
-        <p class="proj-desc">Assembly, sub-assembly, detailed drawings, exploded views, and ASME Y14.5 GD&amp;T practice across mechanical design projects.</p>
+        <p class="proj-desc">Full assembly, sub-assembly, detail drawings and exploded views per ASME Y14.5 GD&amp;T. Foosball table full mechanical design.</p>
         <div class="proj-tags"><span class="tag">SolidWorks</span><span class="tag">GD&amp;T</span><span class="tag">Technical Drawings</span></div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
@@ -326,12 +284,12 @@ footer p{font-size:12px;color:var(--text3)}
       <div class="about-status"><div class="chip-dot"></div>Available Aug 2026</div>
     </div>
     <div class="fade">
-      <p class="about-p"><strong>Mechanical Engineering student at Washington University in St. Louis</strong> with minors in Robotics &amp; Mechatronics and Aerospace Engineering. I am drawn to manufacturing systems where design, controls, layout, and production constraints meet.</p>
-      <p class="about-p">At <strong>Tesla Fremont</strong>, I support Model 3 Body-in-White manufacturing equipment work while also owning deliverables for an internal Optimus training-facility project. The common thread is practical execution: clear CAD, usable documentation, stakeholder feedback, and designs that can be built, checked, and handed off.</p>
-      <p class="about-p">My engineering style is simple: understand the real constraint, make the artifact easy for the next person to use, and keep iterating until it works outside the design file.</p>
+      <p class="about-p"><strong>Mechanical Engineering student at Washington University in St. Louis</strong> (McKelvey School of Engineering, Minors in Robotics &amp; Mechatronics and Aerospace Engineering, expected Dec 2027). GPA: 3.79 · Dean's List · HSF Scholar.</p>
+      <p class="about-p">Currently on extended co-op at <strong>Tesla Fremont</strong> through August 2026 — running two concurrent engineering projects: Model 3 BIW production line optimization and the Optimus Academy humanoid robotics training facility.</p>
+      <p class="about-p">My approach is physics-first. I care about designs that are manufacturable, measurable, and maintainable — not just functional on paper.</p>
       <div class="about-badges">
-        <span class="about-badge">Manufacturing Equipment</span><span class="about-badge">CATIA V5</span>
-        <span class="about-badge">AutoCAD Layouts</span><span class="about-badge">CSWA - SolidWorks</span><span class="about-badge">HSF Scholar</span>
+        <span class="about-badge">HSF Scholar</span><span class="about-badge">CSWA — SolidWorks</span>
+        <span class="about-badge">McKelvey School</span><span class="about-badge">Dean's List</span><span class="about-badge">U.S. Citizen</span>
       </div>
       <a class="about-resume" href="images/resume.pdf" download="LuisGarciaR_Resume.pdf">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
@@ -344,10 +302,10 @@ footer p{font-size:12px;color:var(--text3)}
 <section id="skills">
   <div class="s-hdr fade"><div class="s-chip">Capabilities</div><h2 class="s-title">Technical Skills</h2></div>
   <div class="skills-grid">
-    <div class="skill-col fade"><div class="skill-col-title">Design &amp; CAD</div><div class="skill-items"><div class="skill-item">CATIA V5</div><div class="skill-item">SolidWorks (CSWA)</div><div class="skill-item">AutoCAD 2D Layouts</div><div class="skill-item">GD&amp;T / Tolerance Thinking</div><div class="skill-item">Fixture Design</div><div class="skill-item">Technical Drawings</div></div></div>
-    <div class="skill-col fade"><div class="skill-col-title">Manufacturing Equipment</div><div class="skill-items"><div class="skill-item">BIW Tooling Concepts</div><div class="skill-item">NAAMS-style Locating Hardware</div><div class="skill-item">Shim / Dowel Adjustment Strategy</div><div class="skill-item">Production Readiness Planning</div><div class="skill-item">Handoff Documentation</div><div class="skill-item">Root-Cause Learning</div></div></div>
-    <div class="skill-col fade"><div class="skill-col-title">Data &amp; Programming</div><div class="skill-items"><div class="skill-item">Python (PyTorch, NumPy, Pandas)</div><div class="skill-item">MATLAB</div><div class="skill-item">Tracker / Workflow Systems</div><div class="skill-item">Engineering Change Logs</div><div class="skill-item">C++ / Arduino</div><div class="skill-item">Linux</div></div></div>
-    <div class="skill-col fade"><div class="skill-col-title">Systems &amp; Controls</div><div class="skill-items"><div class="skill-item">PLC / I/O Integration Support</div><div class="skill-item">Controls Component Layout</div><div class="skill-item">Safety-Cell Awareness</div><div class="skill-item">Facility Layout Constraints</div><div class="skill-item">ANSYS FEA / CFD</div><div class="skill-item">ModelSpace Mission Simulation</div></div></div>
+    <div class="skill-col fade"><div class="skill-col-title">Design &amp; CAD</div><div class="skill-items"><div class="skill-item">CATIA V5</div><div class="skill-item">SolidWorks (CSWA)</div><div class="skill-item">AutoCAD</div><div class="skill-item">GD&amp;T / DFM</div><div class="skill-item">3D Printing</div><div class="skill-item">Machining (Lathe/Mill)</div></div></div>
+    <div class="skill-col fade"><div class="skill-col-title">Data &amp; Programming</div><div class="skill-items"><div class="skill-item">Python (PyTorch, NumPy, Pandas)</div><div class="skill-item">MATLAB</div><div class="skill-item">Splunk / SCADA</div><div class="skill-item">C++ / Arduino</div><div class="skill-item">OEE / RCA / DOE</div><div class="skill-item">Linux</div></div></div>
+    <div class="skill-col fade"><div class="skill-col-title">Simulation &amp; Analysis</div><div class="skill-items"><div class="skill-item">ANSYS (FEA / CFD)</div><div class="skill-item">Physics-Informed Neural Networks</div><div class="skill-item">ModelSpace (ATTX)</div><div class="skill-item">Thermodynamics</div><div class="skill-item">Numerical Methods</div></div></div>
+    <div class="skill-col fade"><div class="skill-col-title">Automation &amp; Controls</div><div class="skill-items"><div class="skill-item">KUKA / FANUC Robotics</div><div class="skill-item">Allen-Bradley GuardLogix PLC</div><div class="skill-item">SICK / Keyence Sensors</div><div class="skill-item">Light Curtains / Pneumatics</div><div class="skill-item">Composite Fabrication</div></div></div>
   </div>
 </section>
 
@@ -356,75 +314,73 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="exp-list">
     <div class="exp-card open fade" id="e0">
       <div class="exp-hdr" onclick="toggleExp('e0')">
-        <div><div class="exp-role">Manufacturing Equipment Engineering Intern</div><div class="exp-org">Tesla &middot; Fremont, CA</div></div>
-        <div class="exp-right"><div class="exp-date">Jan 2026 - Aug 2026</div><div class="exp-tog">+</div></div>
+        <div><div class="exp-role">Manufacturing Equipment Engineer Co-Op</div><div class="exp-org">Tesla · Fremont, CA</div></div>
+        <div class="exp-right"><div class="exp-date">Jan 2026 – Aug 2026</div><div class="exp-tog">+</div></div>
       </div>
       <div class="exp-body"><div class="exp-body-inner">
-        <div class="exp-sub"><div class="exp-sub-title">Model 3 Body-in-White</div><ul class="exp-buls">
-          <li>Designed a stud-gun TCP certification fixture concept in <strong>CATIA V5</strong>, using standard locating blocks, shim adjustability, and dowel-locked calibration for repeatable certification.</li>
-          <li>Partnered with dimensional engineering to pressure-test design assumptions around repeatability, access, certification logic, and validation before release.</li>
-          <li>Reverse-engineered legacy production clamping hardware and created internal-machining drawings, reducing vendor dependency, long lead-time risk, and five-figure external replacement cost.</li>
-          <li>Built a production-readiness mindset around requirements, design reviews, fabrication path, fit check, validation, open issues, and final handoff documentation.</li>
+        <div class="exp-sub"><div class="exp-sub-title">Project 1 — Model 3 Body in White</div><ul class="exp-buls">
+          <li>Designed <strong>Go/No-Go calibration fixture</strong> achieving &lt;0.25mm TCP deviation correction.</li>
+          <li>Re-sequenced welding cell: confirmed <strong>10s cycle time reduction</strong> (75→65s).</li>
+          <li>Designed <strong>8 custom CATIA V5 clamps</strong> — $88K cost avoidance, 10-month lead time eliminated.</li>
+          <li>Splunk/SCADA fault querying for root cause analysis and downtime reduction.</li>
+          <li>Redesigned EOAT with pneumatic cylinders to reduce material drop rates.</li>
         </ul></div>
-        <div class="exp-sub" style="margin-top:10px"><div class="exp-sub-title">Optimus Academy / Factory Layout</div><ul class="exp-buls">
-          <li>Built the foundational AutoCAD layout for an internal robotics training facility on a compressed timeline and iterated it through stakeholder feedback.</li>
-          <li>Created a unified equipment tagging and tracking convention linking CAD layouts, field labels, equipment trackers, demo guides, and future install documentation.</li>
-          <li>Produced station-level demo guide layouts adopted by the demo team and contractor crews as field reference artifacts.</li>
-          <li>Supported controls-integration documentation for repurposed equipment by owning structural sections and learning electrical/control requirements from a senior controls engineer.</li>
+        <div class="exp-sub" style="margin-top:10px"><div class="exp-sub-title">Project 2 — Optimus Academy</div><ul class="exp-buls">
+          <li>Led facility transformation into <strong>40-station humanoid robotics training academy</strong>.</li>
+          <li>Phase 1 AutoCAD floor plan from legacy DWG files; architect coordination for permitting.</li>
+          <li>HRC cell design — 80/20 extrusion, light curtains, SICK/Keyence, GuardLogix PLCs.</li>
         </ul></div>
       </div></div>
     </div>
     <div class="exp-card fade" id="e1">
       <div class="exp-hdr" onclick="toggleExp('e1')">
-        <div><div class="exp-role">Mission Operations Engineer</div><div class="exp-org">WashU Satellite (WUSAT) &middot; MOPS</div></div>
-        <div class="exp-right"><div class="exp-date">Sep 2025 - Present</div><div class="exp-tog">+</div></div>
+        <div><div class="exp-role">Mission Operations Engineer</div><div class="exp-org">WashU Satellite (WUSAT) · MOPS</div></div>
+        <div class="exp-right"><div class="exp-date">Sep 2025 – Present</div><div class="exp-tog">+</div></div>
       </div>
       <div class="exp-body"><div class="exp-body-inner"><ul class="exp-buls" style="margin-top:14px">
         <li>Full-mission simulations using <strong>ModelSpace (ATTX)</strong> for CubeSat feasibility.</li>
-        <li>Magnetorquer optimization across magnetic moment, mass, and power trade-offs.</li>
-        <li>Interdisciplinary collaboration to improve system-wide model accuracy.</li>
+        <li>Magnetorquer optimization — AWG 32–40 sweep for magnetic moment, mass, power trade-offs.</li>
+        <li>Interdisciplinary collaboration to ensure system-wide model accuracy.</li>
       </ul></div></div>
     </div>
     <div class="exp-card fade" id="e2">
       <div class="exp-hdr" onclick="toggleExp('e2')">
-        <div><div class="exp-role">Undergraduate Researcher</div><div class="exp-org">Computational Mechanics &amp; AI Lab &middot; WashU</div></div>
-        <div class="exp-right"><div class="exp-date">May 2025 - Aug 2025</div><div class="exp-tog">+</div></div>
+        <div><div class="exp-role">Undergraduate Researcher</div><div class="exp-org">Computational Mechanics &amp; AI Lab · WashU</div></div>
+        <div class="exp-right"><div class="exp-date">May 2025 – Aug 2025</div><div class="exp-tog">+</div></div>
       </div>
       <div class="exp-body"><div class="exp-body-inner"><ul class="exp-buls" style="margin-top:14px">
-        <li>Physics-Informed Neural Networks in PyTorch with <strong>1000x runtime reduction</strong> versus traditional CFD workflows.</li>
-        <li>Translated numerical solver logic to Python with RK4 integration and Newton iterations.</li>
-        <li>Presented research at WUSEF symposium.</li>
+        <li>PINNs in PyTorch — <strong>1000× reduction</strong> in simulation time vs. traditional CFD.</li>
+        <li>Translated Fortran solvers to Python with RK4 integrators and Newton iterations.</li>
+        <li>Presented at WUSEF symposium.</li>
       </ul></div></div>
     </div>
     <div class="exp-card fade" id="e3">
       <div class="exp-hdr" onclick="toggleExp('e3')">
-        <div><div class="exp-role">Structures Engineer</div><div class="exp-org">WashU Design/Build/Fly &middot; AIAA</div></div>
-        <div class="exp-right"><div class="exp-date">Aug 2024 - Present</div><div class="exp-tog">+</div></div>
+        <div><div class="exp-role">Structures Engineer</div><div class="exp-org">WashU Design/Build/Fly · AIAA</div></div>
+        <div class="exp-right"><div class="exp-date">Aug 2024 – Present</div><div class="exp-tog">+</div></div>
       </div>
       <div class="exp-body"><div class="exp-body-inner"><ul class="exp-buls" style="margin-top:14px">
-        <li>Composite structures in SolidWorks with ANSYS FEA for safety factor and weight trade-offs.</li>
+        <li>Composite structures in SolidWorks; ANSYS FEA for safety factors and minimum weight.</li>
         <li>Fabrication and destructive testing of composite prototypes.</li>
-        <li>Release mechanism and pylon system design for multi-mission payload requirements.</li>
+        <li>X-1 release mechanism and pylon system for multi-mission payload.</li>
       </ul></div></div>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="s-hdr fade"><div class="s-chip">Contact</div><h2 class="s-title">Let's Connect</h2><p class="s-sub">Open to future internships, co-ops, and full-time roles in manufacturing systems, robotics, aerospace, and production equipment engineering.</p></div>
+  <div class="s-hdr fade"><div class="s-chip">Contact</div><h2 class="s-title">Let's Connect</h2><p class="s-sub">Open to full-time roles after August 2026 — manufacturing systems, robotics, aerospace.</p></div>
   <div class="contact-wrap">
     <div class="c-links fade">
       <a href="mailto:garciarivera@wustl.edu" class="c-link"><div class="c-icon">✉</div><div><div class="c-lbl">Email</div><div class="c-val">garciarivera@wustl.edu</div></div></a>
       <a href="https://linkedin.com/in/luisgr1" target="_blank" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">in</div><div><div class="c-lbl">LinkedIn</div><div class="c-val">linkedin.com/in/luisgr1</div></div></a>
       <a href="https://github.com/luisgriv" target="_blank" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">gh</div><div><div class="c-lbl">GitHub</div><div class="c-val">github.com/luisgriv</div></div></a>
     </div>
-    <div class="contact-card fade">
-      <div>
-        <div class="contact-card-kicker">Best fit</div>
-        <div class="contact-card-title">Manufacturing equipment, robotics, and production systems.</div>
-        <p class="contact-card-text">I am especially interested in roles where mechanical design, controls awareness, factory layout, and hands-on validation meet. For recruiters or engineers reviewing this portfolio, the strongest matches are manufacturing equipment, body-in-white, automation, robotics, aerospace structures, and systems engineering.</p>
-      </div>
-      <div class="contact-actions"><a class="primary" href="mailto:garciarivera@wustl.edu?subject=Portfolio%20-%20Luis%20Garcia">Email me</a><a class="secondary" href="images/resume.pdf" download="LuisGarciaR_Resume.pdf">Download resume</a></div>
+    <div class="c-form fade">
+      <div class="f-grp"><label class="f-lbl">Name</label><input class="f-in" type="text" placeholder="Your name"></div>
+      <div class="f-grp"><label class="f-lbl">Email</label><input class="f-in" type="email" placeholder="your@email.com"></div>
+      <div class="f-grp"><label class="f-lbl">Message</label><textarea class="f-ta" placeholder="What's on your mind?"></textarea></div>
+      <button class="f-btn" onclick="alert('Connect to Formspree.io to activate.')">Send Message</button>
     </div>
   </div>
 </section>

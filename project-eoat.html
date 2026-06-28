@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bowl Feeder EOAT Locating Feature — Luis Garcia</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#000;--bg2:#0a0a0a;--bg3:#111;--bg4:#161616;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#f5f5f7;--text2:#a1a1a6;--text3:#6e6e73;--text4:#3d3d40;--accent:#2997ff;--accent2:rgba(41,151,255,0.1);--green:#30d158;--green2:rgba(48,209,88,0.1);--r:12px;}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter',BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:52px;background:rgba(0,0,0,0.85);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--text)}
+.nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+.proj-hero{width:100%;margin-top:52px;position:relative;overflow:hidden;background:var(--bg4);min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.hero-prop-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;opacity:.4}
+.hero-prop-content{position:relative;z-index:2;text-align:center;padding:80px 40px 120px;}
+.hero-lock{width:56px;height:56px;border:1px solid var(--border2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 20px;}
+.hero-prop-label{font-size:12px;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.hero-prop-sub{font-size:13px;color:var(--text4);font-family:monospace;letter-spacing:.04em}
+.proj-hero-title{position:absolute;bottom:0;left:0;right:0;padding:32px 60px;z-index:3;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,transparent 100%)}
+.proj-hero-label{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.proj-hero-name{font-size:clamp(22px,3vw,40px);font-weight:600;color:#fff;letter-spacing:-.03em;line-height:1.1}
+.status-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,179,0,0.12);border:1px solid rgba(255,179,0,0.25);border-radius:980px;padding:5px 14px;font-size:11px;font-weight:500;color:#ffb300;margin-top:10px;}
+.status-dot{width:5px;height:5px;background:#ffb300;border-radius:50%;box-shadow:0 0 6px rgba(255,179,0,.8)}
+.proj-content{max-width:960px;margin:0 auto;padding:64px 44px 96px}
+.proj-section{margin-bottom:56px}
+.proj-section-label{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.proj-section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.metrics-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.big-metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;min-width:140px}
+.big-metric-num{font-size:26px;font-weight:600;color:var(--accent);letter-spacing:-.03em;line-height:1}
+.big-metric-label{font-size:12px;color:var(--text3);margin-top:4px}
+.tags-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
+.tag{font-size:11px;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:5px 12px;border-radius:6px}
+.proj-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300}
+.proj-p strong{color:var(--text);font-weight:500}
+.proj-buls{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.proj-buls li{font-size:14px;color:var(--text2);line-height:1.7;padding-left:18px;position:relative;font-weight:300}
+.proj-buls li::before{content:'–';position:absolute;left:0;color:var(--text4)}
+.proj-buls li strong{color:var(--text);font-weight:500}
+.problem-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid #ff453a;border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.problem-box-label{font-size:10px;font-weight:600;color:#ff453a;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.solution-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.solution-box-label{font-size:10px;font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.spec-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px}
+.spec-card-title{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.spec-card-items{display:flex;flex-direction:column;gap:6px}
+.spec-card-item{font-size:13px;color:var(--text2);font-weight:300}
+.prop-notice{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;margin-bottom:32px}
+.prop-notice-icon{font-size:18px;flex-shrink:0}
+.prop-notice-text{font-size:13px;color:var(--text3);line-height:1.5}
+.lesson-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
+.lesson-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.lesson-body{font-size:13px;color:var(--text2);line-height:1.65;font-weight:300}
+.proj-nav-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:32px;margin-top:48px}
+.proj-nav-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;transition:color .2s}
+.proj-nav-link:hover{color:var(--accent)}
+footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between}
+footer p{font-size:12px;color:var(--text3)}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:0 20px}.proj-hero-title{padding:20px}.proj-content{padding:40px 20px 72px}.spec-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>All Projects</a>
+  <a href="index.html" class="nav-logo">Luis Garcia</a>
+  <a href="index.html#contact" class="nav-cta">Contact</a>
+</nav>
+
+<div class="proj-hero">
+  <div class="hero-prop-grid"></div>
+  <div class="hero-prop-content">
+    <div class="hero-lock">🔒</div>
+    <div class="hero-prop-label">Proprietary · Images Withheld</div>
+    <div class="hero-prop-sub">PSH-030 · Robot 01 · EOAT · Tesla Fremont</div>
+  </div>
+  <div class="proj-hero-title">
+    <div class="proj-hero-label">02 · Tesla Fremont · Model 3 BIW · Jun 2026 – Present</div>
+    <div class="proj-hero-name">Bowl Feeder EOAT Locating Feature — Model 3 BIW</div>
+    <div class="status-pill"><div class="status-dot"></div>Design complete · In machining · Install pending</div>
+  </div>
+</div>
+
+<div class="proj-content">
+
+  <div class="proj-section fade">
+    <div class="metrics-row">
+      <div class="big-metric"><div class="big-metric-num">6-DOF</div><div class="big-metric-label">Full constraint restored</div></div>
+      <div class="big-metric"><div class="big-metric-num">3</div><div class="big-metric-label">Fixture variants designed</div></div>
+      <div class="big-metric"><div class="big-metric-num">2</div><div class="big-metric-label">Custom in-house machined parts</div></div>
+      <div class="big-metric"><div class="big-metric-num">100+</div><div class="big-metric-label">Parts picked per cycle daily</div></div>
+    </div>
+    <div class="tags-row">
+      <span class="tag">CATIA V5</span><span class="tag">NAAMS Components</span><span class="tag">MISUMI</span>
+      <span class="tag">DFM</span><span class="tag">GD&amp;T</span><span class="tag">17-4 PH S.S.</span>
+      <span class="tag">In-House Machining</span><span class="tag">BOM / Sourcing</span>
+    </div>
+    <div class="prop-notice">
+      <div class="prop-notice-icon">🔒</div>
+      <div class="prop-notice-text">CATIA models, engineering drawings, and assembly screenshots are proprietary Tesla manufacturing IP and are not shown. This page describes the engineering problem, design approach, and decisions made.</div>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">The Problem</div>
+    <div class="problem-box">
+      <div class="problem-box-label">Constraint gap introduced by bowl feeder installation</div>
+      <p class="proj-p" style="margin-bottom:0">A bowl feeder was installed on Station 30 of the Model 3 body line to automate part feeding. The robot’s end-of-arm tool had two locating features that together achieved full 6-DOF constraint on each part before placement. The bowl feeder’s feed track architecture physically blocked one of those features — it had to be removed to allow the pick to happen at all. The remaining feature constrained rotation only. X-Y translation was now uncontrolled.</p>
+    </div>
+    <p class="proj-p">The robot was still completing cycles — the pick worked — but without positional constraint, part placement accuracy depended entirely on repeatability of the feed track exit position. Given cycle volume and downstream precision requirements, this was not a sustainable condition.</p>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Design Requirements</div>
+    <ul class="proj-buls">
+      <li><strong>Restore full 6-DOF constraint</strong> on the part at pick — rotation already handled, new feature must control X-Y translation</li>
+      <li><strong>Clear feed track geometry</strong> — the new feature cannot reintroduce the physical conflict that forced the original removal</li>
+      <li><strong>No conflict at drop location</strong> — the feature must not interfere with part placement downstream; process analyzed carefully</li>
+      <li><strong>No robot program overhaul</strong> — offset adjustments acceptable, full path reprogramming is not</li>
+      <li><strong>Three variants required</strong> — two fixtures share the same geometry (TL1/TL2), one is a slightly different variant (TL3)</li>
+      <li><strong>Gripper upper jaw redesign</strong> — insufficient clearance for locating pin insertion; jaw must be thinned and bolt holes countersunk flush</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Design Solution</div>
+    <div class="solution-box">
+      <div class="solution-box-label">New locating feature restoring full constraint</div>
+      <p class="proj-p" style="margin-bottom:0">Designed a new locating feature in CATIA V5 that pins X-Y translation while clearing the feed track geometry. Real-life measurements taken directly from the gripper and part to establish accurate reference geometry — no reliance on potentially outdated CAD assembly state alone.</p>
+    </div>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-card-title">Fixture Design</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">NAAMS configurable components (Misumi)</div>
+          <div class="spec-card-item">2 custom L-shaped parts — in-house machined</div>
+          <div class="spec-card-item">TL1/TL2 shared design</div>
+          <div class="spec-card-item">TL3 variant — geometry modified</div>
+          <div class="spec-card-item">DFM-reviewed with fellow engineer</div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-title">Gripper Upper Jaw</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">17-4 PH S.S. · ASTM A564 H1025</div>
+          <div class="spec-card-item">Thinned to clear pin insertion space</div>
+          <div class="spec-card-item">Bolt holes countersunk flush (CSK)</div>
+          <div class="spec-card-item">In-house machining</div>
+          <div class="spec-card-item">100+ parts picked daily</div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-title">Process &amp; Sourcing</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">BOM sourced from MISUMI</div>
+          <div class="spec-card-item">Drawings released for machining</div>
+          <div class="spec-card-item">Drop location analyzed — no conflict</div>
+          <div class="spec-card-item">Multiple design reviews completed</div>
+          <div class="spec-card-item">Install pending — machining in progress</div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="proj-buls">
+      <li>Real-life measurements taken from the physical gripper and part — used to validate CAD assembly state and catch any discrepancies before committing to drawings</li>
+      <li>Drop location process analyzed carefully — confirmed no downstream conflict introduced by new feature geometry</li>
+      <li>All drawings produced with DFM considerations; design reviewed multiple times with a fellow manufacturing engineer before release</li>
+      <li>Machining delayed by Optimus Academy facility work competing for in-house machine time — install trial targeted within 2–3 weeks of machining completion</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Lessons Learned</div>
+    <div class="lesson-card">
+      <div class="lesson-title">Measure the real thing, don’t trust the CAD alone</div>
+      <div class="lesson-body">The assembly model had been modified by multiple people over time. Taking physical measurements from the actual gripper and part on the line caught a discrepancy between the CAD state and what was actually built — early enough that it didn’t affect the drawings. On a live production tool, assuming the CAD is ground truth is a mistake.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">Constraint analysis before design, not after</div>
+      <div class="lesson-body">The original removal was done to solve the immediate feed track conflict without fully accounting for what that feature was doing kinematically. Understanding the full 6-DOF constraint picture first — what each feature controls, what happens if it’s removed — is the analysis that should precede any design decision, not follow it.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">DFM review catches what you stop seeing</div>
+      <div class="lesson-body">After working on the same geometry long enough, you stop questioning your own assumptions. The design reviews with a second engineer caught a countersink that would have been undercut during machining and a clearance that was tight enough to cause assembly issues. Fresh eyes on drawings before release is not optional.</div>
+    </div>
+  </div>
+
+  <div class="proj-nav-row fade">
+    <a href="project-biw.html" class="proj-nav-link"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>BIW Co-Op</a>
+    <a href="index.html#projects" class="proj-nav-link">All projects</a>
+    <a href="project-optimus.html" class="proj-nav-link">Optimus Academy<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Luis Garcia · Kansas City, MO</p>
+  <p>ME · WashU McKelvey · Tesla Fremont · HSF Scholar</p>
+</footer>
+<script>const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const s=Array.from(e.target.parentElement?.children||[]).filter(c=>c.classList.contains('fade'));const i=Math.min(s.indexOf(e.target),4);setTimeout(()=>e.target.classList.add('in'),i*80);obs.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('in');}else{obs.observe(el);}});</script>
+</body>
+</html>
