@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luis Garcia Rivera — Mechanical Engineer</title>
 <meta name="description" content="Mechanical engineering portfolio — Tesla BIW manufacturing, humanoid training hardware, CFD/ML research. WashU McKelvey, expected Dec 2027.">
+<meta property="og:title" content="Luis Garcia Rivera — Mechanical Engineer">
+<meta property="og:description" content="Production robotics, manufacturing optimization, and simulation. WashU McKelvey · Tesla Fremont alum.">
+<meta property="og:image" content="https://luisg54.github.io/engineering-portfolio/images/luis-garcia.jpg">
+<meta property="og:url" content="https://luisg54.github.io/engineering-portfolio/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -25,6 +34,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-links a:hover{color:var(--text)}
 .nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
 .nav-cta:hover{opacity:.85}
+.nav-toggle{display:none;background:none;border:1px solid var(--border2);color:var(--text);width:36px;height:36px;border-radius:8px;cursor:pointer;font-size:18px;line-height:1}
+.intro-bar{display:flex;align-items:center;gap:20px;margin-bottom:40px;padding:20px 24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);max-width:720px}
+.intro-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid var(--border2);flex-shrink:0}
+.intro-text{flex:1;min-width:0}
+.intro-name{font-size:clamp(22px,3vw,28px);font-weight:600;letter-spacing:-0.03em;color:var(--text);line-height:1.15;margin-bottom:4px}
+.intro-role{font-size:14px;color:var(--text2);font-weight:300}
+.intro-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap}
+.intro-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:9px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s,background .2s}
+.intro-btn.primary{background:var(--accent);color:#fff}
+.intro-btn.primary:hover{opacity:.85}
+.intro-btn.secondary{background:rgba(255,255,255,.07);color:var(--text);border:1px solid var(--border2)}
+.intro-btn.secondary:hover{background:rgba(255,255,255,.12)}
 .chip-dot{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 8px rgba(48,209,88,.6);flex-shrink:0}
 section{padding:96px 44px}
 #projects{padding-top:120px}
@@ -68,7 +89,7 @@ section{padding:96px 44px}
 .proj-card:hover .proj-cta svg{transform:translateX(3px)}
 #about{background:var(--bg2)}
 .about-wrap{display:grid;grid-template-columns:280px 1fr;gap:72px;align-items:start}
-.about-photo img{width:260px;height:320px;object-fit:cover;object-position:top;border-radius:16px;filter:brightness(.95)}
+.about-photo img{width:260px;height:320px;object-fit:cover;object-position:center 20%;border-radius:16px;filter:brightness(.95)}
 .about-status{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border2);border-radius:980px;padding:8px 16px;font-size:12px;font-weight:500;color:var(--text2);margin-top:16px}
 .about-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300}
 .about-p strong{color:var(--text);font-weight:500}
@@ -111,7 +132,19 @@ section{padding:96px 44px}
 .c-icon{width:38px;height:38px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .c-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
 .c-val{font-size:14px;color:var(--text)}
-.c-form{display:flex;flex-direction:column;gap:14px}
+.c-form{display:flex;flex-direction:column;gap:14px;justify-content:center}
+.c-panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px}
+.c-panel-title{font-size:18px;font-weight:600;color:var(--text);letter-spacing:-.02em;margin-bottom:8px}
+.c-panel-p{font-size:14px;color:var(--text2);line-height:1.7;font-weight:300;margin-bottom:20px}
+.c-panel-btns{display:flex;flex-wrap:wrap;gap:10px}
+.c-panel-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;padding:12px 20px;border-radius:980px;text-decoration:none;transition:opacity .2s}
+.c-panel-btn:hover{opacity:.85}
+.c-panel-btn.out{background:rgba(255,255,255,.07);color:var(--text);border:1px solid var(--border2)}
+.c-panel-btn.out:hover{background:rgba(255,255,255,.12)}
+.nav-links.open{display:flex;position:fixed;top:52px;left:0;right:0;background:rgba(0,0,0,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);flex-direction:column;padding:16px 24px 20px;gap:4px;z-index:199;list-style:none}
+.nav-links.open li{width:100%}
+.nav-links.open a{display:block;padding:12px 0;font-size:15px;color:var(--text2);text-decoration:none;border-bottom:1px solid var(--border)}
+.nav-links.open li:last-child a{border-bottom:none}
 .f-grp{display:flex;flex-direction:column;gap:6px}
 .f-lbl{font-size:12px;font-weight:500;color:var(--text3)}
 .f-in,.f-ta{background:var(--bg2);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:14px;font-weight:300;padding:11px 14px;border-radius:10px;outline:none;transition:border-color .2s;width:100%}
@@ -125,22 +158,35 @@ footer p{font-size:12px;color:var(--text3)}
 .fade{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fade.in{opacity:1;transform:translateY(0)}
 @media(max-width:1100px){.proj-grid{grid-template-columns:1fr}.proj-card.featured{grid-column:span 1}.skills-grid{grid-template-columns:repeat(2,1fr)}.about-wrap{grid-template-columns:1fr;gap:40px}.contact-wrap{grid-template-columns:1fr;gap:40px}nav{padding:0 24px}section{padding:72px 24px}}
-@media(max-width:640px){.nav-links{display:none}.impact-strip{flex-direction:column}.impact-item{border-right:none;border-bottom:1px solid var(--border)}.impact-item:last-child{border-bottom:none}.skills-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}}
+@media(max-width:640px){.nav-cta{display:none}}
+@media(max-width:640px){.nav-links:not(.open){display:none}.nav-toggle{display:flex;align-items:center;justify-content:center}.intro-bar{flex-wrap:wrap;padding:18px}.intro-actions{width:100%}.impact-strip{flex-direction:column}.impact-item{border-right:none;border-bottom:1px solid var(--border)}.impact-item:last-child{border-bottom:none}.skills-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}}
 </style>
 </head>
 <body>
 <nav>
   <a href="#projects" class="nav-logo">Luis Garcia</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navMenu">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
   <a href="#contact" class="nav-cta">Get in Touch</a>
 </nav>
 
 <section id="projects">
   <div class="s-hdr fade">
+    <div class="intro-bar">
+      <img src="images/luis-garcia.jpg" alt="Luis Garcia Rivera" class="intro-avatar" width="64" height="64">
+      <div class="intro-text">
+        <div class="intro-name">Luis Garcia Rivera</div>
+        <div class="intro-role">Mechanical Engineer · WashU McKelvey · Manufacturing &amp; Robotics</div>
+      </div>
+      <div class="intro-actions">
+        <a href="images/resume.pdf" class="intro-btn secondary" download="Luis_Garcia_Rivera_Resume.pdf">Resume</a>
+        <a href="#contact" class="intro-btn primary">Contact</a>
+      </div>
+    </div>
     <div class="s-chip">Portfolio</div>
     <h2 class="s-title">Engineering Work</h2>
     <p class="s-sub">Production robotics, manufacturing optimization, and simulation — selected projects with technical breakdowns.</p>
@@ -154,7 +200,7 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="proj-grid">
 
     <a class="proj-card featured fade" href="project-biw.html">
-      <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Tesla BIW"><div class="proj-cover-overlay"></div></div>
+      <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Automotive body-in-white manufacturing" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">01 — Featured · Tesla Fremont</div>
         <div class="proj-name">Automotive Body-in-White Manufacturing</div>
@@ -167,7 +213,7 @@ footer p{font-size:12px;color:var(--text3)}
 
     <a class="proj-card fade" href="project-eoat.html">
       <div class="proj-cover portrait">
-        <img src="images/eoat-cover.jpg" alt="KUKA robots on automotive body panel line">
+        <img src="images/eoat-cover.jpg" alt="Industrial robot on automotive body panel line" loading="lazy">
         <div class="proj-cover-overlay"></div>
       </div>
       <div class="proj-body">
@@ -274,7 +320,7 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="s-hdr fade"><div class="s-chip">About</div><h2 class="s-title">Who I Am</h2></div>
   <div class="about-wrap">
     <div class="about-photo fade">
-      <img src="images/photo.jpg" alt="Luis Garcia">
+      <img src="images/luis-garcia.jpg" alt="Luis Garcia Rivera" width="260" height="320" loading="lazy">
       <div class="about-status"><div class="chip-dot"></div>Open to full-time roles</div>
     </div>
     <div class="fade">
@@ -304,7 +350,7 @@ footer p{font-size:12px;color:var(--text3)}
 </section>
 
 <section id="experience">
-  <div class="s-hdr fade"><div class="s-chip">Experience</div><h2 class="s-title">Work History</h2></div>
+  <div class="s-hdr fade"><div class="s-chip">Experience</div><h2 class="s-title">Work History</h2><p class="s-sub">Expanded detail on select roles — full timeline on my <a href="images/resume.pdf" style="color:var(--accent);text-decoration:none">resume</a>.</p></div>
   <div class="exp-list">
     <div class="exp-card open fade" id="e0">
       <div class="exp-hdr" onclick="toggleExp('e0')">
@@ -368,14 +414,19 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="contact-wrap">
     <div class="c-links fade">
       <a href="mailto:garciarivera@wustl.edu" class="c-link"><div class="c-icon">✉</div><div><div class="c-lbl">Email</div><div class="c-val">garciarivera@wustl.edu</div></div></a>
-      <a href="https://linkedin.com/in/luisgr1" target="_blank" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">in</div><div><div class="c-lbl">LinkedIn</div><div class="c-val">linkedin.com/in/luisgr1</div></div></a>
-      <a href="https://github.com/luisgriv" target="_blank" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">gh</div><div><div class="c-lbl">GitHub</div><div class="c-val">github.com/luisgriv</div></div></a>
+      <a href="tel:+18165967546" class="c-link"><div class="c-icon">📞</div><div><div class="c-lbl">Phone</div><div class="c-val">(816) 596-7546</div></div></a>
+      <a href="https://linkedin.com/in/luisgr1" target="_blank" rel="noopener" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">in</div><div><div class="c-lbl">LinkedIn</div><div class="c-val">linkedin.com/in/luisgr1</div></div></a>
+      <a href="https://github.com/luisgriv" target="_blank" rel="noopener" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">gh</div><div><div class="c-lbl">GitHub</div><div class="c-val">github.com/luisgriv</div></div></a>
     </div>
     <div class="c-form fade">
-      <div class="f-grp"><label class="f-lbl">Name</label><input class="f-in" type="text" placeholder="Your name"></div>
-      <div class="f-grp"><label class="f-lbl">Email</label><input class="f-in" type="email" placeholder="your@email.com"></div>
-      <div class="f-grp"><label class="f-lbl">Message</label><textarea class="f-ta" placeholder="What's on your mind?"></textarea></div>
-      <button class="f-btn" onclick="alert('Connect to Formspree.io to activate.')">Send Message</button>
+      <div class="c-panel">
+        <div class="c-panel-title">Let's work together</div>
+        <p class="c-panel-p">Best way to reach me is email — I respond within 24 hours. Open to manufacturing, robotics, and aerospace roles starting immediately.</p>
+        <div class="c-panel-btns">
+          <a href="mailto:garciarivera@wustl.edu?subject=Opportunity%20%E2%80%94%20Luis%20Garcia%20Rivera" class="c-panel-btn">Email Me</a>
+          <a href="https://linkedin.com/in/luisgr1" target="_blank" rel="noopener" class="c-panel-btn out">LinkedIn</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -401,6 +452,18 @@ document.querySelectorAll('.fade').forEach(el=>{
   if(r.top<window.innerHeight){el.classList.add('in');}else{obs.observe(el);}
 });
 function toggleExp(id){document.getElementById(id).classList.toggle('open');}
+const navToggle=document.getElementById('navToggle');
+const navMenu=document.getElementById('navMenu');
+navToggle?.addEventListener('click',()=>{
+  const open=navMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded',open);
+  navToggle.textContent=open?'✕':'☰';
+});
+navMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  navMenu.classList.remove('open');
+  navToggle.setAttribute('aria-expanded','false');
+  navToggle.textContent='☰';
+}));
 </script>
 </body>
 </html>
