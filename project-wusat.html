@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Computer-Aided Design Portfolio — Luis Garcia</title>
+<title>CubeSat Mission Operations Engineering — Luis Garcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -107,12 +107,12 @@ footer p{font-size:12px;color:var(--text3)}
   <a href="index.html#contact" class="nav-cta">Contact</a>
 </nav>
 
-<div class="proj-hero whitebg">
-  <img src="images/cad-assembly.jpg" alt="Computer-Aided Design Portfolio">
+<div class="proj-hero darkbg">
+  <img src="images/wusat-cover.jpg" alt="CubeSat Mission Operations Engineering">
   <div class="proj-hero-overlay"></div>
   <div class="proj-hero-title">
-    <div class="proj-hero-label">06 · CAD Projects · SolidWorks · GD&T</div>
-    <div class="proj-hero-name">Computer-Aided Design Portfolio</div>
+    <div class="proj-hero-label">05 · WashU Satellite (WUSAT) · MOPS Team · Sep 2025 – Present</div>
+    <div class="proj-hero-name">CubeSat Mission Operations Engineering</div>
   </div>
 </div>
 
@@ -120,59 +120,58 @@ footer p{font-size:12px;color:var(--text3)}
 
   <div class="proj-section fade">
     <div class="tags-row">
-      <span class="tag">SolidWorks</span><span class="tag">GD&T / ASME Y14.5</span><span class="tag">Assembly Design</span>
-      <span class="tag">Technical Drawings</span><span class="tag">BOM</span><span class="tag">DFM</span>
+      <span class="tag">ModelSpace (ATTX)</span><span class="tag">MATLAB</span><span class="tag">Systems Engineering</span>
+      <span class="tag">CubeSat</span><span class="tag">Mission Analysis</span><span class="tag">Trade Studies</span>
     </div>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Overview</div>
-    <p class="proj-p">A collection of CAD design work demonstrating proficiency in SolidWorks, full drawing packages per ASME Y14.5 GD&T standards, and assembly design with BOM documentation. The featured project is a complete mechanical design of a foosball table — from concept through fabrication-ready drawings.</p>
+    <p class="proj-p">Mission Operations Engineer on the WashU Satellite (WUSAT) MOPS team. Work focuses on full-mission simulation and spacecraft subsystem trade studies using ModelSpace (ATTX) to evaluate mission feasibility and support CubeSat operations planning.</p>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Manufacturing Relevance</div>
-    <p class="proj-p">I keep this older CAD project in the portfolio because it shows the same habits that matter in manufacturing equipment work: standard hardware selection, drawing clarity, BOM discipline, assembly sequencing, and intentional tolerancing. The project is less about the object itself and more about whether someone else could build from the package.</p>
-  </div>
-
-  <div class="proj-section fade">
-    <div class="proj-section-label">Foosball Table &mdash; Full Design Package</div>
-    <div class="img-grid cols2 fade">
-      <div class="img-box white"><img src="images/cad-assembly.jpg" alt="Assembly Drawing"><div class="img-caption">Main assembly drawing with full BOM — 10 line items, part numbers, quantities</div></div>
-      <div class="img-box white"><img src="images/cad-exploded.jpg" alt="Exploded View"><div class="img-caption">Exploded view drawing — Scale 1:28</div></div>
-      <div class="img-box white"><img src="images/cad-frame.jpg" alt="Frame Detail"><div class="img-caption">Table frame detail drawing — balsa, 84" × 36", #12-24 tapped holes, cup holders</div></div>
-      <div class="img-box white"><img src="images/cad-rod.jpg" alt="Player Rod Sub-Assembly"><div class="img-caption">Player rod sub-assembly — foosball pole, grip, players, neoprene bumpers</div></div>
+    <div class="proj-section-label">Magnetorquer Optimization</div>
+    <div class="img-grid cols1 fade">
+      <div class="img-box"><img src="images/wusat-plots.jpg" alt="Magnetorquer Design Optimization"><div class="img-caption">Magnetorquer design space — magnetic moment, efficiency, mass/power trade-offs across AWG 32–40</div></div>
     </div>
     <ul class="proj-buls">
-      <li>Complete main assembly with <strong>10-item BOM</strong> including standard hardware sourced from McMaster-Carr (part numbers included)</li>
-      <li>Exploded view drawing at Scale 1:28 showing assembly sequence</li>
-      <li>Table frame detailed with all critical dimensions, tapped holes, and tolerances — fractional ±1/20–1/32", angular ±0.0001°, two/three-place decimal per ASME</li>
-      <li>Player rod sub-assembly modeled including neoprene bumpers, handle grips, and needle-roller thrust bearings</li>
-      <li>All parts modeled in SolidWorks; drawings produced to ASME Y14.5 GD&T standard</li>
+      <li>Swept wire gauge AWG 32–40 across magnetic moment, mass, and power constraints to identify optimal magnetorquer configuration</li>
+      <li><strong>AWG 36 identified as optimal</strong> — peak efficiency at 61 A·m²/kg while satisfying both mass and power limits</li>
+      <li>Generated design space plots mapping valid/invalid/optimal configurations — visualizing where constraints bind</li>
+      <li>Used ModelSpace (ATTX) for trade studies and spacecraft design iteration</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Mission Simulation</div>
+    <ul class="proj-buls">
+      <li>Preparing and executing full-mission simulations to evaluate CubeSat feasibility and support operations planning</li>
+      <li>Collaborating with interdisciplinary subteams to integrate mission-level analyses and ensure system-wide model consistency</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Lessons Learned</div>
     <div class="lesson-card">
-      <div class="lesson-title">A drawing is a manufacturing contract</div>
-      <div class="lesson-body">Every dimension and tolerance on a drawing is a commitment to the machinist. Under-tolerancing creates parts that don't fit; over-tolerancing drives up cost unnecessarily. Learning to apply GD&T intentionally — not just to pass a course — meant understanding what each callout actually controls on the manufactured part.</div>
+      <div class="lesson-title">Trade studies are only as good as your constraints</div>
+      <div class="lesson-body">The magnetorquer sweep produced thousands of design points. The interesting question wasn't which point was optimal — it was understanding which constraints were actually binding vs. which had margin. A design that barely passes all constraints is fragile. Learning to read the design space, not just the optimal point, matters.</div>
     </div>
     <div class="lesson-card">
-      <div class="lesson-title">Source hardware before you model it</div>
-      <div class="lesson-body">I modeled a custom needle-roller thrust bearing before checking McMaster-Carr. The standard part was cheaper, available next day, and already had a CAD model. Default to standard hardware and only go custom when you have to.</div>
+      <div class="lesson-title">Systems engineering means staying honest about interfaces</div>
+      <div class="lesson-body">Every subsystem analysis makes assumptions about what the other subsystems will deliver. When those assumptions are wrong, the integrated model breaks. The discipline of documenting interface assumptions explicitly — and checking them — is something spacecraft design forces you to learn.</div>
     </div>
   </div>
 
 
   <div class="proj-nav-row fade">
-    <a href="project-wusat.html" class="proj-nav-link">
+    <a href="project-cfd.html" class="proj-nav-link">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      CubeSat Mission Ops
+      CFD Research
     </a>
     <a href="index.html#projects" class="proj-nav-link">All projects</a>
-    <a href="project-biw.html" class="proj-nav-link">
-      BIW Equipment
+    <a href="project-cad.html" class="proj-nav-link">
+      CAD Portfolio
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
