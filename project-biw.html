@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Model 3 BIW Manufacturing Co-Op — Luis Garcia</title>
+<title>Automotive BIW Manufacturing — Luis Garcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -108,11 +108,11 @@ footer p{font-size:12px;color:var(--text3)}
 </nav>
 
 <div class="proj-hero letterbox">
-  <img src="images/biw.jpg" alt="Model 3 BIW Manufacturing Co-Op">
+  <img src="images/biw.jpg" alt="Automotive body-in-white manufacturing">
   <div class="proj-hero-overlay"></div>
   <div class="proj-hero-title">
     <div class="proj-hero-label">01 · Tesla Fremont · Jan 2026 – Aug 2026</div>
-    <div class="proj-hero-name">Model 3 BIW Manufacturing Co-Op</div>
+    <div class="proj-hero-name">Automotive Body-in-White Manufacturing</div>
   </div>
 </div>
 
@@ -122,57 +122,50 @@ footer p{font-size:12px;color:var(--text3)}
     <div class="metrics-row">
       <div class="big-metric"><div class="big-metric-num">10s</div><div class="big-metric-label">Cycle time reduction (75→65s)</div></div>
       <div class="big-metric"><div class="big-metric-num">$88K</div><div class="big-metric-label">OEM cost avoidance</div></div>
-      <div class="big-metric"><div class="big-metric-num">&lt;0.25mm</div><div class="big-metric-label">TCP deviation achieved</div></div>
-      <div class="big-metric"><div class="big-metric-num">8</div><div class="big-metric-label">Custom clamps designed in CATIA V5</div></div>
+      <div class="big-metric"><div class="big-metric-num">8</div><div class="big-metric-label">Fixture locations reverse-engineered</div></div>
+      <div class="big-metric"><div class="big-metric-num">13%</div><div class="big-metric-label">Station cycle time improvement</div></div>
     </div>
     <div class="tags-row">
-      <span class="tag">CATIA V5</span><span class="tag">SolidWorks</span><span class="tag">KUKA/FANUC</span>
-      <span class="tag">Splunk/SCADA</span><span class="tag">GD&T</span><span class="tag">Root Cause Analysis</span><span class="tag">Pneumatics</span>
+      <span class="tag">CATIA V5</span><span class="tag">FANUC/KUKA</span>
+      <span class="tag">SCADA/HMI</span><span class="tag">GD&amp;T</span><span class="tag">Root Cause Analysis</span><span class="tag">Pneumatics</span>
     </div>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Overview</div>
-    <p class="proj-p">As a Manufacturing Equipment Engineer Co-Op at Tesla Fremont, I worked directly on the <strong>Model 3 Body in White (BIW) production line</strong> — one of the highest-throughput automotive manufacturing environments in the world. My work spanned fixture design, robot cell optimization, and data-driven root cause analysis on live production equipment.</p>
+    <p class="proj-p">As a Manufacturing Equipment Engineer Co-Op at Tesla Fremont, I worked on the <strong>automotive body-in-white (BIW) production line</strong> — fixture design, robot cell optimization, and data-driven root cause analysis on live production equipment.</p>
     <p class="proj-p">Every change had to be validated against interference zones, cleared with production, and locked into the program without stopping the line. Nothing theoretical.</p>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Go/No-Go TCP Calibration Fixture</div>
-    <p class="proj-p">Tucker stud welding guns on the BIW line were experiencing a <strong>recurring 2.5mm TCP deviation</strong> during swap events — enough to cause weld misses and trigger robot path reprogramming after every gun change.</p>
-    <p class="proj-p">I designed a <strong>Go/No-Go calibration fixture</strong> using a chamfered funnel alignment constraint and a dowel-pinned L-bracket to passively correct TCP position during swap. The result: <strong>sub-0.25mm deviation</strong>, eliminating the need for any robot path reprogramming post-swap.</p>
-    <ul class="proj-buls">
-      <li>Chamfered funnel provides passive self-alignment — no operator skill dependency</li>
-      <li>Dowel-pinned L-bracket ensures repeatable datum reference across all gun swaps</li>
-      <li>Go/No-Go tolerance check built in — operators get immediate pass/fail feedback</li>
-      <li>Designed and toleranced in SolidWorks; validated on the line before production release</li>
-    </ul>
-  </div>
-
-  <div class="proj-section fade">
     <div class="proj-section-label">Welding Cell Optimization</div>
-    <p class="proj-p">Re-sequenced weld point assignments across a multi-robot spot welding cell, redistributing work to eliminate inter-robot wait states. Validated all interference zones against the existing robot coordination logic before committing changes.</p>
+    <p class="proj-p">Partnered with two senior engineers to cut cycle time in a three-robot FANUC spot-weld sequence. Reprogrammed an adjacent robot in teach mode to assume one weld and its approach/home points from the bottleneck robot, redistributing work to eliminate inter-robot wait states.</p>
     <ul class="proj-buls">
-      <li><strong>10-second cycle time reduction</strong> confirmed (75s → 65s) — locked into production program</li>
-      <li>Validated zone handoff timing and coordination logic against interference analysis</li>
-      <li>Changes required sign-off through Tesla's engineering change process</li>
+      <li><strong>10-second cycle time reduction</strong> confirmed (75s → 65s, 13%) — locked into production program</li>
+      <li>Validated interference zones, full-speed operation, and production stability with maintenance</li>
+      <li>Changes required sign-off through the engineering change process</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Custom Fixture Clamps — CATIA V5</div>
-    <p class="proj-p">Eight fixture clamps on the BIW line required replacement. OEM lead time was <strong>10 months at $88,000</strong>. I reverse-engineered each clamp from the physical parts, modeled them in CATIA V5, and produced drawings for internal machining.</p>
+    <p class="proj-p">An OEM three-clamp fixture system used at eight production locations required replacement. Quoted lead time was <strong>10 months at ~$88,000</strong>. I reverse-engineered each clamp from physical parts, modeled them in CATIA V5, and produced GD&amp;T drawings for in-house fabrication.</p>
     <ul class="proj-buls">
       <li>Full reverse engineering from physical parts — no original CAD files available</li>
-      <li>All 8 clamps modeled in CATIA V5 with GD&T tolerancing for machinability</li>
+      <li>All clamps modeled in CATIA V5 with GD&amp;T tolerancing for machinability</li>
       <li>Reduced lead time from 10 months to internal machining cycle</li>
-      <li><strong>$88,000 in OEM costs avoided</strong></li>
+      <li><strong>~$88,000 in OEM costs avoided</strong></li>
     </ul>
   </div>
 
   <div class="proj-section fade">
+    <div class="proj-section-label">TCP Calibration Fixture — In Fabrication</div>
+    <p class="proj-p">Designed a Go/No-Go calibration fixture using a chamfered funnel alignment constraint and dowel-pinned bracket to passively correct tool-center-point drift during stud-welding gun swaps. Drawings released; parts currently in machining — line validation pending.</p>
+  </div>
+
+  <div class="proj-section fade">
     <div class="proj-section-label">Related Project — EOAT Locating Feature Redesign</div>
-    <p class="proj-p">Following the bowl feeder installation on Station 30, a geometry conflict forced removal of one of the EOAT’s two locating features, leaving the robot picking with only rotational constraint. I designed a replacement locating feature restoring full 6-DOF part constraint while clearing the feed track geometry — three fixture variants (TL1/TL2 shared + TL3 variant), two custom in-house machined L-brackets, NAAMS components sourced from MISUMI, and a redesigned upper jaw in 17-4 PH S.S. Drawings released for machining; install pending.</p>
+    <p class="proj-p">After a bowl feeder installation blocked one of the EOAT's two locating features, I designed replacement hardware restoring full 6-DOF part constraint — carried through machining, assembly, installation, and a 25-part live-line validation. Tooling is now running in production with reduced fault rates tracked via HMI/SCADA data.</p>
     <a href="project-eoat.html" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--accent);text-decoration:none;margin-top:4px">
       View full project page
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -182,12 +175,8 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="proj-section fade">
     <div class="proj-section-label">Lessons Learned</div>
     <div class="lesson-card">
-      <div class="lesson-title">Tolerance stack-up matters more than you think on live tooling</div>
-      <div class="lesson-body">The TCP fixture taught me that a 0.25mm target sounds easy until you account for datum shift, thermal expansion, and operator variance. Designing the passive funnel alignment was the insight that made the tolerance achievable without depending on perfect operator technique every time.</div>
-    </div>
-    <div class="lesson-card">
       <div class="lesson-title">Data first, hypothesis second</div>
-      <div class="lesson-body">On a production line, gut feel gets you nowhere. Every decision — cycle time changes, EOAT modifications — had to be backed by Splunk fault data and OEE metrics before anyone would approve a change. Learning to pull and interpret that data fast was as important as the mechanical design work.</div>
+      <div class="lesson-body">On a production line, gut feel gets you nowhere. Every decision — cycle time changes, EOAT modifications — had to be backed by HMI/SCADA fault data and OEE metrics before anyone would approve a change. Learning to pull and interpret that data fast was as important as the mechanical design work.</div>
     </div>
     <div class="lesson-card">
       <div class="lesson-title">Change management is a real engineering skill</div>
@@ -211,7 +200,7 @@ footer p{font-size:12px;color:var(--text3)}
 
 <footer>
   <p>© 2026 Luis Garcia · Kansas City, MO</p>
-  <p>ME · WashU McKelvey · Tesla Fremont · HSF Scholar</p>
+  <p>ME · WashU McKelvey · HSF Scholar</p>
 </footer>
 <script>
 const obs=new IntersectionObserver(entries=>{

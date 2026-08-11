@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trios to Solos — Luis Garcia</title>
+<title>Modular Camera System — Luis Garcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -24,8 +24,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .proj-hero-name{font-size:clamp(22px,3vw,40px);font-weight:600;color:#fff;letter-spacing:-.03em;line-height:1.1}
 .status-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 .status-pill{display:inline-flex;align-items:center;gap:7px;border-radius:980px;padding:5px 14px;font-size:11px;font-weight:500}
-.status-amber{background:rgba(255,179,0,0.12);border:1px solid rgba(255,179,0,0.25);color:#ffb300}
-.status-dot-amber{width:5px;height:5px;background:#ffb300;border-radius:50%;box-shadow:0 0 6px rgba(255,179,0,.8)}
+.status-green{background:rgba(48,209,88,0.12);border:1px solid rgba(48,209,88,0.25);color:#30d158}
+.status-dot-green{width:5px;height:5px;background:#30d158;border-radius:50%;box-shadow:0 0 6px rgba(48,209,88,.8)}
 .proj-content{max-width:960px;margin:0 auto;padding:64px 44px 96px}
 .proj-section{margin-bottom:56px}
 .proj-section-label{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
@@ -75,15 +75,13 @@ footer p{font-size:12px;color:var(--text3)}
 </nav>
 
 <div class="proj-hero">
-  <img src="images/trios-cover.svg" alt="Trios to Solos system diagram">
+  <img src="images/trios-cover.svg" alt="Modular station-mounted camera system diagram">
   <div class="proj-hero-overlay"></div>
   <div class="proj-hero-title">
-    <div class="proj-hero-label">03 · Tesla Fremont · Model 3 BIW + Optimus · 2026 – Present</div>
-    <div class="proj-hero-name">Trios to Solos — Modular Camera System<br>for Optimus Training Data Collection</div>
+    <div class="proj-hero-label">03 · Tesla Fremont · Jan 2026 – Aug 2026</div>
+    <div class="proj-hero-name">Modular Camera System for Humanoid Training Data</div>
     <div class="status-row">
-      <div class="status-pill status-amber"><div class="status-dot-amber"></div>Prototype development</div>
-      <div class="status-pill status-amber"><div class="status-dot-amber"></div>Layout validation · CATIA V5</div>
-      <div class="status-pill status-amber"><div class="status-dot-amber"></div>FDL-005 pilot planning</div>
+      <div class="status-pill status-green"><div class="status-dot-green"></div>Deployed to 20 production stations</div>
     </div>
   </div>
 </div>
@@ -92,34 +90,34 @@ footer p{font-size:12px;color:var(--text3)}
 
   <div class="proj-section fade">
     <div class="metrics-row">
+      <div class="big-metric"><div class="big-metric-num">20</div><div class="big-metric-label">Stations deployed</div></div>
       <div class="big-metric"><div class="big-metric-num">3→1</div><div class="big-metric-label">People per station (target)</div></div>
       <div class="big-metric"><div class="big-metric-num">12</div><div class="big-metric-label">Cameras across 3 pods</div></div>
-      <div class="big-metric"><div class="big-metric-num">3</div><div class="big-metric-label">4-cam junction nodes</div></div>
-      <div class="big-metric"><div class="big-metric-num">~20ft</div><div class="big-metric-label">Current cable lengths</div></div>
+      <div class="big-metric"><div class="big-metric-num">3</div><div class="big-metric-label">Mount architectures designed</div></div>
     </div>
     <div class="tags-row">
       <span class="tag">CATIA V5</span><span class="tag">Modular Design</span><span class="tag">Camera Mounts</span>
-      <span class="tag">Cable Management</span><span class="tag">80/20 Extrusion</span><span class="tag">DFM</span>
-      <span class="tag">Production Safety</span><span class="tag">Station Layout</span>
+      <span class="tag">Cable Management</span><span class="tag">80/20 Extrusion</span><span class="tag">3D Printing</span>
+      <span class="tag">Field Deployment</span><span class="tag">Production Safety</span>
     </div>
     <div class="prop-notice">
       <span style="font-size:18px">🔒</span>
-      <div class="prop-notice-text">CATIA V5 station models, prototype photos, and station layout drawings are proprietary Tesla IP and are not shown. The diagram above is an illustrative system architecture, not a reproduction of actual station geometry.</div>
+      <div class="prop-notice-text">Station models, prototype photos, and layout drawings are proprietary and are not shown. The diagram above is an illustrative system architecture, not a reproduction of actual station geometry.</div>
     </div>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">The Problem</div>
     <div class="problem-box">
-      <div class="problem-box-label">3-person setup is not scalable</div>
-      <p class="proj-p" style="margin-bottom:0">Current Optimus training data collection on the Model 3 Body Line requires a <strong>3-person team per station</strong>: one operator performs the production task while two people stand at the station holding camera frames to capture hand motion and body movement. The operator also wears a battery/sensor module with a helmet-mounted sensor. This works but cannot scale — you can’t staff two people per station across a full production line.</p>
+      <div class="problem-box-label">Manual capture doesn't scale</div>
+      <p class="proj-p" style="margin-bottom:0">Humanoid training data collection on the body line required a <strong>3-person team per station</strong>: one operator performing the production task while two people held camera frames to capture hand motion and body movement. This worked for early pilots but couldn't scale across a full production line.</p>
     </div>
-    <p class="proj-p">The operator workflow that needs to be captured includes: picking parts from racks or bins, moving with the part, placing into conveyors or fixtures, performing finger swipe or HMI confirmation actions, waiting through the station cycle, picking the completed part, and returning it to the rack. Any mounting solution needs to cover all of these views without creating a trip hazard, blocking the operator, or requiring the station to be taken offline to install.</p>
+    <p class="proj-p">The operator workflow spans picking from racks, carrying parts, placing into fixtures, HMI confirmations, waiting through the cycle, and returning completed parts. Any mounting solution had to cover these views without creating trip hazards, blocking operators, or requiring stations to go offline for installation.</p>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">System Architecture</div>
-    <p class="proj-p">The concept groups <strong>12 cameras into three 4-camera pods</strong>. Each pod has its own local junction node for cable management, a support structure that clamps to existing fixed station features, and short rigid boom arms to position each camera. Three cable groups — one per pod — route back to a central battery/module sled, replacing the current 12 individual loose cables.</p>
+    <p class="proj-p">The deployed system groups <strong>12 cameras into three 4-camera pods</strong>. Each pod has a local junction node for cable management, a support structure clamped to existing fixed station features, and adjustable boom arms for camera positioning. Three managed cable bundles route back to a central compute/battery sled.</p>
 
     <div class="arch-grid">
       <div class="arch-card">
@@ -128,87 +126,59 @@ footer p{font-size:12px;color:var(--text3)}
           <div class="arch-card-item">3 × 4-camera pods</div>
           <div class="arch-card-item">Lockable adjustable mounts</div>
           <div class="arch-card-item">Rigid boom arms</div>
-          <div class="arch-card-item">Clamp-on to fixed fencing</div>
-          <div class="arch-card-item">No custom 80/20 enclosure</div>
+          <div class="arch-card-item">Clamp-on to fixed guarding</div>
         </div>
       </div>
       <div class="arch-card">
-        <div class="arch-card-title">Cable Management</div>
+        <div class="arch-card-title">Mechanical Design</div>
         <div class="arch-card-items">
-          <div class="arch-card-item">3 managed cable groups</div>
-          <div class="arch-card-item">Local 4-cam junction nodes</div>
-          <div class="arch-card-item">Strain relief at pods</div>
-          <div class="arch-card-item">~20ft current lengths</div>
-          <div class="arch-card-item">Slack routing TBD</div>
+          <div class="arch-card-item">3 adjustable mount architectures</div>
+          <div class="arch-card-item">Tool-free compute/battery mounts</div>
+          <div class="arch-card-item">Swappable interfaces (80/20, I-beam, drilled)</div>
+          <div class="arch-card-item">Print-farm released 3D-printed parts</div>
         </div>
       </div>
       <div class="arch-card">
-        <div class="arch-card-title">Station Constraints</div>
+        <div class="arch-card-title">Deployment Constraints</div>
         <div class="arch-card-items">
-          <div class="arch-card-item">Fixed fence / guard only</div>
-          <div class="arch-card-item">No movable racks or carts</div>
+          <div class="arch-card-item">Fixed guard / fence mounting only</div>
           <div class="arch-card-item">No safety device contact</div>
           <div class="arch-card-item">No floor obstructions</div>
-          <div class="arch-card-item">Operator clearance required</div>
+          <div class="arch-card-item">Operator clearance preserved</div>
         </div>
       </div>
     </div>
 
     <div class="cover-diagram">
-      <img src="images/trios-cover.svg" alt="System architecture diagram showing 3 camera pods and cable routing">
+      <img src="images/trios-cover.svg" alt="Illustrative system architecture showing 3 camera pods and cable routing">
     </div>
-    <div class="img-caption">Illustrative system architecture · FDL-005 spot weld station concept · Not actual station geometry</div>
+    <div class="img-caption">Illustrative system architecture · Guarded production station concept · Not actual station geometry</div>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Coverage Requirements</div>
-    <p class="proj-p">The system needs to capture multiple synchronized angles covering the full operator workflow:</p>
+    <div class="proj-section-label">My Role &amp; Deployment</div>
+    <p class="proj-p">Co-developed and deployed modular training-data hardware to <strong>20 mounted production stations</strong>, targeting a three-person-to-one-operator workflow. Co-led field surveys, assembly, wiring, commissioning, troubleshooting, and camera-angle iteration around live production.</p>
     <ul class="proj-buls">
-      <li><strong>Close hand/fixture views</strong> — detailed finger and hand motion during part placement and confirmation swipes</li>
-      <li><strong>Wide body motion views</strong> — full operator posture and movement envelope through the cycle</li>
-      <li><strong>Pick/rack views</strong> — part retrieval from bins and racks at cycle start</li>
-      <li><strong>Carry-path views</strong> — operator movement with part from pick to place</li>
-      <li><strong>Return-to-rack views</strong> — part return or completed part removal at cycle end</li>
-      <li><strong>HMI/finger-swipe views</strong> — operator interface confirmation actions</li>
-    </ul>
-  </div>
-
-  <div class="proj-section fade">
-    <div class="proj-section-label">Pilot Station — FDL-005</div>
-    <p class="proj-p">The next pilot target is <strong>FDL-005</strong>, a guarded spot-welder robot/fixture station. This station was chosen because it introduces realistic production-floor constraints: fixed fencing and robot guarding (mounting candidates), operator mats, movable bins and racks (mounting exclusions), E-stops and gates (must not contact), overhead structures, and limited walking space.</p>
-    <p class="proj-p">The station layout is being modeled in <strong>CATIA V5</strong> to support design review before physical implementation. The model includes station fencing, fixture geometry, storage bins, and proposed pod locations. Additional elements being added include camera fields of view, operator working envelope, robot/no-go zones, cable routing paths, junction node locations, and bracket concepts.</p>
-    <ul class="proj-buls">
-      <li>An early prototype was tested on an RRT conveyor using an existing 80/20 frame with temporary tripod/GoPro-style mounts — validated the concept but exposed repeatability and rigidity issues</li>
-      <li>Current design direction: <strong>standardized lockable mounts</strong> clamped to existing guard/fence structures — no new full-station 80/20 required</li>
-      <li>Key open item: cable slack management for ~20ft cables without creating trip hazards or production interference</li>
-    </ul>
-  </div>
-
-  <div class="proj-section fade">
-    <div class="proj-section-label">Status &amp; Open Items</div>
-    <ul class="proj-buls">
-      <li><strong>Complete:</strong> Prototype tested on RRT conveyor — concept validated, temporary mount issues identified</li>
-      <li><strong>In progress:</strong> CATIA V5 station model for FDL-005 — camera coverage analysis, bracket concept development</li>
-      <li><strong>Open:</strong> Lockable adjustable camera enclosure/bracket design — must allow aiming during setup, rigid lock during operation</li>
-      <li><strong>Open:</strong> Cable slack routing strategy — 20ft lengths require a managed storage solution</li>
-      <li><strong>Open:</strong> Clamp-on bracket design for fence/guard attachment — must not damage guarding or require tools to remove</li>
-      <li><strong>Next:</strong> FDL-005 pilot installation and coverage validation</li>
+      <li>Owned CATIA V5 mechanical design for <strong>3 adjustable camera-mount architectures</strong> and tool-free 3D-printed compute-module and battery-pack mounts</li>
+      <li>Released designs to a print farm and standardized hardware for repeatable deployment and handoff</li>
+      <li>Iterated camera angles with operators and data-collection leads based on field feedback from live stations</li>
+      <li>Standardized mounting interfaces for 80/20 extrusion, I-beams, and drilled surfaces to adapt across station types</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Lessons Learned</div>
     <div class="lesson-card">
-      <div class="lesson-title">Temporary mounts are a false start, not a proof of concept</div>
-      <div class="lesson-body">The RRT conveyor prototype validated that station-mounted cameras can capture the workflow. But GoPro-style temporary mounts drift, can’t be locked repeatably, and aren’t scalable. The prototype answered "can this work" — the real engineering question is "how do you make it work the same way every time across every station type."</div>
+      <div class="lesson-title">Field deployment is the real design review</div>
+      <div class="lesson-body">Early prototypes on test conveyors validated the concept, but production stations exposed rigidity, cable routing, and operator clearance issues that only appear in context. Deploying to 20 stations forced standardization — every mount had to work the same way regardless of who installed it.</div>
     </div>
     <div class="lesson-card">
-      <div class="lesson-title">Cable management is a first-class constraint, not an afterthought</div>
-      <div class="lesson-body">20ft of cable per camera × 12 cameras is a serious production-floor hazard if not managed. The architecture decision to group into three managed bundles was driven entirely by the cable problem, not by camera coverage. Good system design means solving the constraint that will actually kill you in production, not the one that looks cleanest on paper.</div>
+      <div class="lesson-title">Design for the installer, not just the drawing</div>
+      <div class="lesson-body">Tool-free mounts with locating pins and swappable interfaces mattered as much as camera coverage. If a station tech can't install or adjust the hardware in 30 minutes around a live line, the system won't scale — no matter how clean the CATIA model looks.</div>
     </div>
     <div class="lesson-card">
-      <div class="lesson-title">CATIA modeling before physical install saves rework</div>
-      <div class="lesson-body">FDL-005 has enough geometric complexity — fencing, robot guarding, bins, mats, E-stops — that installing without a model would mean discovering conflicts physically. Modeling the station in CATIA first lets you identify mounting conflicts, cable routing dead-ends, and operator clearance issues in a design review before anyone touches the production floor.</div>
+      <div class="lesson-title">Cable management is a first-class constraint</div>
+      <div class="lesson-body">Grouping 12 camera feeds into three managed bundles was driven by production-floor safety, not aesthetics. Ungrouped cables across a guarded station are a trip hazard and a maintenance headache. Solve the constraint that kills you in production first.</div>
     </div>
   </div>
 
@@ -222,7 +192,7 @@ footer p{font-size:12px;color:var(--text3)}
 
 <footer>
   <p>© 2026 Luis Garcia · Kansas City, MO</p>
-  <p>ME · WashU McKelvey · Tesla Fremont · HSF Scholar</p>
+  <p>ME · WashU McKelvey · HSF Scholar</p>
 </footer>
 <script>
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const s=Array.from(e.target.parentElement?.children||[]).filter(c=>c.classList.contains('fade'));const i=Math.min(s.indexOf(e.target),4);setTimeout(()=>e.target.classList.add('in'),i*80);obs.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});

@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luis Garcia — Mechanical Engineer</title>
+<title>Luis Garcia Rivera — Mechanical Engineer</title>
+<meta name="description" content="Mechanical engineering portfolio — Tesla BIW manufacturing, humanoid training hardware, CFD/ML research. WashU McKelvey, expected Dec 2027.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -24,27 +25,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-links a:hover{color:var(--text)}
 .nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
 .nav-cta:hover{opacity:.85}
-#home{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 40px 80px;position:relative;overflow:hidden}
-.hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(41,151,255,0.07) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
-.hero-inner{position:relative;max-width:760px}
-.hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border2);border-radius:980px;padding:6px 14px;font-size:12px;color:var(--text2);margin-bottom:32px}
 .chip-dot{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 8px rgba(48,209,88,.6);flex-shrink:0}
-.hero-title{font-size:clamp(48px,7vw,86px);font-weight:600;letter-spacing:-0.04em;line-height:1.05;color:var(--text);margin-bottom:20px}
-.hero-title span{background:linear-gradient(135deg,#2997ff,#5ac8fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:17px;color:var(--text2);line-height:1.65;max-width:520px;margin:0 auto 40px;font-weight:300}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-fill{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;padding:12px 24px;border-radius:980px;text-decoration:none;transition:opacity .2s,transform .2s}
-.btn-fill:hover{opacity:.85;transform:translateY(-1px)}
-.btn-out{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);color:var(--text);font-size:14px;font-weight:500;padding:12px 24px;border-radius:980px;text-decoration:none;border:1px solid var(--border2);transition:background .2s,transform .2s}
-.btn-out:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
-.hero-stats{display:flex;justify-content:center;margin-top:64px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;max-width:560px;margin-left:auto;margin-right:auto}
-.h-stat{flex:1;padding:18px 14px;text-align:center;border-right:1px solid var(--border);transition:background .2s}
-.h-stat:last-child{border-right:none}
-.h-stat:hover{background:var(--bg3)}
-.h-num{font-size:24px;font-weight:600;letter-spacing:-0.03em;color:var(--text)}
-.h-num b{color:var(--accent)}
-.h-lbl{font-size:10px;color:var(--text3);margin-top:3px;letter-spacing:.02em}
 section{padding:96px 44px}
+#projects{padding-top:120px}
+.impact-strip{display:flex;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:48px;max-width:720px}
+.impact-item{flex:1;padding:16px 14px;text-align:center;border-right:1px solid var(--border);background:var(--bg2)}
+.impact-item:last-child{border-right:none}
+.impact-num{font-size:22px;font-weight:600;letter-spacing:-0.03em;color:var(--text)}
+.impact-num b{color:var(--accent)}
+.impact-lbl{font-size:10px;color:var(--text3);margin-top:3px}
 .s-chip{display:inline-block;font-size:12px;font-weight:500;color:var(--accent);background:var(--accent2);padding:4px 12px;border-radius:980px;margin-bottom:14px}
 .s-title{font-size:clamp(28px,4vw,46px);font-weight:600;letter-spacing:-0.03em;color:var(--text);line-height:1.1;margin-bottom:10px}
 .s-sub{font-size:15px;color:var(--text2);max-width:500px;line-height:1.65;font-weight:300}
@@ -136,44 +125,31 @@ footer p{font-size:12px;color:var(--text3)}
 .fade{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fade.in{opacity:1;transform:translateY(0)}
 @media(max-width:1100px){.proj-grid{grid-template-columns:1fr}.proj-card.featured{grid-column:span 1}.skills-grid{grid-template-columns:repeat(2,1fr)}.about-wrap{grid-template-columns:1fr;gap:40px}.contact-wrap{grid-template-columns:1fr;gap:40px}nav{padding:0 24px}section{padding:72px 24px}}
-@media(max-width:640px){.nav-links{display:none}.hero-stats{flex-direction:column}.h-stat{border-right:none;border-bottom:1px solid var(--border)}.h-stat:last-child{border-bottom:none}.skills-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}}
+@media(max-width:640px){.nav-links{display:none}.impact-strip{flex-direction:column}.impact-item{border-right:none;border-bottom:1px solid var(--border)}.impact-item:last-child{border-bottom:none}.skills-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}}
 </style>
 </head>
 <body>
 <nav>
-  <a href="#home" class="nav-logo">Luis Garcia</a>
+  <a href="#projects" class="nav-logo">Luis Garcia</a>
   <ul class="nav-links">
-    <li><a href="#home">Home</a></li><li><a href="#projects">Projects</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in Touch</a>
 </nav>
 
-<section id="home">
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-chip"><div class="chip-dot"></div>On co-op · Tesla Fremont · Through Aug 2026</div>
-    <h1 class="hero-title">Engineering<br><span>new solutions.</span></h1>
-    <p class="hero-sub">Mechanical Engineering at WashU — building production-line robotics, humanoid training systems, and physics-informed simulations that hold up in the real world.</p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-fill"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View My Work</a>
-      <a href="#contact" class="btn-out">Get in Touch</a>
-    </div>
-    <div class="hero-stats">
-      <div class="h-stat"><div class="h-num"><b>10s</b></div><div class="h-lbl">Cycle Time Reduced</div></div>
-      <div class="h-stat"><div class="h-num">$<b>88K</b></div><div class="h-lbl">OEM Cost Avoided</div></div>
-      <div class="h-stat"><div class="h-num"><b>1000</b>×</div><div class="h-lbl">CFD Speedup</div></div>
-      <div class="h-stat"><div class="h-num"><b>3.79</b></div><div class="h-lbl">GPA · Dean's List</div></div>
-    </div>
-  </div>
-</section>
-
 <section id="projects">
   <div class="s-hdr fade">
-    <div class="s-chip">Featured Projects</div>
+    <div class="s-chip">Portfolio</div>
     <h2 class="s-title">Engineering Work</h2>
-    <p class="s-sub">Click any project for the full breakdown — images, technical details, and lessons learned.</p>
+    <p class="s-sub">Production robotics, manufacturing optimization, and simulation — selected projects with technical breakdowns.</p>
+    <div class="impact-strip fade">
+      <div class="impact-item"><div class="impact-num"><b>10s</b></div><div class="impact-lbl">Cycle time cut</div></div>
+      <div class="impact-item"><div class="impact-num">$<b>88K</b></div><div class="impact-lbl">OEM avoided</div></div>
+      <div class="impact-item"><div class="impact-num"><b>20</b></div><div class="impact-lbl">Stations deployed</div></div>
+      <div class="impact-item"><div class="impact-num"><b>1000×</b></div><div class="impact-lbl">CFD speedup</div></div>
+    </div>
   </div>
   <div class="proj-grid">
 
@@ -181,10 +157,10 @@ footer p{font-size:12px;color:var(--text3)}
       <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Tesla BIW"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">01 — Featured · Tesla Fremont</div>
-        <div class="proj-name">Model 3 BIW Manufacturing Co-Op</div>
-        <p class="proj-desc">TCP calibration fixture design, welding cell optimization, 8 custom CATIA V5 clamps, and EOAT locating feature redesign to restore 6-DOF part constraint after bowl feeder installation — all on a live Model 3 production line.</p>
-        <div class="proj-metrics"><span class="metric">↓ 10s cycle time</span><span class="metric">$88K cost avoidance</span><span class="metric">&lt;0.25mm TCP</span></div>
-        <div class="proj-tags"><span class="tag">CATIA V5</span><span class="tag">KUKA/FANUC</span><span class="tag">Splunk/SCADA</span><span class="tag">GD&amp;T</span></div>
+        <div class="proj-name">Automotive Body-in-White Manufacturing</div>
+        <p class="proj-desc">Welding cell cycle-time optimization, OEM fixture reverse-engineering, and EOAT redesign on a live automotive body-in-white line — validated against production SCADA data.</p>
+        <div class="proj-metrics"><span class="metric">↓ 10s cycle time</span><span class="metric">$88K cost avoidance</span><span class="metric">8 clamps reverse-engineered</span></div>
+        <div class="proj-tags"><span class="tag">CATIA V5</span><span class="tag">FANUC/KUKA</span><span class="tag">SCADA</span><span class="tag">GD&amp;T</span></div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
@@ -195,16 +171,16 @@ footer p{font-size:12px;color:var(--text3)}
         <div class="proj-cover-overlay"></div>
       </div>
       <div class="proj-body">
-        <div class="proj-num">02 · Tesla Fremont · New</div>
-        <div class="proj-name">Bowl Feeder EOAT Locating Feature — Model 3 BIW</div>
-        <p class="proj-desc">Restored full 6-DOF part constraint on the PSH-30 robot EOAT after bowl feeder installation removed a critical locating feature. Custom CATIA V5 design, NAAMS components, in-house machined parts — drawings released, install pending.</p>
+        <div class="proj-num">02 · Tesla Fremont</div>
+        <div class="proj-name">Bowl Feeder EOAT Locating Feature</div>
+        <p class="proj-desc">Restored full 6-DOF part constraint after bowl feeder installation blocked a critical locator. Designed, machined, assembled, and installed custom hardware — validated on the live line with no issues; faults reduced in production.</p>
         <div class="proj-metrics">
           <span class="metric">6-DOF restored</span>
-          <span class="metric">3 fixture variants</span>
-          <span class="metric">In machining</span>
+          <span class="metric">25-part validation</span>
+          <span class="metric">In production</span>
         </div>
         <div class="proj-tags">
-          <span class="tag">CATIA V5</span><span class="tag">NAAMS</span><span class="tag">DFM</span><span class="tag">GD&amp;T</span><span class="tag">17-4 PH S.S.</span><span class="tag">MISUMI</span>
+          <span class="tag">CATIA V5</span><span class="tag">NAAMS</span><span class="tag">DFM</span><span class="tag">GD&amp;T</span><span class="tag">17-4 PH S.S.</span>
         </div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
@@ -216,12 +192,12 @@ footer p{font-size:12px;color:var(--text3)}
         <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,0.7) 100%)"></div>
       </div>
       <div class="proj-body">
-        <div class="proj-num">03 · Tesla Fremont · New</div>
-        <div class="proj-name">Trios to Solos — Modular Camera System for Optimus Training</div>
-        <p class="proj-desc">Converting a 3-person data collection setup into a scalable station-mounted system. 12 cameras across 3 modular pods, clamp-on brackets, organized cable management — targeting FDL-005 spot weld station as first pilot.</p>
+        <div class="proj-num">03 · Tesla Fremont</div>
+        <div class="proj-name">Modular Camera System for Humanoid Training Data</div>
+        <p class="proj-desc">Co-developed and deployed station-mounted training-data hardware across 20 production stations — modular camera pods, tool-free mounts, and standardized cabling to replace a 3-person manual capture workflow.</p>
         <div class="proj-metrics">
-          <span class="metric">12 cameras · 3 pods</span>
-          <span class="metric">In development</span>
+          <span class="metric">20 stations deployed</span>
+          <span class="metric">3→1 operator target</span>
         </div>
         <div class="proj-tags">
           <span class="tag">CATIA V5</span><span class="tag">Modular Design</span><span class="tag">Camera Mounts</span><span class="tag">Cable Management</span><span class="tag">80/20</span>
@@ -299,17 +275,17 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="about-wrap">
     <div class="about-photo fade">
       <img src="images/photo.jpg" alt="Luis Garcia">
-      <div class="about-status"><div class="chip-dot"></div>Available Aug 2026</div>
+      <div class="about-status"><div class="chip-dot"></div>Open to full-time roles</div>
     </div>
     <div class="fade">
-      <p class="about-p"><strong>Mechanical Engineering student at Washington University in St. Louis</strong> (McKelvey School of Engineering, Minors in Robotics &amp; Mechatronics and Aerospace Engineering, expected Dec 2027). GPA: 3.79 · Dean's List · HSF Scholar.</p>
-      <p class="about-p">Currently on extended co-op at <strong>Tesla Fremont</strong> through August 2026 — running two concurrent engineering projects: Model 3 BIW production line optimization and the Optimus Academy humanoid robotics training facility.</p>
-      <p class="about-p">My approach is physics-first. I care about designs that are manufacturable, measurable, and maintainable — not just functional on paper.</p>
+      <p class="about-p"><strong>Mechanical Engineering student at Washington University in St. Louis</strong> (McKelvey School of Engineering, Minor in Robotics &amp; Mechatronics, expected Dec 2027). GPA: 3.79 · Dean's List · HSF Scholar · Kessler Scholar.</p>
+      <p class="about-p">Completed an extended co-op at <strong>Tesla Fremont</strong> (Jan–Aug 2026) across automotive body-in-white manufacturing, humanoid training-data hardware deployment, and the Optimus Academy facility layout program.</p>
+      <p class="about-p">My approach is physics-first — designs that are manufacturable, measurable, and maintainable on a production floor, not just on paper.</p>
       <div class="about-badges">
-        <span class="about-badge">HSF Scholar</span><span class="about-badge">CSWA — SolidWorks</span>
+        <span class="about-badge">HSF Scholar</span><span class="about-badge">Kessler Scholar</span><span class="about-badge">CSWA — SolidWorks</span>
         <span class="about-badge">McKelvey School</span><span class="about-badge">Dean's List</span><span class="about-badge">U.S. Citizen</span>
       </div>
-      <a class="about-resume" href="images/resume.pdf" download="LuisGarciaR_Resume.pdf">
+      <a class="about-resume" href="images/resume.pdf" download="Luis_Garcia_Rivera_Resume.pdf">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
         Download Resume
       </a>
@@ -320,10 +296,10 @@ footer p{font-size:12px;color:var(--text3)}
 <section id="skills">
   <div class="s-hdr fade"><div class="s-chip">Capabilities</div><h2 class="s-title">Technical Skills</h2></div>
   <div class="skills-grid">
-    <div class="skill-col fade"><div class="skill-col-title">Design &amp; CAD</div><div class="skill-items"><div class="skill-item">CATIA V5</div><div class="skill-item">SolidWorks (CSWA)</div><div class="skill-item">AutoCAD</div><div class="skill-item">GD&amp;T / DFM</div><div class="skill-item">3D Printing</div><div class="skill-item">Machining (Lathe/Mill)</div></div></div>
-    <div class="skill-col fade"><div class="skill-col-title">Data &amp; Programming</div><div class="skill-items"><div class="skill-item">Python (PyTorch, NumPy, Pandas)</div><div class="skill-item">MATLAB</div><div class="skill-item">Splunk / SCADA</div><div class="skill-item">C++ / Arduino</div><div class="skill-item">OEE / RCA / DOE</div><div class="skill-item">Linux</div></div></div>
+    <div class="skill-col fade"><div class="skill-col-title">Design &amp; CAD</div><div class="skill-items"><div class="skill-item">CATIA V5 / 3DEXPERIENCE</div><div class="skill-item">SolidWorks (CSWA)</div><div class="skill-item">AutoCAD / DWG</div><div class="skill-item">GD&amp;T / DFM / DFA</div><div class="skill-item">Fixtures &amp; EOAT</div><div class="skill-item">3D Printing &amp; Machining</div></div></div>
+    <div class="skill-col fade"><div class="skill-col-title">Data &amp; Programming</div><div class="skill-items"><div class="skill-item">Python (PyTorch, NumPy, Pandas)</div><div class="skill-item">MATLAB</div><div class="skill-item">SCADA / HMI</div><div class="skill-item">C++ / Arduino</div><div class="skill-item">OEE / RCA / DOE</div><div class="skill-item">Linux</div></div></div>
     <div class="skill-col fade"><div class="skill-col-title">Simulation &amp; Analysis</div><div class="skill-items"><div class="skill-item">ANSYS (FEA / CFD)</div><div class="skill-item">Physics-Informed Neural Networks</div><div class="skill-item">ModelSpace (ATTX)</div><div class="skill-item">Thermodynamics</div><div class="skill-item">Numerical Methods</div></div></div>
-    <div class="skill-col fade"><div class="skill-col-title">Automation &amp; Controls</div><div class="skill-items"><div class="skill-item">KUKA / FANUC Robotics</div><div class="skill-item">Allen-Bradley GuardLogix PLC</div><div class="skill-item">SICK / Keyence Sensors</div><div class="skill-item">Light Curtains / Pneumatics</div><div class="skill-item">Composite Fabrication</div></div></div>
+    <div class="skill-col fade"><div class="skill-col-title">Automation &amp; Controls</div><div class="skill-items"><div class="skill-item">FANUC / KUKA Robotics</div><div class="skill-item">Teach Pendant Programming</div><div class="skill-item">Allen-Bradley GuardLogix PLC</div><div class="skill-item">SICK / Keyence Sensors</div><div class="skill-item">Light Curtains / Pneumatics</div><div class="skill-item">Composite Fabrication</div></div></div>
   </div>
 </section>
 
@@ -336,17 +312,18 @@ footer p{font-size:12px;color:var(--text3)}
         <div class="exp-right"><div class="exp-date">Jan 2026 – Aug 2026</div><div class="exp-tog">+</div></div>
       </div>
       <div class="exp-body"><div class="exp-body-inner">
-        <div class="exp-sub"><div class="exp-sub-title">Project 1 — Model 3 Body in White</div><ul class="exp-buls">
-          <li>Designed <strong>Go/No-Go calibration fixture</strong> achieving &lt;0.25mm TCP deviation correction.</li>
-          <li>Re-sequenced welding cell: confirmed <strong>10s cycle time reduction</strong> (75→65s).</li>
-          <li>Designed <strong>8 custom CATIA V5 clamps</strong> — $88K cost avoidance, 10-month lead time eliminated.</li>
-          <li>Splunk/SCADA fault querying for root cause analysis and downtime reduction.</li>
-          <li>Redesigned EOAT with pneumatic cylinders to reduce material drop rates.</li>
+        <div class="exp-sub"><div class="exp-sub-title">Body in White Manufacturing</div><ul class="exp-buls">
+          <li>Redesigned bowl-feeder EOAT locating hardware to restore full 6-DOF constraint; carried design through machining, assembly, installation, and <strong>25-part live-line validation</strong> — now running in production.</li>
+          <li>Diagnosed clamp-misalignment faults on the same line; redesigned with weld-bead clearance chamfer, machined in-house, and installed — <strong>substantially reduced faults</strong> tracked via HMI/SCADA data.</li>
+          <li>Partnered with senior engineers to cut station cycle time <strong>75s → 65s (13%)</strong> in a three-robot FANUC spot-weld sequence; reprogrammed an adjacent robot in teach mode and validated with maintenance.</li>
+          <li>Reverse-engineered an OEM three-clamp fixture system at 8 production locations into CATIA V5 models and GD&amp;T drawings — <strong>$88K cost avoidance</strong> vs. OEM replacement.</li>
         </ul></div>
-        <div class="exp-sub" style="margin-top:10px"><div class="exp-sub-title">Project 2 — Optimus Academy</div><ul class="exp-buls">
-          <li>Led facility transformation into <strong>40-station humanoid robotics training academy</strong>.</li>
-          <li>Phase 1 AutoCAD floor plan from legacy DWG files; architect coordination for permitting.</li>
-          <li>HRC cell design — 80/20 extrusion, light curtains, SICK/Keyence, GuardLogix PLCs.</li>
+        <div class="exp-sub" style="margin-top:10px"><div class="exp-sub-title">Humanoid Training Data — Modular Factory Hardware</div><ul class="exp-buls">
+          <li>Co-developed and deployed modular training-data hardware to <strong>20 mounted production stations</strong>, targeting a three-person-to-one-operator workflow.</li>
+          <li>Owned CATIA V5 design for <strong>3 adjustable camera-mount architectures</strong> and tool-free 3D-printed compute/battery mounts with swappable interfaces for extrusion, I-beams, and drilled surfaces.</li>
+        </ul></div>
+        <div class="exp-sub" style="margin-top:10px"><div class="exp-sub-title">Optimus Academy — Humanoid Robotics Training Facility</div><ul class="exp-buls">
+          <li>Owned layout, equipment-tracking, and demolition-documentation for a planned 40-station training facility — <strong>21 contractor-ready layouts</strong> with 179 equipment callouts; coordinated with architects, facilities, and controls engineers.</li>
         </ul></div>
       </div></div>
     </div>
@@ -387,7 +364,7 @@ footer p{font-size:12px;color:var(--text3)}
 </section>
 
 <section id="contact">
-  <div class="s-hdr fade"><div class="s-chip">Contact</div><h2 class="s-title">Let's Connect</h2><p class="s-sub">Open to full-time roles after August 2026 — manufacturing systems, robotics, aerospace.</p></div>
+  <div class="s-hdr fade"><div class="s-chip">Contact</div><h2 class="s-title">Let's Connect</h2><p class="s-sub">Open to full-time and co-op roles in manufacturing systems, robotics, and aerospace.</p></div>
   <div class="contact-wrap">
     <div class="c-links fade">
       <a href="mailto:garciarivera@wustl.edu" class="c-link"><div class="c-icon">✉</div><div><div class="c-lbl">Email</div><div class="c-val">garciarivera@wustl.edu</div></div></a>
@@ -405,7 +382,7 @@ footer p{font-size:12px;color:var(--text3)}
 
 <footer>
   <p>© 2026 Luis Garcia · Kansas City, MO</p>
-  <p>ME · WashU McKelvey · Tesla Fremont · HSF Scholar</p>
+  <p>ME · WashU McKelvey · HSF Scholar · Kessler Scholar</p>
 </footer>
 
 <script>
