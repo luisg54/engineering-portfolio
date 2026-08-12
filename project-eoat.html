@@ -54,6 +54,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .prop-notice{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;margin-bottom:32px}
 .prop-notice-icon{font-size:18px;flex-shrink:0}
 .prop-notice-text{font-size:13px;color:var(--text3);line-height:1.5}
+.diagram-box{width:100%;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#0a0a0b;margin-bottom:10px}
+.diagram-box img{width:100%;display:block}
+.diagram-caption{font-size:11px;color:var(--text3);text-align:center;letter-spacing:.01em;margin-bottom:8px}
 .lesson-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
 .lesson-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
 .lesson-body{font-size:13px;color:var(--text2);line-height:1.65;font-weight:300}
@@ -113,6 +116,15 @@ footer p{font-size:12px;color:var(--text3)}
       <p class="proj-p" style="margin-bottom:0">A bowl feeder was installed on the Model 3 body-in-white line to automate part feeding. The robot's end-of-arm tool had two locating features that together achieved full 6-DOF constraint on each part before placement. The bowl feeder's track architecture physically blocked one of those features — it had to be removed to allow the pick to happen at all. The remaining feature constrained rotation only. X-Y translation was now uncontrolled.</p>
     </div>
     <p class="proj-p">The robot was still completing cycles — the pick worked — but without positional constraint, part placement accuracy depended entirely on repeatability of the feed track exit position. Given cycle volume and downstream precision requirements, this was not a sustainable condition.</p>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Constraint Analysis</div>
+    <p class="proj-p">Before designing anything, I mapped what each locating feature actually controlled. The paired locators constrained all six degrees of freedom; removing one left the part free to translate in X and Y, with only rotation still held. That framing defined the requirement: the replacement feature had to recover exactly those two translational DOF without re-entering the feed track envelope.</p>
+    <div class="diagram-box">
+      <img src="images/eoat-constraint.svg" alt="Three-panel schematic comparing part constraint before the feeder installation, after the locator was removed, and after the redesign restored full six degree of freedom constraint">
+    </div>
+    <div class="diagram-caption">Constraint state across the three design phases · Schematic abstraction — not actual tooling geometry</div>
   </div>
 
   <div class="proj-section fade">
