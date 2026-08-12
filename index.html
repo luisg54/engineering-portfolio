@@ -55,6 +55,14 @@ section{padding:96px 44px}
 .impact-num{font-size:22px;font-weight:600;letter-spacing:-0.03em;color:var(--text)}
 .impact-num b{color:var(--accent)}
 .impact-lbl{font-size:10px;color:var(--text3);margin-top:3px}
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.filter-chip{font-family:inherit;font-size:12.5px;font-weight:500;color:var(--text2);background:var(--bg2);border:1px solid var(--border);padding:7px 15px;border-radius:980px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.filter-chip:hover{border-color:var(--border2);color:var(--text)}
+.filter-chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.proj-card[hidden]{display:none}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:300;background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:10px 18px;border-radius:0 0 8px 0;text-decoration:none}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 .s-chip{display:inline-block;font-size:12px;font-weight:500;color:var(--accent);background:var(--accent2);padding:4px 12px;border-radius:980px;margin-bottom:14px}
 .s-title{font-size:clamp(28px,4vw,46px);font-weight:600;letter-spacing:-0.03em;color:var(--text);line-height:1.1;margin-bottom:10px}
 .s-sub{font-size:15px;color:var(--text2);max-width:500px;line-height:1.65;font-weight:300}
@@ -157,12 +165,18 @@ footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify
 footer p{font-size:12px;color:var(--text3)}
 .fade{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fade.in{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .fade{opacity:1 !important;transform:none !important}
+}
 @media(max-width:1100px){.proj-grid{grid-template-columns:1fr}.proj-card.featured{grid-column:span 1}.skills-grid{grid-template-columns:repeat(2,1fr)}.about-wrap{grid-template-columns:1fr;gap:40px}.contact-wrap{grid-template-columns:1fr;gap:40px}nav{padding:0 24px}section{padding:72px 24px}}
 @media(max-width:640px){.nav-cta{display:none}}
 @media(max-width:640px){.nav-links:not(.open){display:none}.nav-toggle{display:flex;align-items:center;justify-content:center}.intro-bar{flex-wrap:wrap;padding:18px}.intro-actions{width:100%}.impact-strip{flex-direction:column}.impact-item{border-right:none;border-bottom:1px solid var(--border)}.impact-item:last-child{border-bottom:none}.skills-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}}
 </style>
 </head>
 <body>
+<a href="#projects" class="skip-link">Skip to content</a>
 <nav>
   <a href="#projects" class="nav-logo">Luis Garcia</a>
   <ul class="nav-links" id="navMenu">
@@ -197,9 +211,17 @@ footer p{font-size:12px;color:var(--text3)}
       <div class="impact-item"><div class="impact-num"><b>1000×</b></div><div class="impact-lbl">CFD speedup</div></div>
     </div>
   </div>
+  <div class="filter-bar" role="group" aria-label="Filter projects by discipline">
+    <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" class="filter-chip" data-filter="manufacturing" aria-pressed="false">Manufacturing</button>
+    <button type="button" class="filter-chip" data-filter="robotics" aria-pressed="false">Robotics</button>
+    <button type="button" class="filter-chip" data-filter="simulation" aria-pressed="false">Simulation</button>
+    <button type="button" class="filter-chip" data-filter="aerospace" aria-pressed="false">Aerospace</button>
+    <button type="button" class="filter-chip" data-filter="design" aria-pressed="false">Design &amp; CAD</button>
+  </div>
   <div class="proj-grid">
 
-    <a class="proj-card featured fade" href="project-biw.html">
+    <a class="proj-card featured fade" data-cat="manufacturing" href="project-biw.html">
       <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Model 3 body-in-white manufacturing" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">01 — Featured · Tesla Fremont</div>
@@ -211,7 +233,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" href="project-eoat.html">
+    <a class="proj-card fade" data-cat="manufacturing robotics" href="project-eoat.html">
       <div class="proj-cover portrait">
         <img src="images/eoat-cover.jpg" alt="Industrial robot on automotive body panel line" loading="lazy">
         <div class="proj-cover-overlay"></div>
@@ -232,7 +254,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" href="project-trios.html">
+    <a class="proj-card fade" data-cat="robotics manufacturing" href="project-trios.html">
       <div class="proj-cover" style="aspect-ratio:16/9;overflow:hidden;position:relative;background:#0a0a0b">
         <img src="images/trios-cover.svg" alt="Trios to Solos camera system diagram" style="width:100%;height:100%;object-fit:cover;display:block">
         <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,0.7) 100%)"></div>
@@ -252,7 +274,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" href="project-optimus.html">
+    <a class="proj-card fade" data-cat="robotics" href="project-optimus.html">
       <div class="proj-cover portrait"><img src="images/optimus.jpg" alt="Optimus"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">04 · Tesla Fremont</div>
@@ -263,7 +285,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" href="project-dbf.html">
+    <a class="proj-card fade" data-cat="aerospace design" href="project-dbf.html">
       <div class="proj-cover whitebg"><img src="images/dbf-cover.jpg" alt="DBF Aircraft"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
         <div class="proj-num">05 · WashU AIAA</div>
@@ -274,7 +296,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" href="project-cfd.html">
+    <a class="proj-card fade" data-cat="simulation" href="project-cfd.html">
       <div class="proj-cover portrait" style="position:relative;overflow:hidden">
         <video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
           <source src="images/cfd-sim.mp4" type="video/mp4">
@@ -291,7 +313,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" href="project-wusat.html">
+    <a class="proj-card fade" data-cat="aerospace simulation" href="project-wusat.html">
       <div class="proj-cover darkbg"><img src="images/wusat-cover.jpg" alt="WUSAT"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">07 · WashU Satellite · MOPS</div>
@@ -302,7 +324,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" href="project-cad.html">
+    <a class="proj-card fade" data-cat="design" href="project-cad.html">
       <div class="proj-cover whitebg"><img src="images/cad-assembly.jpg" alt="CAD"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
         <div class="proj-num">08 · CAD Portfolio</div>
@@ -463,6 +485,59 @@ navMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   navToggle.setAttribute('aria-expanded','false');
   navToggle.textContent='☰';
 }));
+
+const chips=document.querySelectorAll('.filter-chip');
+const cards=document.querySelectorAll('.proj-card');
+chips.forEach(chip=>chip.addEventListener('click',()=>{
+  const cat=chip.dataset.filter;
+  chips.forEach(c=>{
+    const on=c===chip;
+    c.classList.toggle('active',on);
+    c.setAttribute('aria-pressed',on);
+  });
+  cards.forEach(card=>{
+    const show=cat==='all'||(card.dataset.cat||'').split(' ').includes(cat);
+    card.hidden=!show;
+    if(show)card.classList.add('in');
+  });
+}));
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Luis Garcia Rivera",
+  "url": "https://luisg54.github.io/engineering-portfolio/",
+  "image": "https://luisg54.github.io/engineering-portfolio/images/luis-garcia.jpg",
+  "jobTitle": "Mechanical Engineer",
+  "email": "mailto:garciarivera@wustl.edu",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kansas City",
+    "addressRegion": "MO",
+    "addressCountry": "US"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Washington University in St. Louis, McKelvey School of Engineering"
+  },
+  "knowsAbout": [
+    "Manufacturing Engineering",
+    "Robotics",
+    "CATIA V5",
+    "SolidWorks",
+    "Geometric Dimensioning and Tolerancing",
+    "FANUC Robot Programming",
+    "Finite Element Analysis",
+    "Computational Fluid Dynamics",
+    "Physics-Informed Neural Networks"
+  ],
+  "sameAs": [
+    "https://linkedin.com/in/luisgr1",
+    "https://github.com/luisgriv"
+  ]
+}
 </script>
 </body>
 </html>
