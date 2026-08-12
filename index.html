@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luis Garcia Rivera — Mechanical Engineer</title>
+<title>Luis Garcia — Mechanical Engineer</title>
 <meta name="description" content="Mechanical engineering portfolio — Tesla Model 3 BIW manufacturing, humanoid training hardware, CFD/ML research. WashU McKelvey, expected Dec 2027.">
-<meta property="og:title" content="Luis Garcia Rivera — Mechanical Engineer">
+<meta property="og:title" content="Luis Garcia — Mechanical Engineer">
 <meta property="og:description" content="Production robotics, manufacturing optimization, and simulation. WashU McKelvey · Tesla Fremont. Seeking Summer 2027 internship.">
 <meta property="og:image" content="https://luisg54.github.io/engineering-portfolio/images/luis-garcia.jpg">
 <meta property="og:url" content="https://luisg54.github.io/engineering-portfolio/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://luisg54.github.io/engineering-portfolio/">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -153,14 +154,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .nav-links.open li{width:100%}
 .nav-links.open a{display:block;padding:12px 0;font-size:15px;color:var(--text2);text-decoration:none;border-bottom:1px solid var(--border)}
 .nav-links.open li:last-child a{border-bottom:none}
-.f-grp{display:flex;flex-direction:column;gap:6px}
-.f-lbl{font-size:12px;font-weight:500;color:var(--text3)}
-.f-in,.f-ta{background:var(--bg2);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:14px;font-weight:300;padding:11px 14px;border-radius:10px;outline:none;transition:border-color .2s;width:100%}
-.f-in:focus,.f-ta:focus{border-color:var(--accent)}
-.f-in::placeholder,.f-ta::placeholder{color:var(--text3)}
-.f-ta{resize:vertical;min-height:110px}
-.f-btn{background:var(--accent);color:#fff;font-family:inherit;font-size:14px;font-weight:500;padding:12px 24px;border-radius:980px;border:none;cursor:pointer;transition:opacity .2s}
-.f-btn:hover{opacity:.85}
 footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 footer p{font-size:12px;color:var(--text3)}
 .fade{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
@@ -191,13 +184,13 @@ footer p{font-size:12px;color:var(--text3)}
 <section id="projects">
   <div class="s-hdr fade">
     <div class="intro-bar">
-      <img src="images/luis-garcia.jpg" alt="Luis Garcia Rivera" class="intro-avatar" width="64" height="64">
+      <img src="images/luis-garcia.jpg" alt="Luis Garcia" class="intro-avatar" width="64" height="64" fetchpriority="high">
       <div class="intro-text">
-        <div class="intro-name">Luis Garcia Rivera</div>
+        <h1 class="intro-name">Luis Garcia</h1>
         <div class="intro-role">Mechanical Engineer · WashU McKelvey · Manufacturing &amp; Robotics</div>
       </div>
       <div class="intro-actions">
-        <a href="images/resume.pdf" class="intro-btn secondary" download="Luis_Garcia_Rivera_Resume.pdf">Resume</a>
+        <a href="images/resume.pdf" class="intro-btn secondary" download="Luis_Garcia_Resume.pdf">Resume</a>
         <a href="#contact" class="intro-btn primary">Contact</a>
       </div>
     </div>
@@ -222,7 +215,7 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="proj-grid">
 
     <a class="proj-card featured fade" data-cat="manufacturing" href="project-biw.html">
-      <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Model 3 body-in-white manufacturing" loading="lazy"><div class="proj-cover-overlay"></div></div>
+      <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Model 3 body-in-white manufacturing" fetchpriority="high"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">01 — Featured · Tesla Fremont</div>
         <div class="proj-name">Model 3 Body-in-White Manufacturing</div>
@@ -256,7 +249,7 @@ footer p{font-size:12px;color:var(--text3)}
 
     <a class="proj-card fade" data-cat="robotics manufacturing" href="project-trios.html">
       <div class="proj-cover" style="aspect-ratio:16/9;overflow:hidden;position:relative;background:#0a0a0b">
-        <img src="images/trios-cover.svg" alt="Trios to Solos camera system diagram" style="width:100%;height:100%;object-fit:cover;display:block">
+        <img src="images/trios-cover.svg" alt="Modular station-mounted camera system diagram" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
         <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,0.7) 100%)"></div>
       </div>
       <div class="proj-body">
@@ -275,7 +268,7 @@ footer p{font-size:12px;color:var(--text3)}
     </a>
 
     <a class="proj-card fade" data-cat="robotics" href="project-optimus.html">
-      <div class="proj-cover portrait"><img src="images/optimus.jpg" alt="Optimus"><div class="proj-cover-overlay"></div></div>
+      <div class="proj-cover portrait"><img src="images/optimus.jpg" alt="Optimus humanoid robot on the training facility floor" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">04 · Tesla Fremont</div>
         <div class="proj-name">Optimus Academy — Humanoid Robotics Training Facility</div>
@@ -286,7 +279,7 @@ footer p{font-size:12px;color:var(--text3)}
     </a>
 
     <a class="proj-card fade" data-cat="aerospace design" href="project-dbf.html">
-      <div class="proj-cover whitebg"><img src="images/dbf-cover.jpg" alt="DBF Aircraft"><div class="proj-cover-overlay" style="opacity:0"></div></div>
+      <div class="proj-cover whitebg"><img src="images/dbf-cover.jpg" alt="Design-Build-Fly competition aircraft with 72 inch composite wingspan" loading="lazy"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
         <div class="proj-num">05 · WashU AIAA</div>
         <div class="proj-name">Design-Build-Fly Team</div>
@@ -314,7 +307,7 @@ footer p{font-size:12px;color:var(--text3)}
     </a>
 
     <a class="proj-card fade" data-cat="aerospace simulation" href="project-wusat.html">
-      <div class="proj-cover darkbg"><img src="images/wusat-cover.jpg" alt="WUSAT"><div class="proj-cover-overlay"></div></div>
+      <div class="proj-cover darkbg"><img src="images/wusat-cover.jpg" alt="CubeSat mission operations simulation visualization" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">07 · WashU Satellite · MOPS</div>
         <div class="proj-name">CubeSat Mission Operations Engineering</div>
@@ -325,7 +318,7 @@ footer p{font-size:12px;color:var(--text3)}
     </a>
 
     <a class="proj-card fade" data-cat="design" href="project-cad.html">
-      <div class="proj-cover whitebg"><img src="images/cad-assembly.jpg" alt="CAD"><div class="proj-cover-overlay" style="opacity:0"></div></div>
+      <div class="proj-cover whitebg"><img src="images/cad-assembly.jpg" alt="SolidWorks assembly drawing from the CAD portfolio" loading="lazy"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
         <div class="proj-num">08 · CAD Portfolio</div>
         <div class="proj-name">Computer-Aided Design Projects</div>
@@ -342,7 +335,7 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="s-hdr fade"><div class="s-chip">About</div><h2 class="s-title">Who I Am</h2></div>
   <div class="about-wrap">
     <div class="about-photo fade">
-      <img src="images/luis-garcia.jpg" alt="Luis Garcia Rivera" width="260" height="320" loading="lazy">
+      <img src="images/luis-garcia.jpg" alt="Luis Garcia" width="260" height="320" loading="lazy">
       <div class="about-status"><div class="chip-dot"></div><span>Seeking Summer 2027 internship<br>Full-time from Dec 2027</span></div>
     </div>
     <div class="fade">
@@ -353,7 +346,7 @@ footer p{font-size:12px;color:var(--text3)}
         <span class="about-badge">HSF Scholar</span><span class="about-badge">Kessler Scholar</span><span class="about-badge">CSWA — SolidWorks</span>
         <span class="about-badge">McKelvey School</span><span class="about-badge">Dean's List</span><span class="about-badge">U.S. Citizen</span>
       </div>
-      <a class="about-resume" href="images/resume.pdf" download="Luis_Garcia_Rivera_Resume.pdf">
+      <a class="about-resume" href="images/resume.pdf" download="Luis_Garcia_Resume.pdf">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
         Download Resume
       </a>
@@ -444,7 +437,7 @@ footer p{font-size:12px;color:var(--text3)}
         <div class="c-panel-title">Let's work together</div>
         <p class="c-panel-p">Email is the fastest way to reach me — I respond within 24 hours. Currently recruiting for a <strong style="color:var(--text);font-weight:500">Summer 2027 internship</strong>, and available full-time after I graduate in December 2027.</p>
         <div class="c-panel-btns">
-          <a href="mailto:garciarivera@wustl.edu?subject=Opportunity%20%E2%80%94%20Luis%20Garcia%20Rivera" class="c-panel-btn">Email Me</a>
+          <a href="mailto:garciarivera@wustl.edu?subject=Opportunity%20%E2%80%94%20Luis%20Garcia" class="c-panel-btn">Email Me</a>
           <a href="https://linkedin.com/in/luisgr1" target="_blank" rel="noopener" class="c-panel-btn out">LinkedIn</a>
         </div>
       </div>
@@ -507,7 +500,7 @@ chips.forEach(chip=>chip.addEventListener('click',()=>{
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Luis Garcia Rivera",
+  "name": "Luis Garcia",
   "url": "https://luisg54.github.io/engineering-portfolio/",
   "image": "https://luisg54.github.io/engineering-portfolio/images/luis-garcia.jpg",
   "jobTitle": "Mechanical Engineer",

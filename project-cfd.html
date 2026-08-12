@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CFD + Machine Learning Research — Luis Garcia</title>
+<meta name="description" content="Physics-Informed Neural Networks in PyTorch for cardiovascular fluid dynamics: 1000x speedup over traditional CFD. Undergraduate research at WashU.">
+<link rel="canonical" href="https://luisg54.github.io/engineering-portfolio/project-cfd.html">
+<meta property="og:title" content="CFD + Machine Learning Research — Luis Garcia">
+<meta property="og:description" content="Physics-Informed Neural Networks in PyTorch for cardiovascular fluid dynamics: 1000x speedup over traditional CFD. Undergraduate research at WashU.">
+<meta property="og:image" content="https://luisg54.github.io/engineering-portfolio/images/cfd-diagram.jpg">
+<meta property="og:url" content="https://luisg54.github.io/engineering-portfolio/project-cfd.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -86,7 +97,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div class="video-badge"><div class="video-dot"></div>Live simulation</div>
   <div class="proj-hero-title">
     <div class="proj-hero-label">04 · Computational Mechanics &amp; AI Lab · WashU · May–Aug 2025</div>
-    <div class="proj-hero-name">CFD + Machine Learning —<br>Hemodynamic Simulations</div>
+    <h1 class="proj-hero-name">CFD + Machine Learning —<br>Hemodynamic Simulations</h1>
   </div>
 </div>
 
@@ -116,11 +127,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <p class="proj-p">The core architecture couples a <strong>3D fluid dynamics solver</strong> (full Navier-Stokes, finite element) with a <strong>0D cardiovascular circulation model</strong> — a lumped-parameter electrical analog of the heart and vasculature. The two solvers exchange pressure and flow data at each timestep through direct function calls, no file I/O.</p>
     <div class="img-2col">
       <div class="img-box white">
-        <img src="images/cfd-diagram.jpg" alt="3D-0D Coupling Diagram">
+        <img src="images/cfd-diagram.jpg" alt="3D-0D Coupling Diagram" fetchpriority="high">
         <div class="img-caption">Coupled 3D fluid dynamics + 0D cardiovascular circulation model — pressure/flow interface</div>
       </div>
       <div class="img-box white">
-        <img src="images/cfd-cover.jpg" alt="Hemodynamic Velocity Field">
+        <img src="images/cfd-cover.jpg" alt="Hemodynamic Velocity Field" loading="lazy">
         <div class="img-caption">Hemodynamic velocity streamlines through the cardiac chambers — CFD output</div>
       </div>
     </div>
@@ -131,7 +142,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <p class="proj-p">Findings were presented at the <strong>WashU Summer Engineering Fellowship (WUSEF) symposium</strong>. The poster covers the full pipeline: background motivation, coupled model architecture, implementation details, and validated results showing physiologically accurate valve pressure waveforms.</p>
     <div class="poster-wrap">
       <div class="poster-label">WUSEF 2025 Symposium</div>
-      <img src="images/cfd-poster.jpg" alt="WUSEF Symposium Poster">
+      <img src="images/cfd-poster.jpg" alt="WUSEF Symposium Poster" loading="lazy">
     </div>
     <div class="img-caption" style="margin-bottom:0">Coupling 3D CFD with 0D Cardiovascular Models in PyTorch · Luis Garcia · WashU Dept. of Mechanical Engineering</div>
   </div>
