@@ -138,13 +138,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div class="proj-section fade">
     <div class="metrics-row">
       <div class="big-metric"><div class="big-metric-num">10s</div><div class="big-metric-label">Cycle time reduction (75→65s)</div></div>
-      <div class="big-metric"><div class="big-metric-num">$88K</div><div class="big-metric-label">OEM cost avoidance</div></div>
+      <div class="big-metric"><div class="big-metric-num">$88K</div><div class="big-metric-label">OEM package vs in-house path</div></div>
       <div class="big-metric"><div class="big-metric-num">8</div><div class="big-metric-label">Fixture locations reverse-engineered</div></div>
       <div class="big-metric"><div class="big-metric-num">13%</div><div class="big-metric-label">Station cycle time improvement</div></div>
     </div>
     <div class="tags-row">
-      <span class="tag">CATIA V5</span><span class="tag">FANUC/KUKA</span>
-      <span class="tag">SCADA/HMI</span><span class="tag">GD&amp;T</span><span class="tag">Root Cause Analysis</span><span class="tag">Pneumatics</span>
+      <span class="tag">CATIA V5</span><span class="tag">FANUC</span>
+      <span class="tag">GD&amp;T</span><span class="tag">Root Cause Analysis</span><span class="tag">Pneumatics</span>
     </div>
   </div>
 
@@ -170,19 +170,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <ul class="proj-buls">
       <li>Full reverse engineering from physical parts — no original CAD files available</li>
       <li>All clamps modeled in CATIA V5 with GD&amp;T tolerancing for machinability</li>
-      <li>Reduced lead time from 10 months to internal machining cycle</li>
-      <li><strong>~$88,000 in OEM costs avoided</strong></li>
+      <li>Immediate production need handled with bushing replacement on existing units</li>
+      <li>Drawings enable in-house fabrication instead of an approximately <strong>$88K OEM replacement</strong> and quoted 10-month lead time — nothing was machined under this workstream</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">TCP Calibration Fixture — In Fabrication</div>
-    <p class="proj-p">Designed a Go/No-Go calibration fixture using a chamfered funnel alignment constraint and dowel-pinned bracket to passively correct tool-center-point drift during stud-welding gun swaps. Drawings released; parts currently in machining — line validation pending.</p>
+    <p class="proj-p">Designed a 4-part offline check fixture so stud-welding guns can be certified to one master setup (TCP drift up to 2.5&nbsp;mm) using datum-controlled locating, NAAMS L-blocks, and 3-way shim adjustability. Drawings released; parts in machining — not yet installed.</p>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Related Project — EOAT Locating Feature Redesign</div>
-    <p class="proj-p">After a bowl feeder installation blocked one of the EOAT's two locating features, I designed replacement hardware restoring full 6-DOF part constraint — carried through machining, assembly, installation, and a 25-part live-line validation. Tooling is now running in production with reduced fault rates tracked via HMI/SCADA data.</p>
+    <p class="proj-p">After a bowl feeder installation blocked one of the EOAT's two locating features, I designed replacement hardware restoring full 6-DOF part constraint — carried through machining, assembly, physical installation, and a 25-part live-line validation. Tooling is now running in production.</p>
     <a href="project-eoat.html" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--accent);text-decoration:none;margin-top:4px">
       View full project page
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -193,7 +193,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <div class="proj-section-label">Lessons Learned</div>
     <div class="lesson-card">
       <div class="lesson-title">Data first, hypothesis second</div>
-      <div class="lesson-body">On a production line, gut feel gets you nowhere. Every decision — cycle time changes, EOAT modifications — had to be backed by HMI/SCADA fault data and OEE metrics before anyone would approve a change. Learning to pull and interpret that data fast was as important as the mechanical design work.</div>
+      <div class="lesson-body">On a production line, gut feel gets you nowhere. Every decision — cycle time changes, EOAT modifications — had to be backed by what the line actually did: live validation, maintenance sign-off, and production stability. Learning to prove a change before asking for it was as important as the mechanical design work.</div>
     </div>
     <div class="lesson-card">
       <div class="lesson-title">Change management is a real engineering skill</div>
