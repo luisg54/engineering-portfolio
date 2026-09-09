@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EOAT Automation Cell — 4-DOF Arm Prototype — Luis Garcia</title>
+<meta name="description" content="Solo build of a 4-DOF servo arm and PLC-supervised pick cell: SolidWorks assembly of 199 components, first-principles torque budget, and a staged plan to measured validation.">
+<link rel="canonical" href="https://luisg54.github.io/engineering-portfolio/project-automation-cell.html">
+<meta property="og:title" content="EOAT Automation Cell — 4-DOF Arm Prototype — Luis Garcia">
+<meta property="og:description" content="Solo build of a 4-DOF servo arm and PLC-supervised pick cell: SolidWorks assembly of 199 components, first-principles torque budget, and a staged plan to measured validation.">
+<meta property="og:image" content="https://luisg54.github.io/engineering-portfolio/images/arm-hero.jpg">
+<meta property="og:url" content="https://luisg54.github.io/engineering-portfolio/project-automation-cell.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#000;--bg2:#0a0a0a;--bg3:#111;--bg4:#161616;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#f5f5f7;--text2:#a1a1a6;--text3:#8a8a90;--text4:#55555a;--accent:#2997ff;--accent2:rgba(41,151,255,0.1);--green:#30d158;--green2:rgba(48,209,88,0.1);--amber:#ffb300;--r:12px;}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter',BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:52px;background:rgba(0,0,0,0.85);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--text)}
+.nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+.proj-hero-title{position:absolute;bottom:0;left:0;right:0;padding:32px 60px;z-index:3;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,transparent 100%)}
+.proj-hero-label{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.proj-hero-name{font-size:clamp(22px,3vw,40px);font-weight:600;color:#fff;letter-spacing:-.03em;line-height:1.1}
+.status-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,179,0,0.12);border:1px solid rgba(255,179,0,0.25);border-radius:980px;padding:5px 14px;font-size:11px;font-weight:500;color:var(--amber);}
+.status-dot{width:5px;height:5px;background:var(--amber);border-radius:50%;box-shadow:0 0 6px rgba(255,179,0,.8)}
+.proj-content{max-width:960px;margin:0 auto;padding:64px 44px 96px}
+.proj-section{margin-bottom:56px}
+.proj-section-label{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.proj-section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.metrics-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.big-metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;min-width:140px}
+.big-metric-num{font-size:26px;font-weight:600;color:var(--accent);letter-spacing:-.03em;line-height:1}
+.big-metric-label{font-size:12px;color:var(--text3);margin-top:4px}
+.tags-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
+.tag{font-size:11px;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:5px 12px;border-radius:6px}
+.proj-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300}
+.proj-p strong{color:var(--text);font-weight:500}
+.proj-buls{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.proj-buls li{font-size:14px;color:var(--text2);line-height:1.7;padding-left:18px;position:relative;font-weight:300}
+.proj-buls li::before{content:'–';position:absolute;left:0;color:var(--text4)}
+.proj-buls li strong{color:var(--text);font-weight:500}
+.problem-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid #ff453a;border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.problem-box-label{font-size:10px;font-weight:600;color:#ff453a;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.solution-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.solution-box-label{font-size:10px;font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.spec-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px}
+.spec-card-title{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.spec-card-items{display:flex;flex-direction:column;gap:6px}
+.spec-card-item{font-size:13px;color:var(--text2);font-weight:300}
+.prop-notice{display:flex;align-items:flex-start;gap:12px;background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--r);padding:16px 20px;margin-bottom:32px}
+.prop-notice-icon{font-size:16px;flex-shrink:0;line-height:1.5}
+.prop-notice-text{font-size:13px;color:var(--text3);line-height:1.6}
+.prop-notice-text strong{color:var(--text2);font-weight:500}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.shot{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.shot img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.shot-cap{padding:12px 16px 14px;font-size:12px;color:var(--text3);line-height:1.55;border-top:1px solid var(--border)}
+.shot-cap b{color:var(--text2);font-weight:500}
+.phase-table{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:20px;font-size:13px}
+.phase-table th{background:var(--bg3);color:var(--text3);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:left;padding:12px 16px;border-bottom:1px solid var(--border)}
+.phase-table td{padding:14px 16px;border-bottom:1px solid var(--border);color:var(--text2);font-weight:300;vertical-align:top;background:var(--bg2)}
+.phase-table tr:last-child td{border-bottom:none}
+.phase-table td b{color:var(--text);font-weight:500}
+.st{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:980px;white-space:nowrap}
+.st.now{background:var(--accent2);color:var(--accent);border:1px solid rgba(41,151,255,.25)}
+.st.next{background:var(--bg3);color:var(--text3);border:1px solid var(--border2)}
+.lesson-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
+.lesson-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.lesson-body{font-size:13px;color:var(--text2);line-height:1.65;font-weight:300}
+.repo-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--accent);text-decoration:none;background:var(--accent2);border:1px solid rgba(41,151,255,.25);padding:10px 18px;border-radius:980px;transition:background .2s}
+.repo-link:hover{background:rgba(41,151,255,.18)}
+.proj-nav-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:32px;margin-top:48px}
+.proj-nav-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;transition:color .2s}
+.proj-nav-link:hover{color:var(--accent)}
+footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between}
+footer p{font-size:12px;color:var(--text3)}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .fade{opacity:1 !important;transform:none !important}
+}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media(max-width:768px){nav{padding:0 20px}.proj-hero-title{padding:20px}.proj-hero img{height:330px;max-height:none !important;object-position:center 32% !important}.proj-content{padding:40px 20px 72px}.spec-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.phase-table{font-size:12px}.phase-table td,.phase-table th{padding:10px 12px}.phase-table thead{display:none}.phase-table tr{display:block;border-bottom:1px solid var(--border)}.phase-table tr:last-child{border-bottom:none}.phase-table td{display:block;border-bottom:none;padding:4px 14px}.phase-table td:first-child{padding-top:14px}.phase-table td:last-child{padding-bottom:14px}footer{flex-direction:column;gap:8px}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>All Projects</a>
+  <a href="index.html" class="nav-logo">Luis Garcia</a>
+  <a href="index.html#contact" class="nav-cta">Contact</a>
+</nav>
+
+<div class="proj-hero" style="margin-top:52px;position:relative;overflow:hidden;background:#0a0a0a">
+  <img src="images/arm-hero.jpg" alt="Isometric SolidWorks render of the 4-DOF servo arm prototype on its bench base plate" style="width:100%;max-height:520px;object-fit:cover;object-position:center 45%;display:block" fetchpriority="high">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,0.92) 100%)"></div>
+  <div style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:980px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:.04em;backdrop-filter:blur(8px)">SolidWorks 2026 · Revision B assembly</div>
+  <div class="proj-hero-title">
+    <div class="proj-hero-label">03 · Personal Project · Jun 2026 – Present</div>
+    <h1 class="proj-hero-name">EOAT Automation Cell — 4-DOF Arm Prototype</h1>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+      <div class="status-pill"><div class="status-dot"></div>In progress · Design phase</div>
+    </div>
+  </div>
+</div>
+
+<div class="proj-content">
+
+  <div class="proj-section fade">
+    <div class="metrics-row">
+      <div class="big-metric"><div class="big-metric-num">4</div><div class="big-metric-label">Actuated DOF — yaw, shoulder, elbow, grip</div></div>
+      <div class="big-metric"><div class="big-metric-num">199</div><div class="big-metric-label">Components in the native assembly</div></div>
+      <div class="big-metric"><div class="big-metric-num">15</div><div class="big-metric-label">Printed part types, 21 instances</div></div>
+      <div class="big-metric"><div class="big-metric-num">2.2×</div><div class="big-metric-label">Shoulder torque margin (CAD estimate)</div></div>
+    </div>
+    <div class="tags-row">
+      <span class="tag">SolidWorks 2026</span><span class="tag">SolidWorks API / Python</span>
+      <span class="tag">Design for 3D Printing</span><span class="tag">Tolerance &amp; Fit</span>
+      <span class="tag">Servo Sizing</span><span class="tag">Allen-Bradley Micro820</span>
+      <span class="tag">Arduino / C++</span><span class="tag">Test Planning</span>
+    </div>
+    <div class="prop-notice">
+      <div class="prop-notice-icon">⏳</div>
+      <div class="prop-notice-text"><strong>Nothing on this page has been built or measured yet.</strong> The arm exists as a fully constrained native SolidWorks assembly with working joints; every number below is a CAD-derived estimate or a design target, and is labelled as such. The Results table stays empty until it is filled from physical test data.</div>
+    </div>
+    <a class="repo-link" href="https://github.com/luisg54/eoat-automation-cell" target="_blank" rel="noopener">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      View the repo on GitHub
+    </a>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Why I'm Building It</div>
+    <div class="problem-box">
+      <div class="problem-box-label">The gap I wanted to close</div>
+      <p class="proj-p" style="margin-bottom:0">On a production floor I worked on tooling that a robot and a PLC already drove — I owned the mechanical end of the problem, not the sequencing, sensing, or fault handling around it. This project is the deliberate inverse: a cell small enough that I own every layer of it, from the locating scheme on the part to the state machine that decides when the gripper is allowed to close.</p>
+    </div>
+    <p class="proj-p">The whole cell is built around one pick object — an <strong>8 × 22 × 7 mm 608ZZ bearing</strong> — located by an ID pin and rest at the pickup pose and a different datum scheme at the destination. Fixing the part first, then designing everything else to serve it, is the same order of operations that industrial fixturing follows, and it is what keeps the scope from drifting.</p>
+    <p class="proj-p">The single statement that decides whether this project worked:</p>
+    <div class="solution-box">
+      <div class="solution-box-label">Success criterion</div>
+      <p class="proj-p" style="margin-bottom:0">The system shall autonomously detect, pick, transfer, and place a part for <strong>50 consecutive cycles with at least 98% successful completion</strong>, documented fault handling, and measured positional repeatability.</p>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Current CAD — Revision B</div>
+    <p class="proj-p">The prototype is a <strong>4-DOF articulated arm</strong>: base yaw, shoulder pitch, elbow pitch, and a single-finger gripper, driven by three SG90 micro servos and one MG996R at the shoulder. It is modelled natively in SolidWorks 2026 as editable parts and a real mated assembly — not a static arrangement of meshes — so joint travel can actually be exercised in CAD.</p>
+
+    <div class="gallery">
+      <figure class="shot">
+        <img src="images/arm-cover.jpg" alt="Isometric view of the arm assembly showing the base plate, yaw platform, bearing-supported shoulder and elbow, and gripper" loading="lazy">
+        <figcaption class="shot-cap"><b>Isometric — full assembly.</b> Base pedestal and bolt-down plate, yaw platform on a stacked 608ZZ pair, and the removable servo cassette underneath.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/arm-front.jpg" alt="Front orthographic view of the arm in the home pose with shoulder and elbow bearing cheeks visible" loading="lazy">
+        <figcaption class="shot-cap"><b>Front — home pose.</b> Shoulder and elbow each run on a steel dowel through a printed adapter into a 608ZZ, so the servo horn carries torque and the bearing carries the radial load.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/arm-right.jpg" alt="Right orthographic view of the arm showing the servo stack, standoffs and TPU gripper pads" loading="lazy">
+        <figcaption class="shot-cap"><b>Right — joint stack.</b> M3 standoffs set the cheek spacing; bearing keepers provide axial retention; the jaw pads are screw-captured TPU rather than glued.</figcaption>
+      </figure>
+      <figure class="shot" style="display:flex;flex-direction:column;justify-content:center;padding:24px 22px">
+        <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px">Assembly at a glance</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:13px;color:var(--text2);font-weight:300">
+          <div><b style="color:var(--text);font-weight:500">199</b> total components</div>
+          <div><b style="color:var(--text);font-weight:500">15</b> printed part types · 21 instances</div>
+          <div><b style="color:var(--text);font-weight:500">41</b> explicitly modelled fastener stacks</div>
+          <div><b style="color:var(--text);font-weight:500">98</b> fully constrained sketches across 16 files</div>
+          <div><b style="color:var(--text);font-weight:500">518 g</b> modelled mass at solid-print density</div>
+        </div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text3);line-height:1.55">Parts, mates and fastener stacks were built and audited through the SolidWorks API with Python, so the counts above come out of the model rather than out of a spreadsheet.</div>
+      </figure>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Design Decisions</div>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-card-title">Joint Architecture</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">Servo horn takes torque only</div>
+          <div class="spec-card-item">608ZZ bearings take radial load</div>
+          <div class="spec-card-item">6.35 × 25.4 mm steel dowels as pivots</div>
+          <div class="spec-card-item">Printed dowel-to-8 mm-bore adapters</div>
+          <div class="spec-card-item">Screwed keepers for axial retention</div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-title">Serviceability</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">Removable yaw servo cassette</div>
+          <div class="spec-card-item">Positive yaw crossbolt on the D-collar</div>
+          <div class="spec-card-item">Tool access checked per fastener</div>
+          <div class="spec-card-item">Screw-captured TPU jaw pads</div>
+          <div class="spec-card-item">M2.5 at the shoulder ears — larger nut corners foul the servo case</div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-title">Sizing Basis</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">20 g payload target (provisional)</div>
+          <div class="spec-card-item">Solid-density mass bound, 1.25 load factor</div>
+          <div class="spec-card-item">Budget = ⅓ of reference stall torque</div>
+          <div class="spec-card-item">Shoulder margin 2.15× · elbow 1.44×</div>
+          <div class="spec-card-item">Reference ratings, not measured torque</div>
+        </div>
+      </div>
+    </div>
+    <ul class="proj-buls">
+      <li><strong>The bearing does the work the horn shouldn't.</strong> A servo output shaft is not a structural bearing. Every pitch joint pairs the horn with a dowel running in a 608ZZ, so the horn only ever sees torque — the reason the joints grew cheeks, standoffs and keepers instead of bolting a link straight to a horn.</li>
+      <li><strong>A 3:1 geared SG90 shoulder was evaluated and rejected</strong> — restricted travel and too little load margin. The MG996R was chosen on travel and margin, and adds an estimated $15–30 to the build.</li>
+      <li><strong>Joint travel was verified in the native model, not eyeballed.</strong> A separate configuration suppresses the command mates and enforces angle limits: yaw ±60°, shoulder −30° to +80°, elbow −100° to −5°, grip 0–25°. Nine poses and twelve transfer samples solved with zero solid overlaps.</li>
+      <li><strong>Those checks are discrete samples, not a swept proof.</strong> Continuous sweep, cable routing, and external fixtures are still excluded — which is why the first pickup pose I tried (−40°/−50°) turned out to clip the yaw platform and had to be revised to −30°/−60°.</li>
+      <li><strong>Structure is PETG, jaw pads are TPU.</strong> Printed at the WashU makerspace; a dedicated fit coupon is exported alongside the parts so the dowel and bearing fits get trialled before a full set is printed.</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Open Problem — Horn Interface</div>
+    <div class="problem-box">
+      <div class="problem-box-label">Fabrication hold · caught in CAD, before ordering</div>
+      <p class="proj-p" style="margin-bottom:0">The shoulder is modelled against a nominal 26 mm horn plate on a 20 mm bolt circle. The metal disc horn actually sold for this servo class is 20 mm OD on a 14 mm bolt circle, 4.5 mm thick — it will not drop into the modelled pattern, and substituting it would also shift the axial stack by about 2.5 mm. The SG90 horns need the same treatment: the model assumes an 8 mm hole radius and M2 through-fasteners, the supplier drawing shows 8.3 mm and roughly 1 mm pilots.</p>
+    </div>
+    <p class="proj-p">Every horn-connected part is <strong>held from release</strong> until a real horn is selected and measured, the link pattern, washer relief and screw engagement are updated, and the affected mates are re-solved. Parts that do not touch a horn are unaffected. This is the cheapest possible place to find that mismatch — the alternative is finding it with a printed part and a bag of the wrong screws.</p>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Plan to Validation</div>
+    <p class="proj-p">Four phases, each independently demonstrable. No phase starts before the previous one has measured results — the failure mode for a project like this is fragmenting it into five half-finished subsystems.</p>
+    <table class="phase-table">
+      <thead><tr><th>Phase</th><th>Goal</th><th>Demonstrable output</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>1 — Mechanical proof</b></td>
+          <td>Printed arm, one pick object, defined pickup and place poses, repeatable hard stops</td>
+          <td>Manual cycle with basic repeatability data</td>
+          <td><span class="st now">CAD in progress</span></td>
+        </tr>
+        <tr>
+          <td><b>2 — Motion &amp; sensing</b></td>
+          <td>Arduino motion control, home switch, part-present sensor, end-position confirmation</td>
+          <td>Repeatable automatic pick-and-place cycle</td>
+          <td><span class="st next">Not started</span></td>
+        </tr>
+        <tr>
+          <td><b>3 — PLC supervisory control</b></td>
+          <td>Micro820 owns cycle start, permissives, state sequence, faults, reset and the handshake; the motion controller owns low-level movement</td>
+          <td>Fault injected, detected, reported, recovered</td>
+          <td><span class="st next">Not started</span></td>
+        </tr>
+        <tr>
+          <td><b>4 — Validation</b></td>
+          <td>Repeatability, pick rate, cycle time, fault recovery, payload, gripper retention, sensor robustness</td>
+          <td>Completed test report</td>
+          <td><span class="st next">Not started</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="proj-p">The PLC-to-motion-controller split is deliberate. Letting the PLC supervise a separate motion controller over a simple I/O handshake is how a real cell is partitioned, and it is the part of automation I had the least ownership of on the floor.</p>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Results</div>
+    <p class="proj-p">Empty until measured. This table gets filled from the test plan, not from expectations.</p>
+    <table class="phase-table">
+      <thead><tr><th>Metric</th><th>Target</th><th>Measured</th></tr></thead>
+      <tbody>
+        <tr><td><b>Successful pick rate</b></td><td>≥ 98% over 50 cycles</td><td style="color:var(--text4)">—</td></tr>
+        <tr><td><b>Positional repeatability</b></td><td>Set after Phase 1</td><td style="color:var(--text4)">—</td></tr>
+        <tr><td><b>Cycle time</b></td><td>Set after Phase 2</td><td style="color:var(--text4)">—</td></tr>
+        <tr><td><b>Payload</b></td><td>≥ 20 g</td><td style="color:var(--text4)">—</td></tr>
+        <tr><td><b>Gripper retention through transfer</b></td><td>No drops across the validation run</td><td style="color:var(--text4)">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">What I've Learned So Far</div>
+    <div class="lesson-card">
+      <div class="lesson-title">Lock the part before you design the machine</div>
+      <div class="lesson-body">Choosing the 608ZZ first — and writing down how it gets located at both ends of the cycle — is what made every later decision decidable. Jaw geometry, payload, Z clearance over the pin, and the sensor choice all fall out of that one commitment. The scope only started converging once the part stopped being a variable.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">A model that can't move hasn't been checked</div>
+      <div class="lesson-body">Building real mates instead of a fixed arrangement is slower, and it is what caught the pickup pose colliding with the yaw platform. Driving the joints through named angle dimensions and then independently comparing all 199 component transforms against the kinematics turns "it looks fine" into a check that either passes or does not.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">Separate what you assumed from what you measured</div>
+      <div class="lesson-body">The load report labels every input: CAD solid volume, manufacturer reference mass, assumed friction coefficient. The torque margins are real conclusions from those inputs, but they are not test data, and writing them down that way keeps me from quoting a 2.15× margin as if a servo had actually been loaded. The same discipline is why the Results table above is still blank.</div>
+    </div>
+  </div>
+
+  <div class="proj-nav-row fade">
+    <a href="project-optimus.html" class="proj-nav-link"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Optimus Academy</a>
+    <a href="index.html#projects" class="proj-nav-link">All projects</a>
+    <a href="project-dbf.html" class="proj-nav-link">Design-Build-Fly<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Luis Garcia · Kansas City, MO</p>
+  <p>ME · WashU McKelvey · HSF Scholar</p>
+</footer>
+<script>const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const s=Array.from(e.target.parentElement?.children||[]).filter(c=>c.classList.contains('fade'));const i=Math.min(s.indexOf(e.target),4);setTimeout(()=>e.target.classList.add('in'),i*80);obs.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('in');}else{obs.observe(el);}});</script>
+</body>
+</html>

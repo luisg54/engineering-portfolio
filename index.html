@@ -21,7 +21,7 @@
 :root{
   --bg:#000;--bg2:#0a0a0a;--bg3:#111;--bg4:#161616;
   --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --text:#f5f5f7;--text2:#a1a1a6;--text3:#6e6e73;--text4:#3d3d40;
+  --text:#f5f5f7;--text2:#a1a1a6;--text3:#8a8a90;--text4:#55555a;
   --accent:#2997ff;--accent2:rgba(41,151,255,0.1);
   --green:#30d158;--green2:rgba(48,209,88,0.1);
   --r:12px;
@@ -55,7 +55,7 @@ section{padding:96px 44px}
 .impact-item:last-child{border-right:none}
 .impact-num{font-size:22px;font-weight:600;letter-spacing:-0.03em;color:var(--text)}
 .impact-num b{color:var(--accent)}
-.impact-lbl{font-size:10px;color:var(--text3);margin-top:3px}
+.impact-lbl{font-size:11px;color:var(--text3);margin-top:3px}
 .filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
 .filter-chip{font-family:inherit;font-size:12.5px;font-weight:500;color:var(--text2);background:var(--bg2);border:1px solid var(--border);padding:7px 15px;border-radius:980px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .filter-chip:hover{border-color:var(--border2);color:var(--text)}
@@ -94,6 +94,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .tag{font-size:11px;color:var(--text2);background:var(--bg4);border:1px solid var(--border);padding:4px 10px;border-radius:6px}
 .proj-cta{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--accent)}
+.proj-links{display:flex;flex-direction:column;gap:8px;margin-top:2px}
+.proj-link{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12.5px;font-weight:500;color:var(--accent);background:var(--accent2);border:1px solid rgba(41,151,255,.22);padding:12px 14px;border-radius:8px;text-decoration:none;transition:background .2s,border-color .2s}
+.proj-link:hover{background:rgba(41,151,255,.18);border-color:rgba(41,151,255,.4)}
+.proj-link svg{flex-shrink:0;transition:transform .2s}
+.proj-link:hover svg{transform:translateX(3px)}
+.proj-card.hub:hover .proj-cover img{transform:none}
+.proj-card.hub:hover{transform:none;border-color:var(--border);background:var(--bg2)}
+.metric.amber{background:rgba(255,179,0,.1);border-color:rgba(255,179,0,.22);color:#ffb300}
 .proj-cta svg{transition:transform .2s}
 .proj-card:hover .proj-cta svg{transform:translateX(3px)}
 #about{background:var(--bg2)}
@@ -116,7 +124,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 #experience{background:var(--bg2)}
 .exp-list{display:flex;flex-direction:column;gap:10px;max-width:880px}
 .exp-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
-.exp-hdr{padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;transition:background .2s}
+.exp-hdr{width:100%;padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;transition:background .2s;background:none;border:0;font-family:inherit;text-align:left;color:inherit}
+.exp-main{display:block}
+.exp-role,.exp-org,.exp-date{display:block}
 .exp-hdr:hover{background:rgba(255,255,255,.02)}
 .exp-role{font-size:16px;font-weight:600;color:var(--text);letter-spacing:-.02em;margin-bottom:3px}
 .exp-org{font-size:13px;font-weight:500;color:var(--accent)}
@@ -139,7 +149,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .c-link{display:flex;align-items:center;gap:16px;padding:18px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);text-decoration:none;transition:border-color .2s,background .2s}
 .c-link:hover{border-color:var(--accent);background:rgba(41,151,255,.04)}
 .c-icon{width:38px;height:38px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.c-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
+.c-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
 .c-val{font-size:14px;color:var(--text)}
 .c-form{display:flex;flex-direction:column;gap:14px;justify-content:center}
 .c-panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px}
@@ -214,66 +224,56 @@ footer p{font-size:12px;color:var(--text3)}
   </div>
   <div class="proj-grid">
 
-    <a class="proj-card featured fade" data-cat="manufacturing" href="project-biw.html">
+    <article class="proj-card hub featured fade" data-cat="manufacturing robotics">
       <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Model 3 body-in-white manufacturing" fetchpriority="high"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
-        <div class="proj-num">01 — Featured · Tesla Fremont</div>
-        <div class="proj-name">Model 3 Body-in-White Manufacturing</div>
-        <p class="proj-desc">Welding cell cycle-time optimization, OEM fixture reverse-engineering, and EOAT redesign on the live Model 3 body-in-white line — installed and validated in production.</p>
-        <div class="proj-metrics"><span class="metric">↓ 10s cycle time</span><span class="metric">$88K OEM path</span><span class="metric">8 clamps reverse-engineered</span></div>
-        <div class="proj-tags"><span class="tag">CATIA V5</span><span class="tag">FANUC</span><span class="tag">GD&amp;T</span><span class="tag">EOAT</span></div>
-        <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </div>
-    </a>
-
-    <a class="proj-card fade" data-cat="manufacturing robotics" href="project-eoat.html">
-      <div class="proj-cover portrait">
-        <img src="images/eoat-cover.jpg" alt="Industrial robot on automotive body panel line" loading="lazy">
-        <div class="proj-cover-overlay"></div>
-      </div>
-      <div class="proj-body">
-        <div class="proj-num">02 · Tesla Fremont</div>
-        <div class="proj-name">Bowl Feeder EOAT Locating Feature — Model 3 BIW</div>
-        <p class="proj-desc">Restored full 6-DOF part constraint on the Model 3 line after bowl feeder installation blocked a critical locator. Designed, machined, assembled, and physically installed custom hardware — 25-part live-line validation with no issues; running in production.</p>
-        <div class="proj-metrics">
-          <span class="metric">6-DOF restored</span>
-          <span class="metric">25-part validation</span>
-          <span class="metric">In production</span>
+        <div class="proj-num">01 — Featured · Tesla Fremont · Jan – Aug 2026</div>
+        <h3 class="proj-name">Model 3 Body-in-White Manufacturing</h3>
+        <p class="proj-desc">Welding cell cycle-time optimization, OEM fixture reverse-engineering, and EOAT locating hardware on the live Model 3 body-in-white line — designed, machined, installed, and validated in production.</p>
+        <div class="proj-metrics"><span class="metric">↓ 10s cycle time</span><span class="metric">$88K OEM path</span><span class="metric">6-DOF restored</span><span class="metric">In production</span></div>
+        <div class="proj-tags"><span class="tag">CATIA V5</span><span class="tag">FANUC</span><span class="tag">NAAMS</span><span class="tag">GD&amp;T</span><span class="tag">17-4 PH S.S.</span><span class="tag">In-House Machining</span></div>
+        <div class="proj-links">
+          <a class="proj-link" href="project-biw.html">Cycle time, clamps &amp; fixture reverse-engineering<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a class="proj-link" href="project-eoat.html">Bowl feeder EOAT locating feature<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-        <div class="proj-tags">
-          <span class="tag">CATIA V5</span><span class="tag">NAAMS</span><span class="tag">DFM</span><span class="tag">GD&amp;T</span><span class="tag">17-4 PH S.S.</span>
-        </div>
-        <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
-    </a>
+    </article>
 
-    <a class="proj-card fade" data-cat="robotics manufacturing" href="project-trios.html">
-      <div class="proj-cover" style="aspect-ratio:16/9;overflow:hidden;position:relative;background:#0a0a0b">
-        <img src="images/trios-cover.svg" alt="Modular station-mounted camera system diagram" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,0.7) 100%)"></div>
-      </div>
+    <article class="proj-card hub fade" data-cat="robotics manufacturing">
+      <div class="proj-cover portrait"><img src="images/optimus.jpg" alt="Optimus humanoid robot on the training facility floor" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
-        <div class="proj-num">03 · Tesla Fremont</div>
-        <div class="proj-name">Modular Camera System for Humanoid Training Data</div>
-        <p class="proj-desc">Co-developed and deployed station-mounted training-data hardware across 20 mounted Fremont stations — modular camera pods, tool-free mounts, and standardized cabling, targeting a 3-person-to-1-operator workflow.</p>
+        <div class="proj-num">02 · Tesla Fremont · Jan – Aug 2026</div>
+        <h3 class="proj-name">Optimus Program — Training Hardware &amp; Facility</h3>
+        <p class="proj-desc">Two efforts on the humanoid program: modular station-mounted camera hardware deployed across 20 Fremont stations, and the layout and equipment package for a planned 40-station training facility.</p>
         <div class="proj-metrics">
           <span class="metric">20 stations mounted</span>
           <span class="metric">3→1 operator target</span>
+          <span class="metric">40-station facility</span>
         </div>
         <div class="proj-tags">
-          <span class="tag">CATIA V5</span><span class="tag">Modular Design</span><span class="tag">Camera Mounts</span><span class="tag">Cable Management</span><span class="tag">80/20</span>
+          <span class="tag">CATIA V5</span><span class="tag">AutoCAD</span><span class="tag">Modular Design</span><span class="tag">Cable Management</span><span class="tag">80/20</span><span class="tag">Facility Design</span>
         </div>
-        <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="proj-links">
+          <a class="proj-link" href="project-trios.html">Modular camera system for training data<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a class="proj-link" href="project-optimus.html">Optimus Academy facility layout<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
       </div>
-    </a>
+    </article>
 
-    <a class="proj-card fade" data-cat="robotics" href="project-optimus.html">
-      <div class="proj-cover portrait"><img src="images/optimus.jpg" alt="Optimus humanoid robot on the training facility floor" loading="lazy"><div class="proj-cover-overlay"></div></div>
+    <a class="proj-card fade" data-cat="robotics design manufacturing" href="project-automation-cell.html">
+      <div class="proj-cover portrait"><img src="images/arm-cover.jpg" alt="Isometric SolidWorks render of the 4-DOF servo arm prototype on its bench base plate" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
-        <div class="proj-num">04 · Tesla Fremont</div>
-        <div class="proj-name">Optimus Academy — Humanoid Robotics Training Facility</div>
-        <p class="proj-desc">40-station humanoid robot training facility — AutoCAD layout, equipment tracking, station-ID tagging, and contractor-ready demo documentation.</p>
-        <div class="proj-tags"><span class="tag">AutoCAD</span><span class="tag">Equipment Tracking</span><span class="tag">Field Handoff</span><span class="tag">Facility Design</span></div>
+        <div class="proj-num">03 · Personal Project · Jun 2026 – Present</div>
+        <h3 class="proj-name">EOAT Automation Cell — 4-DOF Arm Prototype</h3>
+        <p class="proj-desc">Solo-designed pick cell: a 4-DOF servo arm in SolidWorks with bearing-supported joints, first-principles torque sizing, and a staged plan to PLC-supervised control and measured validation. Currently in the design phase — nothing built or measured yet.</p>
+        <div class="proj-metrics">
+          <span class="metric amber">Design phase</span>
+          <span class="metric">199-component assembly</span>
+          <span class="metric">4 actuated DOF</span>
+        </div>
+        <div class="proj-tags">
+          <span class="tag">SolidWorks 2026</span><span class="tag">SolidWorks API</span><span class="tag">3D Printing</span><span class="tag">Servo Sizing</span><span class="tag">Micro820 PLC</span>
+        </div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
@@ -281,8 +281,8 @@ footer p{font-size:12px;color:var(--text3)}
     <a class="proj-card fade" data-cat="aerospace design" href="project-dbf.html">
       <div class="proj-cover whitebg"><img src="images/dbf-cover.jpg" alt="Design-Build-Fly competition aircraft with 72 inch composite wingspan" loading="lazy"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
-        <div class="proj-num">05 · WashU AIAA</div>
-        <div class="proj-name">Design-Build-Fly Team</div>
+        <div class="proj-num">04 · WashU AIAA · Aug 2024 – Present</div>
+        <h3 class="proj-name">Design-Build-Fly Team</h3>
         <p class="proj-desc">National competition aircraft — composite airframe structures, ANSYS FEA, full engineering drawing package. 72” wingspan.</p>
         <div class="proj-tags"><span class="tag">SolidWorks</span><span class="tag">ANSYS FEA</span><span class="tag">Composite Fabrication</span></div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
@@ -291,14 +291,14 @@ footer p{font-size:12px;color:var(--text3)}
 
     <a class="proj-card fade" data-cat="simulation" href="project-cfd.html">
       <div class="proj-cover portrait" style="position:relative;overflow:hidden">
-        <video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
+        <video id="cfdVideo" autoplay loop muted playsinline poster="images/cfd-cover.jpg" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
           <source src="images/cfd-sim.mp4" type="video/mp4">
         </video>
         <div class="proj-cover-overlay"></div>
       </div>
       <div class="proj-body">
-        <div class="proj-num">06 · Computational Mechanics &amp; AI Lab</div>
-        <div class="proj-name">CFD + Machine Learning Research</div>
+        <div class="proj-num">05 · Computational Mechanics &amp; AI Lab · May – Aug 2025</div>
+        <h3 class="proj-name">CFD + Machine Learning Research</h3>
         <p class="proj-desc">Physics-Informed Neural Networks in PyTorch for cardiovascular fluid dynamics. 1000× speedup over traditional CFD. Symposium presentation.</p>
         <div class="proj-metrics"><span class="metric">1000× CFD speedup</span></div>
         <div class="proj-tags"><span class="tag">PyTorch</span><span class="tag">PINNs</span><span class="tag">CFD</span></div>
@@ -309,13 +309,14 @@ footer p{font-size:12px;color:var(--text3)}
     <a class="proj-card fade" data-cat="design" href="project-cad.html">
       <div class="proj-cover whitebg"><img src="images/cad-assembly.jpg" alt="SolidWorks assembly drawing from the CAD portfolio" loading="lazy"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
-        <div class="proj-num">07 · CAD Portfolio</div>
-        <div class="proj-name">Computer-Aided Design Projects</div>
+        <div class="proj-num">06 · CAD Portfolio · SolidWorks &amp; GD&amp;T</div>
+        <h3 class="proj-name">Computer-Aided Design Projects</h3>
         <p class="proj-desc">Full assembly, sub-assembly, detail drawings and exploded views per ASME Y14.5 GD&amp;T. Foosball table full mechanical design.</p>
         <div class="proj-tags"><span class="tag">SolidWorks</span><span class="tag">GD&amp;T</span><span class="tag">Technical Drawings</span></div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
+
 
   </div>
 </section>
@@ -328,8 +329,9 @@ footer p{font-size:12px;color:var(--text3)}
       <div class="about-status"><div class="chip-dot"></div><span>Seeking Summer 2027 internship<br>Full-time from Dec 2027</span></div>
     </div>
     <div class="fade">
-      <p class="about-p"><strong>Mechanical Engineering student at Washington University in St. Louis</strong> (McKelvey School of Engineering, Minor in Robotics &amp; Mechatronics, expected Dec 2027). GPA: 3.79 · Dean's List · HSF Scholar · Kessler Scholar.</p>
+      <p class="about-p"><strong>Mechanical Engineering student at Washington University in St. Louis</strong> (McKelvey School of Engineering, expected Dec 2027). GPA: 3.79 · Dean's List · HSF Scholar · Kessler Scholar.</p>
       <p class="about-p">Completed an extended co-op at <strong>Tesla Fremont</strong> (Jan–Aug 2026) across Model 3 body-in-white manufacturing, humanoid training-data hardware deployment, and the Optimus Academy facility layout program.</p>
+      <p class="about-p">Currently building an <strong><a href="project-automation-cell.html" style="color:var(--accent);text-decoration:none">automated pick cell</a></strong> end to end on my own — 4-DOF arm design, motion control, and PLC supervisory logic — to own the layers of an automation cell I didn't own on the floor.</p>
       <p class="about-p">My approach is physics-first — designs that are manufacturable, measurable, and maintainable on a production floor, not just on paper.</p>
       <div class="about-badges">
         <span class="about-badge">HSF Scholar</span><span class="about-badge">Kessler Scholar</span><span class="about-badge">CSWA — SolidWorks</span>
@@ -357,11 +359,11 @@ footer p{font-size:12px;color:var(--text3)}
   <div class="s-hdr fade"><div class="s-chip">Experience</div><h2 class="s-title">Work History</h2><p class="s-sub">Expanded detail on select roles — full timeline on my <a href="images/resume.pdf" style="color:var(--accent);text-decoration:none">resume</a>.</p></div>
   <div class="exp-list">
     <div class="exp-card open fade" id="e0">
-      <div class="exp-hdr" onclick="toggleExp('e0')">
-        <div><div class="exp-role">Manufacturing Equipment Engineer Co-Op</div><div class="exp-org">Tesla · Fremont, CA</div></div>
-        <div class="exp-right"><div class="exp-date">Jan 2026 – Aug 2026</div><div class="exp-tog">+</div></div>
-      </div>
-      <div class="exp-body"><div class="exp-body-inner">
+      <button class="exp-hdr" type="button" aria-expanded="false" aria-controls="e0-body" onclick="toggleExp('e0')">
+        <span class="exp-main"><span class="exp-role">Manufacturing Equipment Engineer Co-Op</span><span class="exp-org">Tesla · Fremont, CA</span></span>
+        <span class="exp-right"><span class="exp-date">Jan 2026 – Aug 2026</span><span class="exp-tog" aria-hidden="true">+</span></span>
+      </button>
+      <div class="exp-body" id="e0-body"><div class="exp-body-inner">
         <div class="exp-sub"><div class="exp-sub-title">Body in White Manufacturing</div><ul class="exp-buls">
           <li>Redesigned bowl-feeder EOAT locating hardware to restore full 6-DOF constraint; carried design through machining, assembly, installation, and <strong>25-part live-line validation</strong> — now running in production.</li>
           <li>Diagnosed clamp-misalignment faults on the same line; redesigned with weld-bead clearance chamfer, machined in-house, and installed — running in production.</li>
@@ -378,22 +380,22 @@ footer p{font-size:12px;color:var(--text3)}
       </div></div>
     </div>
     <div class="exp-card fade" id="e1">
-      <div class="exp-hdr" onclick="toggleExp('e1')">
-        <div><div class="exp-role">Undergraduate Researcher</div><div class="exp-org">Computational Mechanics &amp; AI Lab · WashU</div></div>
-        <div class="exp-right"><div class="exp-date">May 2025 – Aug 2025</div><div class="exp-tog">+</div></div>
-      </div>
-      <div class="exp-body"><div class="exp-body-inner"><ul class="exp-buls" style="margin-top:14px">
+      <button class="exp-hdr" type="button" aria-expanded="false" aria-controls="e1-body" onclick="toggleExp('e1')">
+        <span class="exp-main"><span class="exp-role">Undergraduate Researcher</span><span class="exp-org">Computational Mechanics &amp; AI Lab · WashU</span></span>
+        <span class="exp-right"><span class="exp-date">May 2025 – Aug 2025</span><span class="exp-tog" aria-hidden="true">+</span></span>
+      </button>
+      <div class="exp-body" id="e1-body"><div class="exp-body-inner"><ul class="exp-buls" style="margin-top:14px">
         <li>PINNs in PyTorch — <strong>1000× reduction</strong> in simulation time vs. traditional CFD.</li>
         <li>Translated Fortran solvers to Python with RK4 integrators and Newton iterations.</li>
         <li>Presented at WUSEF symposium.</li>
       </ul></div></div>
     </div>
     <div class="exp-card fade" id="e2">
-      <div class="exp-hdr" onclick="toggleExp('e2')">
-        <div><div class="exp-role">Structures Engineer</div><div class="exp-org">WashU Design/Build/Fly · AIAA</div></div>
-        <div class="exp-right"><div class="exp-date">Aug 2024 – Present</div><div class="exp-tog">+</div></div>
-      </div>
-      <div class="exp-body"><div class="exp-body-inner"><ul class="exp-buls" style="margin-top:14px">
+      <button class="exp-hdr" type="button" aria-expanded="false" aria-controls="e2-body" onclick="toggleExp('e2')">
+        <span class="exp-main"><span class="exp-role">Structures Engineer</span><span class="exp-org">WashU Design/Build/Fly · AIAA</span></span>
+        <span class="exp-right"><span class="exp-date">Aug 2024 – Present</span><span class="exp-tog" aria-hidden="true">+</span></span>
+      </button>
+      <div class="exp-body" id="e2-body"><div class="exp-body-inner"><ul class="exp-buls" style="margin-top:14px">
         <li>Composite structures in SolidWorks; ANSYS FEA for safety factors and minimum weight.</li>
         <li>Fabrication and destructive testing of composite prototypes.</li>
         <li>X-1 release mechanism and pylon system for multi-mission payload.</li>
@@ -408,7 +410,7 @@ footer p{font-size:12px;color:var(--text3)}
     <div class="c-links fade">
       <a href="mailto:garciarivera@wustl.edu" class="c-link"><div class="c-icon">✉</div><div><div class="c-lbl">Email</div><div class="c-val">garciarivera@wustl.edu</div></div></a>
       <a href="https://linkedin.com/in/luisgr1" target="_blank" rel="noopener" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">in</div><div><div class="c-lbl">LinkedIn</div><div class="c-val">linkedin.com/in/luisgr1</div></div></a>
-      <a href="https://github.com/luisgriv" target="_blank" rel="noopener" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">gh</div><div><div class="c-lbl">GitHub</div><div class="c-val">github.com/luisgriv</div></div></a>
+      <a href="https://github.com/luisg54" target="_blank" rel="noopener" class="c-link"><div class="c-icon" style="font-size:13px;font-weight:700">gh</div><div><div class="c-lbl">GitHub</div><div class="c-val">github.com/luisg54</div></div></a>
     </div>
     <div class="c-form fade">
       <div class="c-panel">
@@ -425,7 +427,7 @@ footer p{font-size:12px;color:var(--text3)}
 
 <footer>
   <p>© 2026 Luis Garcia · Kansas City, MO</p>
-  <p>ME · WashU McKelvey · HSF Scholar · Kessler Scholar</p>
+  <p>ME · WashU McKelvey · <span style="color:var(--text4)">Updated September 2026</span></p>
 </footer>
 
 <script>
@@ -443,7 +445,13 @@ document.querySelectorAll('.fade').forEach(el=>{
   const r=el.getBoundingClientRect();
   if(r.top<window.innerHeight){el.classList.add('in');}else{obs.observe(el);}
 });
-function toggleExp(id){document.getElementById(id).classList.toggle('open');}
+function toggleExp(id){
+  const card=document.getElementById(id);
+  const open=card.classList.toggle('open');
+  card.querySelector('.exp-hdr').setAttribute('aria-expanded',open);
+}
+document.querySelectorAll('.exp-card').forEach(c=>
+  c.querySelector('.exp-hdr').setAttribute('aria-expanded',c.classList.contains('open')));
 const navToggle=document.getElementById('navToggle');
 const navMenu=document.getElementById('navMenu');
 navToggle?.addEventListener('click',()=>{
@@ -456,6 +464,11 @@ navMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   navToggle.setAttribute('aria-expanded','false');
   navToggle.textContent='☰';
 }));
+
+const cfd=document.getElementById('cfdVideo');
+if(cfd&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  cfd.removeAttribute('autoplay');cfd.pause();cfd.removeAttribute('loop');
+}
 
 const chips=document.querySelectorAll('.filter-chip');
 const cards=document.querySelectorAll('.proj-card');
@@ -506,7 +519,7 @@ chips.forEach(chip=>chip.addEventListener('click',()=>{
   ],
   "sameAs": [
     "https://linkedin.com/in/luisgr1",
-    "https://github.com/luisgriv"
+    "https://github.com/luisg54"
   ]
 }
 </script>
