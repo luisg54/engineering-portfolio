@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EOAT Automation Cell — 4-DOF Arm Prototype — Luis Garcia</title>
-<meta name="description" content="Solo build of a 4-DOF servo arm and PLC-supervised pick cell: SolidWorks assembly of 199 components, first-principles torque budget, and a staged plan to measured validation.">
+<meta name="description" content="Solo-designed 4-DOF servo arm and PLC-supervised pick cell: a 198-component SolidWorks assembly with a modular parallel gripper and a first-principles torque budget.">
 <link rel="canonical" href="https://luisg54.github.io/engineering-portfolio/project-automation-cell.html">
 <meta property="og:title" content="EOAT Automation Cell — 4-DOF Arm Prototype — Luis Garcia">
-<meta property="og:description" content="Solo build of a 4-DOF servo arm and PLC-supervised pick cell: SolidWorks assembly of 199 components, first-principles torque budget, and a staged plan to measured validation.">
-<meta property="og:image" content="https://luisg54.github.io/engineering-portfolio/images/arm-hero.jpg">
+<meta property="og:description" content="Solo-designed 4-DOF servo arm and PLC-supervised pick cell: a 198-component SolidWorks assembly with a modular parallel gripper and a first-principles torque budget.">
+<meta property="og:image" content="https://luisg54.github.io/engineering-portfolio/images/arm-hero.jpg?v=revd">
 <meta property="og:url" content="https://luisg54.github.io/engineering-portfolio/project-automation-cell.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
@@ -101,9 +101,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 </nav>
 
 <div class="proj-hero" style="margin-top:52px;position:relative;overflow:hidden;background:#0a0a0a">
-  <img src="images/arm-hero.jpg" alt="Isometric SolidWorks render of the 4-DOF servo arm prototype on its bench base plate" style="width:100%;max-height:520px;object-fit:cover;object-position:center 45%;display:block" fetchpriority="high">
+  <img src="images/arm-hero.jpg?v=revd" alt="Isometric SolidWorks render of the Revision D arm prototype, showing the yaw platform, both pitch joints and the modular parallel gripper on its bench base plate" style="width:100%;max-height:520px;object-fit:cover;object-position:center 45%;display:block" fetchpriority="high">
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,0.92) 100%)"></div>
-  <div style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:980px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:.04em;backdrop-filter:blur(8px)">SolidWorks 2026 · Revision B assembly</div>
+  <div style="position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:980px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:.04em;backdrop-filter:blur(8px)">SolidWorks 2026 · Revision D assembly</div>
   <div class="proj-hero-title">
     <div class="proj-hero-label">03 · Personal Project · Jun 2026 – Present</div>
     <h1 class="proj-hero-name">EOAT Automation Cell — 4-DOF Arm Prototype</h1>
@@ -118,19 +118,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div class="proj-section fade">
     <div class="metrics-row">
       <div class="big-metric"><div class="big-metric-num">4</div><div class="big-metric-label">Actuated DOF — yaw, shoulder, elbow, grip</div></div>
-      <div class="big-metric"><div class="big-metric-num">199</div><div class="big-metric-label">Components in the native assembly</div></div>
-      <div class="big-metric"><div class="big-metric-num">15</div><div class="big-metric-label">Printed part types, 21 instances</div></div>
-      <div class="big-metric"><div class="big-metric-num">2.2×</div><div class="big-metric-label">Shoulder torque margin (CAD estimate)</div></div>
+      <div class="big-metric"><div class="big-metric-num">198</div><div class="big-metric-label">Components in the native assembly</div></div>
+      <div class="big-metric"><div class="big-metric-num">15</div><div class="big-metric-label">Printed part types, 23 instances</div></div>
+      <div class="big-metric"><div class="big-metric-num">32 mm</div><div class="big-metric-label">Parallel jaw stroke (purchased tool)</div></div>
     </div>
     <div class="tags-row">
       <span class="tag">SolidWorks 2026</span><span class="tag">SolidWorks API / Python</span>
       <span class="tag">Design for 3D Printing</span><span class="tag">Tolerance &amp; Fit</span>
-      <span class="tag">Servo Sizing</span><span class="tag">Allen-Bradley Micro820</span>
+      <span class="tag">Servo Sizing</span><span class="tag">COTS Integration</span><span class="tag">Parallel Gripper</span><span class="tag">Allen-Bradley Micro820</span>
       <span class="tag">Arduino / C++</span><span class="tag">Test Planning</span>
     </div>
     <div class="prop-notice">
       <div class="prop-notice-icon">⏳</div>
-      <div class="prop-notice-text"><strong>Nothing on this page has been built or measured yet.</strong> The arm exists as a fully constrained native SolidWorks assembly with working joints; every number below is a CAD-derived estimate or a design target, and is labelled as such. The Results table stays empty until it is filled from physical test data.</div>
+      <div class="prop-notice-text"><strong>Nothing on this page has been built or measured yet.</strong> The arm exists as a fully constrained native SolidWorks assembly with working joints, now at Revision D; every number below is a CAD-derived estimate or a design target, and is labelled as such. No parts have been printed and no hardware has been purchased. The Results table stays empty until it is filled from physical test data.</div>
     </div>
     <a class="repo-link" href="https://github.com/luisg54/eoat-automation-cell" target="_blank" rel="noopener">
       <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -153,30 +153,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Current CAD — Revision B</div>
-    <p class="proj-p">The prototype is a <strong>4-DOF articulated arm</strong>: base yaw, shoulder pitch, elbow pitch, and a single-finger gripper, driven by three SG90 micro servos and one MG996R at the shoulder. It is modelled natively in SolidWorks 2026 as editable parts and a real mated assembly — not a static arrangement of meshes — so joint travel can actually be exercised in CAD.</p>
+    <div class="proj-section-label">Current CAD — Revision D</div>
+    <p class="proj-p">The prototype is a <strong>4-DOF articulated arm</strong>: base yaw, shoulder pitch, elbow pitch, and a gripper. It is modelled natively in SolidWorks 2026 as editable parts and a real mated assembly — not a static arrangement of meshes — so joint travel can actually be exercised in CAD.</p>
+    <p class="proj-p">Revision D is the fourth pass, and it changed the architecture rather than the details. The printed single-finger gripper is gone, replaced by a <strong>purchased parallel gripper on a removable printed fork</strong>, so the tool is now a swappable interface instead of part of the arm. Both pitch joints moved to <strong>MG996R servos sharing one common horn interface</strong> — the same OD20 / PCD14 metal horn and 32 mm standoff spacing at the shoulder and the elbow — and the old single yaw-platform-plus-upright part was split into a separate platform and a bolt-on upright so each one prints and services independently.</p>
 
     <div class="gallery">
       <figure class="shot">
-        <img src="images/arm-cover.jpg" alt="Isometric view of the arm assembly showing the base plate, yaw platform, bearing-supported shoulder and elbow, and gripper" loading="lazy">
-        <figcaption class="shot-cap"><b>Isometric — full assembly.</b> Base pedestal and bolt-down plate, yaw platform on a stacked 608ZZ pair, and the removable servo cassette underneath.</figcaption>
+        <img src="images/arm-cover.jpg?v=revd" alt="Isometric view of the Revision D assembly showing the base plate, yaw platform, both bearing-supported pitch joints and the parallel gripper" loading="lazy">
+        <figcaption class="shot-cap"><b>Isometric — full assembly.</b> Base pedestal and bolt-down plate, yaw platform on a stacked 608ZZ pair, removable yaw-servo cassette underneath, and the parallel gripper carried on the modular forearm.</figcaption>
       </figure>
       <figure class="shot">
-        <img src="images/arm-front.jpg" alt="Front orthographic view of the arm in the home pose with shoulder and elbow bearing cheeks visible" loading="lazy">
-        <figcaption class="shot-cap"><b>Front — home pose.</b> Shoulder and elbow each run on a steel dowel through a printed adapter into a 608ZZ, so the servo horn carries torque and the bearing carries the radial load.</figcaption>
+        <img src="images/arm-front.jpg?v=revd" alt="Front orthographic view of the Revision D arm in the home pose with the parallel gripper jaws open" loading="lazy">
+        <figcaption class="shot-cap"><b>Front — home pose, jaws open.</b> Shoulder and elbow each run on a steel dowel through a printed adapter into a 608ZZ, so the servo horn carries torque and the bearing carries the radial load. Jaw opening is a driven equation, 0–32 mm.</figcaption>
       </figure>
       <figure class="shot">
-        <img src="images/arm-right.jpg" alt="Right orthographic view of the arm showing the servo stack, standoffs and TPU gripper pads" loading="lazy">
-        <figcaption class="shot-cap"><b>Right — joint stack.</b> M3 standoffs set the cheek spacing; bearing keepers provide axial retention; the jaw pads are screw-captured TPU rather than glued.</figcaption>
+        <img src="images/arm-right.jpg?v=revd" alt="Right orthographic view of the Revision D arm showing the two MG996R servos, the 32 mm standoffs and the gripper fork" loading="lazy">
+        <figcaption class="shot-cap"><b>Right — joint stack.</b> Two MG996R cases stacked outboard, 32 mm standoffs setting both cheek spacings, and the gripper fork bolted to the forearm through four M3×16. The outboard mass here is what costs the shoulder its margin.</figcaption>
       </figure>
       <figure class="shot" style="display:flex;flex-direction:column;justify-content:center;padding:24px 22px">
         <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px">Assembly at a glance</div>
         <div style="display:flex;flex-direction:column;gap:9px;font-size:13px;color:var(--text2);font-weight:300">
-          <div><b style="color:var(--text);font-weight:500">199</b> total components</div>
-          <div><b style="color:var(--text);font-weight:500">15</b> printed part types · 21 instances</div>
-          <div><b style="color:var(--text);font-weight:500">41</b> explicitly modelled fastener stacks</div>
-          <div><b style="color:var(--text);font-weight:500">98</b> fully constrained sketches across 16 files</div>
-          <div><b style="color:var(--text);font-weight:500">518 g</b> modelled mass at solid-print density</div>
+          <div><b style="color:var(--text);font-weight:500">198</b> total components · 207 mates</div>
+          <div><b style="color:var(--text);font-weight:500">15</b> printed part types · 23 instances</div>
+          <div><b style="color:var(--text);font-weight:500">45</b> explicitly modelled fastener stacks</div>
+          <div><b style="color:var(--text);font-weight:500">64</b> constrained sketches across the 6 new parts</div>
+          <div><b style="color:var(--text);font-weight:500">637 g</b> modelled mass at solid-print density</div>
         </div>
         <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text3);line-height:1.55">Parts, mates and fastener stacks were built and audited through the SolidWorks API with Python, so the counts above come out of the model rather than out of a spreadsheet.</div>
       </figure>
@@ -200,10 +201,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <div class="spec-card-title">Serviceability</div>
         <div class="spec-card-items">
           <div class="spec-card-item">Removable yaw servo cassette</div>
-          <div class="spec-card-item">Positive yaw crossbolt on the D-collar</div>
-          <div class="spec-card-item">Tool access checked per fastener</div>
-          <div class="spec-card-item">Screw-captured TPU jaw pads</div>
-          <div class="spec-card-item">M2.5 at the shoulder ears — larger nut corners foul the servo case</div>
+          <div class="spec-card-item">Yaw platform and upright are separate bolt-on parts</div>
+          <div class="spec-card-item">Gripper fork unbolts as a unit (4 × M3×16)</div>
+          <div class="spec-card-item">One horn interface serves both pitch joints</div>
+          <div class="spec-card-item">Crush spacers stop the tool ears clamping inward</div>
         </div>
       </div>
       <div class="spec-card">
@@ -212,27 +213,48 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
           <div class="spec-card-item">20 g payload target (provisional)</div>
           <div class="spec-card-item">Solid-density mass bound, 1.25 load factor</div>
           <div class="spec-card-item">Budget = ⅓ of reference stall torque</div>
-          <div class="spec-card-item">Shoulder margin 2.15× · elbow 1.44×</div>
+          <div class="spec-card-item"><strong style="color:var(--amber);font-weight:500">Shoulder margin 1.15×</strong> — the binding constraint</div>
+          <div class="spec-card-item">Elbow margin 3.60× on the second MG996R</div>
+          <div class="spec-card-item">0.65 N per jaw needed at µ = 0.3</div>
           <div class="spec-card-item">Reference ratings, not measured torque</div>
         </div>
       </div>
     </div>
     <ul class="proj-buls">
       <li><strong>The bearing does the work the horn shouldn't.</strong> A servo output shaft is not a structural bearing. Every pitch joint pairs the horn with a dowel running in a 608ZZ, so the horn only ever sees torque — the reason the joints grew cheeks, standoffs and keepers instead of bolting a link straight to a horn.</li>
-      <li><strong>A 3:1 geared SG90 shoulder was evaluated and rejected</strong> — restricted travel and too little load margin. The MG996R was chosen on travel and margin, and adds an estimated $15–30 to the build.</li>
-      <li><strong>Joint travel was verified in the native model, not eyeballed.</strong> A separate configuration suppresses the command mates and enforces angle limits: yaw ±60°, shoulder −30° to +80°, elbow −100° to −5°, grip 0–25°. Nine poses and twelve transfer samples solved with zero solid overlaps.</li>
-      <li><strong>Those checks are discrete samples, not a swept proof.</strong> Continuous sweep, cable routing, and external fixtures are still excluded — which is why the first pickup pose I tried (−40°/−50°) turned out to clip the yaw platform and had to be revised to −30°/−60°.</li>
-      <li><strong>Structure is PETG, jaw pads are TPU.</strong> Printed at the WashU makerspace; a dedicated fit coupon is exported alongside the parts so the dowel and bearing fits get trialled before a full set is printed.</li>
+      <li><strong>Buying the gripper was the right call, and I resisted it for three revisions.</strong> A printed single-finger jaw closing on a round bearing was always going to be the least repeatable part of the cell. A purchased parallel gripper gives true parallel jaws, a 32 mm driven stroke and its own feedback servo for $29.95 — cheaper than the print time I had already spent failing to match it. The design effort moved to the interface: a removable fork, the real 4.2 mm jaw axes, M4×35 through-bolts, and two 13 mm crush spacers inside the 13.4 mm ear gaps so tightening cannot squeeze the tool body.</li>
+      <li><strong>One horn interface, two joints.</strong> Both pitch joints now use the same OD20 / PCD14 metal horn on 20.5 mm spacing with 32 mm standoffs. That is what closed the horn-interface hold below: instead of reconciling three different horn patterns, there is one pattern to get right, and getting it right fixes both joints.</li>
+      <li><strong>Joint travel was verified in the native model, not eyeballed.</strong> A separate configuration suppresses the command mates and enforces angle limits: yaw ±60°, shoulder −15° to +80°, elbow −100° to −5°, with jaw opening driven 0–32 mm by equation. Six saved pose configurations reopen with zero mate errors, all 198 references resolving and no part feature errors.</li>
+      <li><strong>23 of 24 sampled poses are clean.</strong> Ten motion poses and fourteen lift/yaw transfer samples were checked by driving the native angle dimensions and independently comparing every component transform against the kinematics. The one exception is 0.18 mm³ of overlap <em>inside the purchased gripper's own imported geometry</em> when it is commanded fully shut to 0 mm — supplier model artefact, no printed part involved, and not a pose the tool needs.</li>
+      <li><strong>The shoulder range shrank, and that is a real cost.</strong> The larger elbow servo case fouls the platform sooner, so the shoulder lower limit moved from −30° to −15°. Combined with 637 g of modelled mass on a 150 mm lever, the shoulder margin fell from 2.15× to <strong>1.15×</strong>. It still clears the ⅓-of-stall budget, but it is now the number that decides whether this arm works.</li>
+      <li><strong>Those checks are discrete samples, not a swept proof.</strong> Continuous sweep, cable routing, tool access and external fixtures are still excluded — which is why an earlier pickup pose turned out to clip the yaw platform and had to be revised.</li>
+      <li><strong>Structure is PETG.</strong> Printed at the WashU makerspace; a dedicated fit coupon is exported alongside the parts so the dowel and bearing fits get trialled before a full set is printed.</li>
     </ul>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Open Problem — Horn Interface</div>
+    <div class="proj-section-label">Horn Interface — Closed</div>
     <div class="problem-box">
-      <div class="problem-box-label">Fabrication hold · caught in CAD, before ordering</div>
-      <p class="proj-p" style="margin-bottom:0">The shoulder is modelled against a nominal 26 mm horn plate on a 20 mm bolt circle. The metal disc horn actually sold for this servo class is 20 mm OD on a 14 mm bolt circle, 4.5 mm thick — it will not drop into the modelled pattern, and substituting it would also shift the axial stack by about 2.5 mm. The SG90 horns need the same treatment: the model assumes an 8 mm hole radius and M2 through-fasteners, the supplier drawing shows 8.3 mm and roughly 1 mm pilots.</p>
+      <div class="problem-box-label">The problem, as it stood at Revision B</div>
+      <p class="proj-p" style="margin-bottom:0">The shoulder was modelled against a nominal 26 mm horn plate on a 20 mm bolt circle. The metal disc horn actually sold for this servo class is 20 mm OD on a 14 mm bolt circle — it would not drop into the modelled pattern, and substituting it also shifted the axial stack by about 2.5 mm. Every horn-connected part was held from release, and three different horn patterns across four servos meant three separate interfaces to reconcile.</p>
     </div>
-    <p class="proj-p">Every horn-connected part is <strong>held from release</strong> until a real horn is selected and measured, the link pattern, washer relief and screw engagement are updated, and the affected mates are re-solved. Parts that do not touch a horn are unaffected. This is the cheapest possible place to find that mismatch — the alternative is finding it with a printed part and a bag of the wrong screws.</p>
+    <div class="solution-box">
+      <div class="solution-box-label">How Revision D closed it</div>
+      <p class="proj-p" style="margin-bottom:0">Both pitch joints were standardised onto the real <strong>OD20 / PCD14 M3-tapped metal horn</strong> — the part that is actually sold — at 20.5 mm spacing on 32 mm standoffs, and the printed links were rebuilt around it rather than around a nominal envelope. Dropping the printed gripper removed a fourth horn interface entirely. What was three mismatched patterns is now one measured pattern used twice, and the supplier drawing is saved next to the model in <code>source-reference/</code>.</p>
+    </div>
+    <p class="proj-p">This is worth stating plainly because it is the whole argument for modelling properly before printing: the mismatch was found by a CAD check, cost four revisions of rework, and cost <strong>no material and no money</strong>. Finding it with a printed link and a bag of the wrong screws is the alternative. <strong>Seated horn height and the bearing/dowel fits are still assumptions</strong> — those need calipers on the real parts, not another revision.</p>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Open Problems</div>
+    <div class="problem-box">
+      <div class="problem-box-label">Shoulder margin · 1.15×</div>
+      <p class="proj-p" style="margin-bottom:0">Two MG996R cases and a 30 g tool sit outboard on a 150 mm lever, and modelled mass is up to 637 g. Against a budget of one third of reference stall torque the shoulder now has 1.15× where Revision B had 2.15×. That is a CAD estimate built on a solid-density mass bound and a datasheet rating, so the true figure could fall either side of it — which is exactly why it has to be measured on the built arm before anything downstream is trusted.</p>
+    </div>
+    <div class="problem-box">
+      <div class="problem-box-label">Tool availability</div>
+      <p class="proj-p" style="margin-bottom:0">The gripper is a $29.95 candidate that the supplier showed as backordered on 2026-09-12, and nothing has been purchased. The fork adapter is built around its published STEP and dimension drawing rather than a measured unit, so the interface is verified against the supplier's geometry, not against hardware in hand.</p>
+    </div>
   </div>
 
   <div class="proj-section fade">
@@ -293,11 +315,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     </div>
     <div class="lesson-card">
       <div class="lesson-title">A model that can't move hasn't been checked</div>
-      <div class="lesson-body">Building real mates instead of a fixed arrangement is slower, and it is what caught the pickup pose colliding with the yaw platform. Driving the joints through named angle dimensions and then independently comparing all 199 component transforms against the kinematics turns "it looks fine" into a check that either passes or does not.</div>
+      <div class="lesson-body">Building real mates instead of a fixed arrangement is slower, and it is what caught the pickup pose colliding with the yaw platform. Driving the joints through named angle dimensions and then independently comparing all 198 component transforms against the kinematics turns "it looks fine" into a check that either passes or does not.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">Four revisions to admit the right part was for sale</div>
+      <div class="lesson-body">Revisions A through C all had a printed single-finger gripper, and each one made it slightly better without making it good. Swapping to a $29.95 parallel gripper solved repeatability, stroke and feedback in one move, and turned the interesting problem into an interface problem — mounting, crush spacers, fastener access — which is the problem worth having. Knowing which parts to design and which to buy is a judgement call, and I got it wrong for three passes.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">Every improvement spends something</div>
+      <div class="lesson-body">The second MG996R and the purchased tool made the arm more capable and more serviceable. They also added 119 g, moved mass outboard, cut the shoulder's usable range from −30° to −15°, and halved its torque margin. Nothing about Revision D is free, and writing down what it cost is the only way the next revision starts from the truth rather than from the highlight reel.</div>
     </div>
     <div class="lesson-card">
       <div class="lesson-title">Separate what you assumed from what you measured</div>
-      <div class="lesson-body">The load report labels every input: CAD solid volume, manufacturer reference mass, assumed friction coefficient. The torque margins are real conclusions from those inputs, but they are not test data, and writing them down that way keeps me from quoting a 2.15× margin as if a servo had actually been loaded. The same discipline is why the Results table above is still blank.</div>
+      <div class="lesson-body">The load report labels every input: CAD solid volume, manufacturer reference mass, assumed friction coefficient. The torque margins are real conclusions from those inputs, but they are not test data, and writing them down that way keeps me from quoting a 1.15× margin as if a servo had actually been loaded. The same discipline is why the Results table above is still blank.</div>
     </div>
   </div>
 
