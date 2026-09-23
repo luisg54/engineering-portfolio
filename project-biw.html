@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Model 3 BIW Manufacturing — Luis Garcia</title>
-<meta name="description" content="Model 3 body-in-white manufacturing at Tesla Fremont: spot-weld cycle-time reduction, OEM fixture reverse-engineering, and EOAT redesign validated on SCADA data.">
+<meta name="description" content="Model 3 body-in-white work at Tesla Fremont: EOAT locating hardware and a spot-weld cycle-time cut running in production, plus OEM fixture reverse-engineering.">
 <link rel="canonical" href="https://luisg54.github.io/engineering-portfolio/project-biw.html">
 <meta property="og:title" content="Model 3 BIW Manufacturing — Luis Garcia">
-<meta property="og:description" content="Model 3 body-in-white manufacturing at Tesla Fremont: spot-weld cycle-time reduction, OEM fixture reverse-engineering, and EOAT redesign validated on SCADA data.">
+<meta property="og:description" content="Model 3 body-in-white work at Tesla Fremont: EOAT locating hardware and a spot-weld cycle-time cut running in production, plus OEM fixture reverse-engineering.">
 <meta property="og:image" content="https://luisg54.github.io/engineering-portfolio/images/biw.jpg">
 <meta property="og:url" content="https://luisg54.github.io/engineering-portfolio/project-biw.html">
 <meta property="og:type" content="article">
@@ -53,8 +53,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .proj-section-label::after{content:'';flex:1;height:1px;background:var(--border)}
 
 /* metrics row */
-.metrics-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
-.big-metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;min-width:160px}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px}
+.big-metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;min-width:0}
 .big-metric-num{font-size:28px;font-weight:600;color:var(--accent);letter-spacing:-.03em;line-height:1}
 .big-metric-label{font-size:12px;color:var(--text3);margin-top:4px}
 
@@ -82,6 +82,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .img-box.white img{object-fit:contain;background:#f5f5f0;padding:16px}
 .img-caption{font-size:11px;color:var(--text3);margin-top:6px;text-align:center;letter-spacing:.01em}
 
+/* what-shipped status list */
+.status-list{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.status-row{display:grid;grid-template-columns:1.25fr 1.5fr auto;gap:16px;align-items:center;padding:14px 18px;background:var(--bg2);border-bottom:1px solid var(--border);text-decoration:none;transition:background .2s}
+.status-row:last-child{border-bottom:none}
+.status-row:hover{background:var(--bg3)}
+.status-name{font-size:13.5px;font-weight:500;color:var(--text)}
+.status-role{font-size:12.5px;color:var(--text3);font-weight:300}
+.st{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:980px;white-space:nowrap;justify-self:end}
+.st.live{background:var(--green2);color:var(--green);border:1px solid rgba(48,209,88,.25)}
+.st.hold{background:rgba(255,179,0,.1);color:#ffb300;border:1px solid rgba(255,179,0,.25)}
+.proj-section[id]{scroll-margin-top:72px}
+.deep-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--accent);text-decoration:none}
+.deep-link:hover svg{transform:translateX(3px)}
+.deep-link svg{transition:transform .2s}
 /* lessons */
 .lesson-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
 .lesson-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
@@ -109,7 +123,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .proj-hero-title{padding:24px}
   .proj-content{padding:40px 20px 72px}
   .img-grid.cols2,.img-grid.cols3{grid-template-columns:1fr}
-  .metrics-row{gap:8px}
+  .metrics-row{gap:8px;grid-template-columns:1fr 1fr}
+  .status-row{grid-template-columns:1fr;gap:4px;padding:14px 16px}
+  .st{justify-self:start;margin-top:4px}
   footer{flex-direction:column;gap:8px}
 }
 </style>
@@ -137,67 +153,106 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
   <div class="proj-section fade">
     <div class="metrics-row">
-      <div class="big-metric"><div class="big-metric-num">10s</div><div class="big-metric-label">Cycle time reduction (75→65s)</div></div>
-      <div class="big-metric"><div class="big-metric-num">$88K</div><div class="big-metric-label">OEM package vs in-house path</div></div>
-      <div class="big-metric"><div class="big-metric-num">8</div><div class="big-metric-label">Fixture locations reverse-engineered</div></div>
-      <div class="big-metric"><div class="big-metric-num">13%</div><div class="big-metric-label">Station cycle time improvement</div></div>
+      <div class="big-metric" style="border-color:rgba(48,209,88,0.25)"><div class="big-metric-num" style="color:var(--green)">3</div><div class="big-metric-label">Changes running in production</div></div>
+      <div class="big-metric"><div class="big-metric-num">25-part</div><div class="big-metric-label">Live-line validation, zero issues</div></div>
+      <div class="big-metric"><div class="big-metric-num">75→65s</div><div class="big-metric-label">Station cycle time (−13%)</div></div>
+      <div class="big-metric"><div class="big-metric-num">$88K</div><div class="big-metric-label">OEM quote the in-house drawings replace</div></div>
     </div>
     <div class="tags-row">
-      <span class="tag">CATIA V5</span><span class="tag">FANUC</span>
-      <span class="tag">GD&amp;T</span><span class="tag">Root Cause Analysis</span><span class="tag">Pneumatics</span>
+      <span class="tag">CATIA V5</span><span class="tag">FANUC Teach Pendant</span><span class="tag">NAAMS</span>
+      <span class="tag">GD&amp;T</span><span class="tag">17-4 PH S.S.</span><span class="tag">Root Cause Analysis</span><span class="tag">In-House Machining</span>
     </div>
   </div>
 
   <div class="proj-section fade">
-    <div class="proj-section-label">Overview</div>
-    <p class="proj-p">As a Manufacturing Equipment Engineer Co-Op at Tesla Fremont, I worked on the <strong>Model 3 Body-in-White (BIW) production line</strong> — fixture design, robot cell optimization, and data-driven root cause analysis on live production equipment.</p>
-    <p class="proj-p">Every change had to be validated against interference zones, cleared with production, and locked into the program without stopping the line. Nothing theoretical.</p>
+    <div class="proj-section-label">What Shipped</div>
+    <p class="proj-p">Five workstreams on the Model 3 body-in-white line during my co-op. Three were built, installed and are running in production; two were designed and handed to fabrication. The status column says which is which.</p>
+    <div class="status-list">
+      <a class="status-row" href="#eoat">
+        <span class="status-name">EOAT locating feature redesign</span>
+        <span class="status-role">Measured, designed, drew, physically installed</span>
+        <span class="st live">In production · validated</span>
+      </a>
+      <a class="status-row" href="#cycle">
+        <span class="status-name">FANUC spot-weld cycle-time rebalance</span>
+        <span class="status-role">Teach-mode reprogram, with two senior engineers</span>
+        <span class="st live">In production</span>
+      </a>
+      <a class="status-row" href="#chamfer">
+        <span class="status-name">Chamfered EOAT clamp</span>
+        <span class="status-role">Diagnosed fault, redesigned, machined, installed</span>
+        <span class="st live">In production</span>
+      </a>
+      <a class="status-row" href="#clamps">
+        <span class="status-name">OEM fixture clamp reverse-engineering</span>
+        <span class="status-role">8 clamp systems modelled with GD&amp;T drawings</span>
+        <span class="st hold">Drawings complete</span>
+      </a>
+      <a class="status-row" href="#tcp">
+        <span class="status-name">TCP calibration check fixture</span>
+        <span class="status-role">4-part fixture design, drawings released</span>
+        <span class="st hold">In fabrication</span>
+      </a>
+    </div>
   </div>
 
-  <div class="proj-section fade">
-    <div class="proj-section-label">Welding Cell Optimization</div>
-    <p class="proj-p">Partnered with two senior engineers to cut cycle time in a three-robot FANUC spot-weld sequence. Reprogrammed an adjacent robot in teach mode to assume one weld and its approach/home points from the bottleneck robot, redistributing work to eliminate inter-robot wait states.</p>
+  <div class="proj-section fade" id="eoat">
+    <div class="proj-section-label">EOAT Locating Feature — In Production</div>
+    <p class="proj-p">A bowl-feeder installation blocked one of the two locating features on a robot's end-of-arm tool. The pick still worked, but the part was no longer fully constrained. I measured the existing hardware and surrounding geometry, then designed replacement locating hardware in CATIA V5 that restores <strong>full 6-DOF part constraint</strong> while clearing the new feeder.</p>
     <ul class="proj-buls">
-      <li><strong>10-second cycle time reduction</strong> confirmed (75s → 65s, 13%) — locked into production program</li>
-      <li>Validated interference zones, full-speed operation, and production stability with maintenance</li>
-      <li>Changes required sign-off through the engineering change process</li>
+      <li><strong>2 locating-assembly variants covering 3 fixtures</strong>, built from standard NAAMS components plus custom brackets and a 17-4 PH stainless upper locator</li>
+      <li>Produced the manufacturing drawings and carried the design through machining, finishing and assembly</li>
+      <li><strong>Physically installed the tooling on the line myself</strong></li>
+      <li><strong>25-part live-line validation with no issues</strong>, followed by production monitoring — the hardware is running in production</li>
     </ul>
-  </div>
-
-  <div class="proj-section fade">
-    <div class="proj-section-label">Custom Fixture Clamps — CATIA V5</div>
-    <p class="proj-p">An OEM three-clamp fixture system used at eight production locations required replacement. Quoted lead time was <strong>10 months at ~$88,000</strong>. I reverse-engineered each clamp from physical parts, modeled them in CATIA V5, and produced GD&amp;T drawings for in-house fabrication.</p>
-    <ul class="proj-buls">
-      <li>Full reverse engineering from physical parts — no original CAD files available</li>
-      <li>All clamps modeled in CATIA V5 with GD&amp;T tolerancing for machinability</li>
-      <li>Immediate production need handled with bushing replacement on existing units</li>
-      <li>Drawings enable in-house fabrication instead of an approximately <strong>$88K OEM replacement</strong> and quoted 10-month lead time — nothing was machined under this workstream</li>
-    </ul>
-  </div>
-
-  <div class="proj-section fade">
-    <div class="proj-section-label">TCP Calibration Fixture — In Fabrication</div>
-    <p class="proj-p">Designed a 4-part offline check fixture so stud-welding guns can be certified to one master setup (TCP drift up to 2.5&nbsp;mm) using datum-controlled locating, NAAMS L-blocks, and 3-way shim adjustability. Drawings released; parts in machining — not yet installed.</p>
-  </div>
-
-  <div class="proj-section fade">
-    <div class="proj-section-label">Related Project — EOAT Locating Feature Redesign</div>
-    <p class="proj-p">After a bowl feeder installation blocked one of the EOAT's two locating features, I designed replacement hardware restoring full 6-DOF part constraint — carried through machining, assembly, physical installation, and a 25-part live-line validation. Tooling is now running in production.</p>
-    <a href="project-eoat.html" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--accent);text-decoration:none;margin-top:4px">
-      View full project page
+    <a class="deep-link" href="project-eoat.html">Full write-up: constraint analysis, design requirements and validation
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
+  </div>
+
+  <div class="proj-section fade" id="cycle">
+    <div class="proj-section-label">Welding Cell Cycle Time — In Production</div>
+    <p class="proj-p">In a three-robot FANUC spot-weld sequence, one robot ran roughly <strong>10 seconds longer than the other two and set the station cycle time</strong>. Working with two senior engineers, I reprogrammed an adjacent robot in teach mode to take over one weld and its approach and home points from the bottleneck robot, and supported the robot-zone handoff retiming.</p>
+    <ul class="proj-buls">
+      <li><strong>Station cycle time cut from 75 s to 65 s (−13%)</strong></li>
+      <li>Checked interference and path coordination, then validated at full production speed</li>
+      <li>Monitored production stability with maintenance after release — the change held</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade" id="chamfer">
+    <div class="proj-section-label">Chamfered EOAT Clamp — In Production</div>
+    <p class="proj-p">A separate clamp on the same line was letting parts slide past the second locating pin. The clamp's contact face was too thick to engage cleanly where weld beads sit on the part ends. I redesigned it with a <strong>weld-bead clearance chamfer</strong>, had it machined in-house and installed it. It is running in production.</p>
+  </div>
+
+  <div class="proj-section fade" id="clamps">
+    <div class="proj-section-label">OEM Fixture Clamps — Drawings Complete</div>
+    <p class="proj-p">An OEM three-clamp fixture system used at eight production locations needed replacement parts, quoted at <strong>about $88,000 with a 10-month lead time</strong>. No original CAD existed. I reverse-engineered the clamp systems from the physical parts, modelled them in CATIA V5 and produced GD&amp;T drawings so they can be fabricated in-house.</p>
+    <ul class="proj-buls">
+      <li>Full reverse engineering from physical parts, toleranced for machinability</li>
+      <li>The immediate production need was covered by a bushing replacement on the existing units</li>
+      <li><strong>Nothing was machined under this workstream.</strong> The $88K is the OEM quote the drawings give an alternative to — not a realized saving</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade" id="tcp">
+    <div class="proj-section-label">TCP Calibration Fixture — In Fabrication</div>
+    <p class="proj-p">Designed a 4-part offline check fixture so stud-welding guns can be certified against one shared master setup (TCP drift up to 2.5&nbsp;mm), using datum-controlled locating, NAAMS L-blocks and 3-way shim adjustability. Drawings released; parts in machining — not yet installed.</p>
   </div>
 
   <div class="proj-section fade">
     <div class="proj-section-label">Lessons Learned</div>
     <div class="lesson-card">
-      <div class="lesson-title">Data first, hypothesis second</div>
-      <div class="lesson-body">On a production line, gut feel gets you nowhere. Every decision — cycle time changes, EOAT modifications — had to be backed by what the line actually did: live validation, maintenance sign-off, and production stability. Learning to prove a change before asking for it was as important as the mechanical design work.</div>
+      <div class="lesson-title">Prove it on the line before asking for it</div>
+      <div class="lesson-body">On a production line, gut feel gets you nowhere. Every change — the cycle-time rebalance, the locating hardware, the clamp — had to be backed by what the line actually did: a live validation run, maintenance sign-off and production stability afterwards. Learning to prove a change before asking for it was as important as the mechanical design work.</div>
     </div>
     <div class="lesson-card">
       <div class="lesson-title">Change management is a real engineering skill</div>
       <div class="lesson-body">Getting a change onto a live production line involves coordinating with operators, process engineers, and controls — not just submitting a drawing. Understanding how to communicate a change, validate it, and get sign-off was something I had to learn on the job.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">Say which work shipped</div>
+      <div class="lesson-body">Two of these five workstreams stopped at drawings, for good reasons — a bushing swap covered the immediate clamp need, and the TCP fixture was still in the machine shop when the co-op ended. Stating that plainly is what makes the three production claims believable.</div>
     </div>
   </div>
 
