@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Towed-Sensor Winch &amp; Light Sensor — Luis Garcia</title>
+<meta name="description" content="Bench prototype of a cable winch and towed light sensor for AIAA Design/Build/Fly Mission 3: SolidWorks design, 3D-printed hardware, redesign for assembly.">
+<link rel="canonical" href="https://luisg54.github.io/engineering-portfolio/project-winch.html">
+<meta property="og:title" content="Towed-Sensor Winch &amp; Light Sensor — Luis Garcia">
+<meta property="og:description" content="Bench prototype of a cable winch and towed light sensor for AIAA Design/Build/Fly Mission 3: SolidWorks design, 3D-printed hardware, redesign for assembly.">
+<meta property="og:image" content="https://luisg54.github.io/engineering-portfolio/images/m3-system-hero.jpg">
+<meta property="og:url" content="https://luisg54.github.io/engineering-portfolio/project-winch.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#000;--bg2:#0a0a0a;--bg3:#111;--bg4:#161616;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#f5f5f7;--text2:#a1a1a6;--text3:#8a8a90;--text4:#55555a;--accent:#2997ff;--accent2:rgba(41,151,255,0.1);--green:#30d158;--green2:rgba(48,209,88,0.1);--amber:#ffb300;--r:12px;}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter',BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:52px;background:rgba(0,0,0,0.85);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--text)}
+.nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+.proj-hero-title{position:absolute;bottom:0;left:0;right:0;padding:32px 60px;z-index:3;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,transparent 100%)}
+.proj-hero-label{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.proj-hero-name{font-size:clamp(24px,3.4vw,44px);font-weight:600;color:#fff;letter-spacing:-.03em;line-height:1.1}
+.status-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,179,0,0.12);border:1px solid rgba(255,179,0,0.25);border-radius:980px;padding:5px 14px;font-size:11px;font-weight:500;color:var(--amber);}
+.status-dot{width:5px;height:5px;background:var(--amber);border-radius:50%;box-shadow:0 0 6px rgba(255,179,0,.8)}
+.proj-content{max-width:960px;margin:0 auto;padding:64px 44px 96px}
+.proj-section{margin-bottom:56px}
+.proj-section-label{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.proj-section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px}
+.big-metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px}
+.big-metric-num{font-size:26px;font-weight:600;color:var(--accent);letter-spacing:-.03em;line-height:1}
+.big-metric-num.ok{color:var(--green)}
+.big-metric-label{font-size:12px;color:var(--text3);margin-top:6px;line-height:1.45}
+.tags-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
+.tag{font-size:11px;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:5px 12px;border-radius:6px}
+.proj-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300}
+.proj-p strong{color:var(--text);font-weight:500}
+.proj-buls{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.proj-buls li{font-size:14px;color:var(--text2);line-height:1.7;padding-left:18px;position:relative;font-weight:300}
+.proj-buls li::before{content:'–';position:absolute;left:0;color:var(--text4)}
+.proj-buls li strong{color:var(--text);font-weight:500}
+.problem-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid #ff453a;border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.problem-box-label{font-size:10px;font-weight:600;color:#ff453a;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.solution-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.solution-box-label{font-size:10px;font-weight:600;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.mission-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.mission-box-label{font-size:10px;font-weight:600;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.spec-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px}
+.spec-card-title{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.spec-card-items{display:flex;flex-direction:column;gap:7px}
+.spec-card-item{font-size:13px;color:var(--text2);font-weight:300;line-height:1.5}
+.spec-card-item em{font-style:normal;color:var(--text3);font-size:11.5px}
+.prop-notice{display:flex;align-items:flex-start;gap:12px;background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--r);padding:16px 20px;margin-bottom:8px}
+.prop-notice-icon{font-size:16px;flex-shrink:0;line-height:1.5}
+.prop-notice-text{font-size:13px;color:var(--text3);line-height:1.6}
+.prop-notice-text strong{color:var(--text2);font-weight:500}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.gallery.cols3{grid-template-columns:repeat(3,1fr)}
+.shot{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.shot img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.shot.cad img{object-fit:contain;background:#eef0f2}
+.shot-cap{padding:12px 16px 14px;font-size:12px;color:var(--text3);line-height:1.55;border-top:1px solid var(--border)}
+.shot-cap b{color:var(--text2);font-weight:500}
+.glance{display:flex;flex-direction:column;justify-content:center;padding:24px 22px}
+.glance-title{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.glance-list{display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--text2);font-weight:300;line-height:1.5}
+.glance-list b{color:var(--text);font-weight:500}
+.glance-note{margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text3);line-height:1.55}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.compare .tagline{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:980px;margin-bottom:6px}
+.tagline.old{background:rgba(255,69,58,.1);color:#ff6961;border:1px solid rgba(255,69,58,.25)}
+.tagline.new{background:var(--green2);color:var(--green);border:1px solid rgba(48,209,88,.25)}
+.phase-table{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:20px;font-size:13px}
+.phase-table th{background:var(--bg3);color:var(--text3);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:left;padding:12px 16px;border-bottom:1px solid var(--border)}
+.phase-table td{padding:14px 16px;border-bottom:1px solid var(--border);color:var(--text2);font-weight:300;vertical-align:top;background:var(--bg2)}
+.phase-table tr:last-child td{border-bottom:none}
+.phase-table td b{color:var(--text);font-weight:500}
+.st{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:980px;white-space:nowrap;margin-bottom:6px}
+.st.done{background:var(--green2);color:var(--green);border:1px solid rgba(48,209,88,.25)}
+.st.part{background:rgba(255,179,0,.1);color:var(--amber);border:1px solid rgba(255,179,0,.25)}
+.st.next{background:var(--bg3);color:var(--text3);border:1px solid var(--border2)}
+.lesson-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
+.lesson-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.lesson-body{font-size:13px;color:var(--text2);line-height:1.65;font-weight:300}
+.proj-nav-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:32px;margin-top:48px}
+.proj-nav-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;transition:color .2s}
+.proj-nav-link:hover{color:var(--accent)}
+footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between}
+footer p{font-size:12px;color:var(--text3)}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .fade{opacity:1 !important;transform:none !important}
+}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media(max-width:900px){.metrics-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){nav{padding:0 20px}.proj-hero-title{padding:20px}.proj-hero img{height:340px;max-height:none !important}.hero-badge{display:none !important}.proj-content{padding:40px 20px 72px}.spec-grid{grid-template-columns:1fr}.gallery,.gallery.cols3,.compare{grid-template-columns:1fr}.metrics-row{gap:8px}.big-metric{padding:16px 16px}.big-metric-num{font-size:22px}.phase-table{font-size:12px}.phase-table td,.phase-table th{padding:10px 12px}.phase-table thead{display:none}.phase-table tr{display:block;border-bottom:1px solid var(--border)}.phase-table tr:last-child{border-bottom:none}.phase-table td{display:block;border-bottom:none;padding:4px 14px}.phase-table td:first-child{padding-top:14px}.phase-table td:last-child{padding-bottom:14px}footer{flex-direction:column;gap:8px}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>All Projects</a>
+  <a href="index.html" class="nav-logo">Luis Garcia</a>
+  <a href="index.html#contact" class="nav-cta">Contact</a>
+</nav>
+
+<div class="proj-hero" style="margin-top:52px;position:relative;overflow:hidden;background:#0a0a0a">
+  <img src="images/m3-system-hero.jpg" alt="SolidWorks render of the whole bench system: the black winch frames and green gear train on wooden stand strips, the yellow tether running to the red bellmouth, and the black sensor docked under it" style="width:100%;max-height:560px;object-fit:cover;object-position:62% center;display:block" fetchpriority="high">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.92) 100%)"></div>
+  <div class="hero-badge" style="position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:980px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:.04em;backdrop-filter:blur(8px)">Bench prototype · AIAA DBF 2026–27, Mission 3</div>
+  <div class="proj-hero-title">
+    <div class="proj-hero-label">04 · MEMS 4110 Design Project · Fall 2026</div>
+    <h1 class="proj-hero-name">Towed-Sensor Winch &amp; Light Sensor</h1>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+      <div class="status-pill"><div class="status-dot"></div>Initial prototype built · Final prototype in progress</div>
+    </div>
+  </div>
+</div>
+
+<div class="proj-content">
+
+  <div class="proj-section fade">
+    <div class="metrics-row">
+      <div class="big-metric"><div class="big-metric-num ok">1.007 kg</div><div class="big-metric-label">Sensor mass, measured — goal 1 kg</div></div>
+      <div class="big-metric"><div class="big-metric-num">7 → 2</div><div class="big-metric-label">Printed sensor parts after the redesign</div></div>
+      <div class="big-metric"><div class="big-metric-num">10 → 5</div><div class="big-metric-label">Screws to open and close the sensor</div></div>
+      <div class="big-metric"><div class="big-metric-num">3</div><div class="big-metric-label">Light modes — off, solid, flashing</div></div>
+    </div>
+    <div class="tags-row">
+      <span class="tag">SolidWorks</span><span class="tag">Mechanism Design</span><span class="tag">Design for Assembly</span>
+      <span class="tag">Design for 3D Printing</span><span class="tag">Gear Train</span><span class="tag">Arduino</span>
+      <span class="tag">Stability Analysis</span><span class="tag">Mass &amp; Trim</span><span class="tag">Bench Testing</span>
+    </div>
+    <div class="prop-notice">
+      <div class="prop-notice-icon">⏳</div>
+      <div class="prop-notice-text"><strong>Built and bench-run — not yet trialed against its goals.</strong> The winch has let the sensor out and reeled it back in from a table, and the lights have run through all three modes in a demo mode. The full goal trials — 9 ft runs, a fan test, lights changing on command over the cable — are the final prototype's job. Every number below is labelled as measured, shown on video, or estimated.</div>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">The Problem</div>
+    <div class="mission-box">
+      <div class="mission-box-label">The mission</div>
+      <p class="proj-p" style="margin-bottom:0">The 2026–27 AIAA Design/Build/Fly Mission 3 asks a radio-controlled airplane to carry a sensor <strong>inside</strong> the aircraft, let it out on a cable to <strong>at least 1.5× the wingspan</strong>, switch its three lights between <strong>off, solid and flashing on command</strong> from the airplane, then reel it back in and hold it locked for landing.</p>
+    </div>
+    <p class="proj-p">For our MEMS 4110 design project, my team built that system as a <strong>bench prototype</strong>: a motor-driven winch on a test stand, its controller, and the sensor it carries. It does not fly. The point is to prove the mechanism, the cable path and the electronics on a bench, where a failure costs a reprint instead of an airplane.</p>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">What I Owned</div>
+    <ul class="proj-buls">
+      <li><strong>The mechanical design</strong> of the winch, the sensor and the bench stand in SolidWorks: drum and gear train, the bellmouth that guides the cable head home, the servo-arm lock, and the sensor body.</li>
+      <li><strong>The design calls behind them</strong> — layout, materials, mass and trim, fin sizing, winch clearance — each checked with a hand calculation or a CAD check before anything was printed.</li>
+      <li><strong>Getting it made:</strong> print planning on the makerspace's 3D printers, a step-by-step build guide, and the test plan the team builds and films against.</li>
+      <li>Teammates did much of the soldering and wiring, and the build itself was a team effort.</li>
+    </ul>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">The Winch</div>
+    <div class="gallery">
+      <figure class="shot">
+        <img src="images/m3-winch-bench.jpg" alt="The built winch on the bench: printed side frames, a white cable drum, the drive motor and a bench power supply" loading="lazy">
+        <figcaption class="shot-cap"><b>Built — on the bench supply.</b> Printed side frames on an 8 mm steel rod, the cable drum between them, and the drive motor below.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/m3-drum.jpg" alt="Close-up of the cable drum wound with yellow tether and the black printed gear train beside it" loading="lazy">
+        <figcaption class="shot-cap"><b>Drum and gear train.</b> Motor pinion to a 48-tooth idler to a 48-tooth drum gear, with the tether wound on the drum.</figcaption>
+      </figure>
+      <figure class="shot cad">
+        <img src="images/m3-winch-cad.jpg" alt="SolidWorks render of the winch on its wooden stand strips, with the red bellmouth funnel at one end and the drum and gears at the other" loading="lazy">
+        <figcaption class="shot-cap"><b>CAD — winch on its stand.</b> The cable runs from the drum, over a pulley, and down through the bellmouth (red), which funnels the cable head back into its seat when it docks.</figcaption>
+      </figure>
+      <figure class="shot glance">
+        <div class="glance-title">How it works</div>
+        <div class="glance-list">
+          <div><b>Out:</b> the motor pays cable off the drum and the sensor drops through the bellmouth.</div>
+          <div><b>In:</b> the drum reels it back; the cone on the cable head self-centres in the bellmouth's seat.</div>
+          <div><b>Lock:</b> a hobby servo swings a printed arm under the head to hold it stowed.</div>
+          <div><b>Control:</b> an Arduino Nano with a motor driver and an optical counter on the drum, commanded from a laptop.</div>
+        </div>
+        <div class="glance-note">Status: the out-and-back demo ran the motor straight from the bench supply. The servo lock and the Nano controller are designed and are the next things fitted.</div>
+      </figure>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Build Day One Failed — and Made It Simpler</div>
+    <div class="problem-box">
+      <div class="problem-box-label">First build session</div>
+      <p class="proj-p" style="margin-bottom:0">The drum wouldn't turn: nothing coupled the 48-tooth gear to its shaft, and the studio couldn't cut or grind the stainless rod to add flats. Nobody could wind the lock's small spring by hand, and the tiny drilled holes in the prints were hard to make. The design assumed a machine shop the team didn't have.</p>
+    </div>
+    <div class="solution-box">
+      <div class="solution-box-label">The rule I set for the redesign</div>
+      <p class="proj-p" style="margin-bottom:0"><strong>Studio tools only</strong> — a 3D printer, a hand drill and a soldering iron. No machining, no tapping, no hand-made springs, holes printed to size. The drum gear got a <strong>clamp hub</strong>: two set screws in captured nuts that grip the plain round rod. The spring lock became <strong>a servo swinging a printed arm</strong>. Both were redrawn the same day.</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot cad">
+        <img src="images/m3-fix-hub.jpg" alt="CAD view of the winch drum with the new green drum gear and its clamp hub on the rod" loading="lazy">
+        <figcaption class="shot-cap"><b>Fix 1 — clamp hub (CAD).</b> The gear grips the round rod with set screws, so no flats have to be machined.</figcaption>
+      </figure>
+      <figure class="shot cad">
+        <img src="images/m3-fix-lock.jpg" alt="CAD view of the servo-arm lock: a blue hobby servo in a green printed holder with a curved arm reaching into the bellmouth window" loading="lazy">
+        <figcaption class="shot-cap"><b>Fix 2 — servo-arm lock (CAD).</b> A hobby servo swings a printed finger through the old bolt window under the cable head. No springs.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">The Sensor — Redesigned for Assembly</div>
+    <div class="problem-box">
+      <div class="problem-box-label">Version 1 couldn't be assembled the way we built it</div>
+      <p class="proj-p" style="margin-bottom:0">The first sensor body was laid out weight-first: steel shot filled the nose and tail, and the electronics got what was left — narrow channels, side bays and passages sized for a single wire. It assumed each board would be placed first and wired in place. The team built the wiring harness on the bench instead, and the finished harness — solder joints, heat-shrink and all — <strong>could not be fed into the pockets</strong>.</p>
+    </div>
+    <div class="compare">
+      <figure class="shot cad">
+        <img src="images/m3-sensor-before.jpg" alt="Exploded CAD view of the first sensor body: front cup, main body, nose cone, hatch and small plugs, with the electronics floating between them" loading="lazy">
+        <figcaption class="shot-cap"><span class="tagline old">Before</span><br><b>The first body — seven printed parts.</b> Front cup, main body, nose cone, tail hatch and two fill plugs, plus a clip-on fin added in version 2. Ten screws to close.</figcaption>
+      </figure>
+      <figure class="shot cad">
+        <img src="images/m3-sensor-after.jpg" alt="See-through CAD view of the redesigned sensor: one streamlined tub with a swept fin and the electronics laid out in one open bay" loading="lazy">
+        <figcaption class="shot-cap"><span class="tagline new">After</span><br><b>Version 3 — one tub, one lid.</b> The whole electronics bay opens in one plane; weights sit in sealed pockets at the two ends.</figcaption>
+      </figure>
+    </div>
+    <div class="solution-box">
+      <div class="solution-box-label">One load-carrying tub, one flat lid</div>
+      <p class="proj-p" style="margin-bottom:0">I redrew the sensor as a single tub that carries everything structural — the cable cup and tie-off, three light windows and two weight pockets — and a flat side lid that only covers. <strong>Five screws off and the whole ~300 cm³ bay is open</strong>, even with the sensor hanging on its cable. The harness lays in from the side; nothing is threaded through a hole, and nothing has a fixed pocket, so a board a few millimetres off still fits.</p>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-card-title">Stability</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">Hangs from one point, so gravity holds pitch and roll</div>
+          <div class="spec-card-item">Only yaw is free — one swept fin behind the cable handles it</div>
+          <div class="spec-card-item">Fin sized with a Barrowman-style estimate: centre of pressure 12–33 mm behind the cable <em>(estimate)</em></div>
+          <div class="spec-card-item">A deeper boattail looked better and failed the cautious case, so the belly stays shallow</div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-title">Mass &amp; Trim</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">1 kg target; 2–2.5 lb acceptable</div>
+          <div class="spec-card-item">Weights split 75 / 25 front to back, by grams</div>
+          <div class="spec-card-item">Weights sealed in the end pockets, away from the wiring</div>
+          <div class="spec-card-item"><strong style="color:var(--green);font-weight:500">1.007 kg</strong> on the scale <em>(measured)</em></div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-title">Manufacturing</div>
+        <div class="spec-card-items">
+          <div class="spec-card-item">2 printed parts in one ~5 h print job</div>
+          <div class="spec-card-item">No supports: light side on the bed, 45° bevels on the bed edge</div>
+          <div class="spec-card-item">Holes and nut slots printed to size — nothing to drill or tap</div>
+          <div class="spec-card-item">Winch clearance checked in CAD at every twist from −12° to +12°</div>
+        </div>
+      </div>
+    </div>
+    <p class="proj-p">One call worth showing: I first specified PETG because the LED boards run warm. When the printer with the shortest queue only had PLA loaded, I checked instead of waiting — a star board settles around 50–60 °C, close to where PLA softens, but the ledge it sits on carries no load and the walls see about 0.03 MPa. <strong>PLA was fine</strong>, and it printed that day.</p>
+    <div class="gallery">
+      <figure class="shot">
+        <img src="images/m3-lights.jpg" alt="The printed sensor on a concrete floor with its three red lights on, the yellow tether rising from the cable head on top" loading="lazy">
+        <figcaption class="shot-cap"><b>Built — lights on.</b> The printed tub with its three lights running.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/m3-scale.jpg" alt="The printed sensor sitting on a kitchen scale that reads 1.007 kilograms" loading="lazy">
+        <figcaption class="shot-cap"><b>1.007 kg, measured</b> — against a 1 kg goal.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/m3-wiring.jpg" alt="Hands laying the wired electronics into the open side of the black sensor tub on a workbench" loading="lazy">
+        <figcaption class="shot-cap"><b>Harness in from the side</b> — the lid off, the bay open.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/m3-hanging.jpg" alt="The sensor hanging from its yellow tether under a bench, its red lights glowing on the floor" loading="lazy">
+        <figcaption class="shot-cap"><b>Hanging on the tether</b> — still air; the fan test is next.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">Results So Far</div>
+    <p class="proj-p">The goals were written so a video can prove them. Where a result is partial, it says so.</p>
+    <table class="phase-table">
+      <thead><tr><th>Goal</th><th>Target</th><th>Where it stands</th></tr></thead>
+      <tbody>
+        <tr><td><b>Sensor mass</b></td><td>1 kg (2–2.5 lb acceptable)</td><td><span class="st done">Measured</span><br>1.007 kg</td></tr>
+        <tr><td><b>Out and back</b></td><td>9 ft (108 ± 1 in) out, then back in to fully stowed</td><td><span class="st part">Shown, short</span><br>Out and back from a table, motor on the bench supply. Full 9 ft runs are next.</td></tr>
+        <tr><td><b>Stability in moving air</b></td><td>0 full spins in 30 s of blower air, nose into the wind</td><td><span class="st next">Next</span><br>Hung in still air only. The fan test is planned.</td></tr>
+        <tr><td><b>Lights</b></td><td>Off, solid and flashing on command over the cable</td><td><span class="st part">Shown, demo mode</span><br>All three modes ran on their own. The on-command test is next.</td></tr>
+      </tbody>
+    </table>
+    <p class="proj-p"><strong>Next:</strong> the final prototype — a compact winch module, the light command sent down the cable, and a drive chosen from the test data — then the full goal trials, filmed.</p>
+  </div>
+
+  <div class="proj-section fade">
+    <div class="proj-section-label">What I've Learned So Far</div>
+    <div class="lesson-card">
+      <div class="lesson-title">Design for how it actually gets built</div>
+      <div class="lesson-body">The first sensor was correct in CAD and impossible on the bench, because it assumed an assembly order nobody followed. The redesign started from the real sequence — harness built first, then laid in — and the part count, screw count and fit tolerance all fell out of that one question.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">Constraints are design inputs</div>
+      <div class="lesson-body">Day one failed on things a machine shop would never notice: flats on a steel rod, a hand-wound spring, a tiny drilled hole. Writing the studio's real capabilities down as rules — print it, drill it by hand, or don't use it — made the second design simpler and faster to build than the first.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">A goal you can't measure isn't a goal</div>
+      <div class="lesson-body">The stability goal started as "30 mph, within ±15°" — neither of which the team could measure on a bench. It became "zero full spins in 30 seconds of blower air", which a phone video can prove or disprove. Same intent, and now it can actually fail.</div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-title">Check the assumption, not the habit</div>
+      <div class="lesson-body">PETG was a reasonable default for parts near a warm LED. A ten-minute heat and stress check showed PLA was fine for this part, which turned a wait for the right printer into a same-day print.</div>
+    </div>
+  </div>
+
+  <div class="proj-nav-row fade">
+    <a href="project-automation-cell.html" class="proj-nav-link"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>EOAT Automation Cell</a>
+    <a href="index.html#projects" class="proj-nav-link">All projects</a>
+    <a href="project-dbf.html" class="proj-nav-link">Design-Build-Fly<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Luis Garcia · Kansas City, MO</p>
+  <p>ME · WashU McKelvey · HSF Scholar</p>
+</footer>
+<script>const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const s=Array.from(e.target.parentElement?.children||[]).filter(c=>c.classList.contains('fade'));const i=Math.min(s.indexOf(e.target),4);setTimeout(()=>e.target.classList.add('in'),i*80);obs.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('in');}else{obs.observe(el);}});</script>
+</body>
+</html>
