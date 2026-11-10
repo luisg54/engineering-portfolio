@@ -15,74 +15,8 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#000;--bg2:#0a0a0a;--bg3:#111;--bg4:#161616;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#f5f5f7;--text2:#a1a1a6;--text3:#8a8a90;--text4:#55555a;--accent:#2997ff;--accent2:rgba(41,151,255,0.1);--green:#30d158;--green2:rgba(48,209,88,0.1);--r:12px;}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter',BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:52px;background:rgba(0,0,0,0.85);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
-.nav-logo{font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
-.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
-.nav-back:hover{color:var(--text)}
-.nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
-.nav-cta:hover{opacity:.85}
-.proj-hero{width:100%;margin-top:52px;position:relative;overflow:hidden;background:#0a0a0b}
-.proj-hero img{width:100%;display:block;max-height:460px;object-fit:cover}
-.proj-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.92) 100%)}
-.proj-hero-title{position:absolute;bottom:0;left:0;right:0;padding:36px 60px}
-.proj-hero-label{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
-.proj-hero-name{font-size:clamp(22px,3vw,40px);font-weight:600;color:#fff;letter-spacing:-.03em;line-height:1.1}
-.status-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-.status-pill{display:inline-flex;align-items:center;gap:7px;border-radius:980px;padding:5px 14px;font-size:11px;font-weight:500}
-.status-green{background:rgba(48,209,88,0.12);border:1px solid rgba(48,209,88,0.25);color:#30d158}
-.status-dot-green{width:5px;height:5px;background:#30d158;border-radius:50%;box-shadow:0 0 6px rgba(48,209,88,.8)}
-.proj-content{max-width:960px;margin:0 auto;padding:64px 44px 96px}
-.proj-section{margin-bottom:56px}
-.proj-section-label{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.proj-section-label::after{content:'';flex:1;height:1px;background:var(--border)}
-.metrics-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
-.big-metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;min-width:140px}
-.big-metric-num{font-size:26px;font-weight:600;color:var(--accent);letter-spacing:-.03em;line-height:1}
-.big-metric-label{font-size:12px;color:var(--text3);margin-top:4px}
-.tags-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
-.tag{font-size:11px;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:5px 12px;border-radius:6px}
-.proj-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300}
-.proj-p strong{color:var(--text);font-weight:500}
-.proj-buls{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
-.proj-buls li{font-size:14px;color:var(--text2);line-height:1.7;padding-left:18px;position:relative;font-weight:300}
-.proj-buls li::before{content:'–';position:absolute;left:0;color:var(--text4)}
-.proj-buls li strong{color:var(--text);font-weight:500}
-.problem-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid #ff453a;border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
-.problem-box-label{font-size:10px;font-weight:600;color:#ff453a;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
-.arch-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px}
-.arch-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px}
-.arch-card-title{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
-.arch-card-items{display:flex;flex-direction:column;gap:6px}
-.arch-card-item{font-size:13px;color:var(--text2);font-weight:300}
-.prop-notice{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;margin-bottom:32px}
-.prop-notice-text{font-size:13px;color:var(--text3);line-height:1.5}
-.cover-diagram{width:100%;border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-bottom:12px;background:#0a0a0b}
-.cover-diagram img{width:100%;display:block}
-.img-caption{font-size:11px;color:var(--text3);text-align:center;margin-bottom:24px;letter-spacing:.01em}
-.lesson-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
-.lesson-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
-.lesson-body{font-size:13px;color:var(--text2);line-height:1.65;font-weight:300}
-.proj-nav-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:32px;margin-top:48px}
-.proj-nav-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;transition:color .2s}
-.proj-nav-link:hover{color:var(--accent)}
-footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between}
-footer p{font-size:12px;color:var(--text3)}
-.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.fade.in{opacity:1;transform:translateY(0)}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
-  .fade{opacity:1 !important;transform:none !important}
-}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-@media(max-width:768px){nav{padding:0 20px}.proj-hero-title{padding:24px}.proj-content{padding:40px 20px 72px}.arch-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 <nav>
@@ -97,10 +31,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div class="proj-hero-title">
     <div class="proj-hero-label">02 · Tesla Fremont · Optimus Program · Jan – Aug 2026</div>
     <h1 class="proj-hero-name">Modular Camera System for Humanoid Training Data</h1>
-    <div class="status-row">
-      <div class="status-pill status-green"><div class="status-dot-green"></div>20 stations mounted · 10 collecting</div>
-    </div>
   </div>
+</div>
+
+<div class="proj-meta">
+  <div class="status-text live"><span class="status-dot live"></span>20 stations mounted · 10 collecting</div>
 </div>
 
 <div class="proj-content">
@@ -201,7 +136,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
   <div class="proj-nav-row fade">
     <a href="project-eoat.html" class="proj-nav-link"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>EOAT Redesign</a>
-    <a href="index.html#projects" class="proj-nav-link">All projects</a>
+    <a href="index.html#work" class="proj-nav-link">All projects</a>
     <a href="project-optimus.html" class="proj-nav-link">Optimus Academy<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 
@@ -211,9 +146,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <p>© 2026 Luis Garcia · Kansas City, MO</p>
   <p>ME · WashU McKelvey · HSF Scholar</p>
 </footer>
-<script>
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const s=Array.from(e.target.parentElement?.children||[]).filter(c=>c.classList.contains('fade'));const i=Math.min(s.indexOf(e.target),4);setTimeout(()=>e.target.classList.add('in'),i*80);obs.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('in');}else{obs.observe(el);}});
-</script>
+<script src="js/site.js" defer></script>
 </body>
 </html>
