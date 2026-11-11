@@ -80,7 +80,7 @@
       heroLayers[heroIndex].classList.remove('is-active');
       heroIndex = (heroIndex + 1) % heroLayers.length;
       heroLayers[heroIndex].classList.add('is-active');
-    }, 6500);
+    }, 3500);
   } else if (heroLayers.length === 1) {
     heroLayers[0].classList.add('is-active');
   }

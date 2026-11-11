@@ -135,7 +135,7 @@ nav{
   position:absolute;inset:0;overflow:hidden;
   background:#0c1016;
   opacity:0;
-  transition:opacity 1.4s ease-in-out;
+  transition:opacity .6s ease-in-out;
   z-index:0
 }
 .home-hero-layer.is-active{
