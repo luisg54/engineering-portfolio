@@ -164,11 +164,11 @@ nav{
 .home-hero-layer video{
   object-fit:cover;object-position:center;
   /* Subtle mute so brand type stays primary — no warm/copper wash */
-  filter:saturate(.88) brightness(.92)
+  filter:saturate(.86) brightness(.9)
 }
-/* Helo ascent: keep rocket/plume in frame on tall viewports */
+/* NASA pad liftoff (medium): keep plume/rocket present on tall crops */
 .home-hero-layer-base img,
-.home-hero-layer-base video{object-position:center 62%}
+.home-hero-layer-base video{object-position:center 48%}
 .home-hero-layer-overlay img,
 .home-hero-layer-overlay video{object-position:center 45%}
 .home-hero-static{
