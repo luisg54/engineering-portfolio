@@ -62,7 +62,7 @@
   /* Homepage hero GIF: freeze to poster under reduced motion (picture + JS fallback) */
   var heroMotion = document.querySelector('.home-hero-motion');
   if (heroMotion && reduceMotion) {
-    heroMotion.src = 'images/hero-roadster-kickflip-poster.jpg';
+    heroMotion.src = 'images/hero-nasa-launch-poster.jpg';
     heroMotion.removeAttribute('srcset');
   }
 
