@@ -35,7 +35,18 @@
 
 <header class="home-hero" id="top">
   <div class="home-hero-media" aria-hidden="true">
-    <img src="images/arm-cover.jpg?v=revd" alt="" fetchpriority="high" width="1600" height="900">
+    <picture>
+      <source srcset="images/hero-roadster-kickflip-poster.jpg" media="(prefers-reduced-motion: reduce)">
+      <img
+        class="home-hero-motion"
+        src="images/hero-roadster-kickflip.gif"
+        alt=""
+        width="480"
+        height="270"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </picture>
   </div>
   <div class="home-hero-scrim" aria-hidden="true"></div>
   <div class="home-hero-inner">

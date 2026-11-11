@@ -128,21 +128,25 @@ nav{
   margin-top:0;padding-top:var(--nav-h)
 }
 .home-hero-media{
-  position:absolute;inset:0;z-index:0
+  position:absolute;inset:0;z-index:0;
+  background:var(--bg)
+}
+.home-hero-media picture,
+.home-hero-media img{
+  width:100%;height:100%;display:block
 }
 .home-hero-media img{
-  width:100%;height:100%;object-fit:cover;object-position:center 45%;
-  display:block;transform:scale(1.06);
-  animation:heroKen 28s ease-in-out alternate infinite;
-  /* Keep photo colors honest — no warm/copper tint wash */
-  filter:none
+  object-fit:cover;object-position:center 40%;
+  /* Subtle mute so brand type stays primary — no warm/copper wash */
+  filter:saturate(.85) brightness(.9);
+  transform:scale(1.02)
 }
 .home-hero-scrim{
   position:absolute;inset:0;z-index:1;
   /* Neutral cool graphite for type legibility only — no orange/copper color overlay */
   background:
-    linear-gradient(to top,rgba(12,16,22,.94) 0%,rgba(12,16,22,.45) 42%,rgba(12,16,22,.18) 72%,rgba(12,16,22,.28) 100%),
-    linear-gradient(90deg,rgba(12,16,22,.4) 0%,transparent 55%);
+    linear-gradient(to top,rgba(12,16,22,.94) 0%,rgba(12,16,22,.5) 42%,rgba(12,16,22,.22) 72%,rgba(12,16,22,.32) 100%),
+    linear-gradient(90deg,rgba(12,16,22,.45) 0%,transparent 55%);
   pointer-events:none
 }
 .home-hero-inner{
@@ -191,11 +195,6 @@ nav{
   transform-origin:left;transition:transform .3s ease
 }
 .btn-underline:hover::after{transform:scaleX(1)}
-
-@keyframes heroKen{
-  from{transform:scale(1.04) translate3d(0,0,0)}
-  to{transform:scale(1.1) translate3d(-1.5%,-1%,0)}
-}
 
 /* —— Sections / homepage below fold —— */
 section{padding:88px 44px}
@@ -510,7 +509,7 @@ footer p{font-family:var(--font-ui);font-size:12px;color:var(--text3)}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .fade{opacity:1 !important;transform:none !important}
-  .home-hero-media img{animation:none !important;transform:none !important}
+  .home-hero-media img{transform:none !important;filter:saturate(.8) brightness(.88)}
   .reveal-img .proj-cover img,
   .reveal-img .proj-cover video{clip-path:none !important}
 }
