@@ -15,205 +15,82 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#000;--bg2:#0a0a0a;--bg3:#111;--bg4:#161616;
-  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --text:#f5f5f7;--text2:#a1a1a6;--text3:#8a8a90;--text4:#55555a;
-  --accent:#2997ff;--accent2:rgba(41,151,255,0.1);
-  --green:#30d158;--green2:rgba(48,209,88,0.1);
-  --r:12px;
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter',BlinkMacSystemFont,sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:52px;background:rgba(0,0,0,0.85);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
-.nav-logo{font-size:15px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
-.nav-links{display:flex;gap:24px;list-style:none}
-.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{font-size:13px;font-weight:500;color:#fff;background:var(--accent);padding:7px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s}
-.nav-cta:hover{opacity:.85}
-.nav-toggle{display:none;background:none;border:1px solid var(--border2);color:var(--text);width:36px;height:36px;border-radius:8px;cursor:pointer;font-size:18px;line-height:1}
-.intro-bar{display:flex;align-items:center;gap:20px;margin-bottom:40px;padding:20px 24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);max-width:720px}
-.intro-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid var(--border2);flex-shrink:0}
-.intro-text{flex:1;min-width:0}
-.intro-name{font-size:clamp(22px,3vw,28px);font-weight:600;letter-spacing:-0.03em;color:var(--text);line-height:1.15;margin-bottom:4px}
-.intro-role{font-size:14px;color:var(--text2);font-weight:300}
-.intro-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap}
-.intro-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:9px 16px;border-radius:980px;text-decoration:none;transition:opacity .2s,background .2s}
-.intro-btn.primary{background:var(--accent);color:#fff}
-.intro-btn.primary:hover{opacity:.85}
-.intro-btn.secondary{background:rgba(255,255,255,.07);color:var(--text);border:1px solid var(--border2)}
-.intro-btn.secondary:hover{background:rgba(255,255,255,.12)}
-.chip-dot{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 8px rgba(48,209,88,.6);flex-shrink:0}
-section{padding:96px 44px}
-#projects{padding-top:120px}
-.impact-strip{display:flex;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:48px;max-width:720px}
-.impact-item{flex:1;padding:16px 14px;text-align:center;border-right:1px solid var(--border);background:var(--bg2)}
-.impact-item:last-child{border-right:none}
-.impact-num{font-size:22px;font-weight:600;letter-spacing:-0.03em;color:var(--text)}
-.impact-num b{color:var(--accent)}
-.impact-lbl{font-size:11px;color:var(--text3);margin-top:3px}
-.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
-.filter-chip{font-family:inherit;font-size:12.5px;font-weight:500;color:var(--text2);background:var(--bg2);border:1px solid var(--border);padding:7px 15px;border-radius:980px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
-.filter-chip:hover{border-color:var(--border2);color:var(--text)}
-.filter-chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
-.proj-card[hidden]{display:none}
-.skip-link{position:absolute;left:-9999px;top:0;z-index:300;background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:10px 18px;border-radius:0 0 8px 0;text-decoration:none}
-.skip-link:focus{left:0}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.s-chip{display:inline-block;font-size:12px;font-weight:500;color:var(--accent);background:var(--accent2);padding:4px 12px;border-radius:980px;margin-bottom:14px}
-.s-title{font-size:clamp(28px,4vw,46px);font-weight:600;letter-spacing:-0.03em;color:var(--text);line-height:1.1;margin-bottom:10px}
-.s-sub{font-size:15px;color:var(--text2);max-width:500px;line-height:1.65;font-weight:300}
-.s-hdr{margin-bottom:52px}
-#projects{background:var(--bg)}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.proj-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;text-decoration:none;display:block;transition:border-color .25s,transform .25s,background .25s}
-.proj-card:hover{border-color:var(--border2);transform:translateY(-2px);background:var(--bg3)}
-.proj-card.featured{grid-column:span 2}
-.proj-cover{width:100%;overflow:hidden;position:relative;background:var(--bg4)}
-.proj-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.proj-card:hover .proj-cover img{transform:scale(1.03)}
-.proj-cover-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.65) 100%)}
-.proj-cover.letterbox{aspect-ratio:21/7}
-.proj-cover.letterbox img{object-fit:cover;object-position:center 40%}
-.proj-cover.portrait{aspect-ratio:4/3}
-.proj-cover.portrait img{object-fit:cover;object-position:center top}
-.proj-cover.whitebg{aspect-ratio:16/9;background:#f0ede8}
-.proj-cover.whitebg img{object-fit:contain;padding:20px}
-.proj-cover.darkbg{aspect-ratio:1/1;background:#000}
-.proj-cover.darkbg img{object-fit:cover}
-.proj-body{padding:22px 24px 26px}
-.proj-num{font-size:11px;color:var(--text3);font-weight:500;letter-spacing:.04em;margin-bottom:6px}
-.proj-name{font-size:18px;font-weight:600;color:var(--text);letter-spacing:-.02em;line-height:1.25;margin-bottom:8px}
-.proj-desc{font-size:13px;color:var(--text2);line-height:1.65;font-weight:300;margin-bottom:14px}
-.proj-metrics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.metric{display:inline-flex;align-items:center;gap:5px;background:var(--green2);border:1px solid rgba(48,209,88,.2);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--green)}
-.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.tag{font-size:11px;color:var(--text2);background:var(--bg4);border:1px solid var(--border);padding:4px 10px;border-radius:6px}
-.proj-cta{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--accent)}
-.proj-links{display:flex;flex-direction:column;gap:8px;margin-top:2px}
-.proj-link{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12.5px;font-weight:500;color:var(--accent);background:var(--accent2);border:1px solid rgba(41,151,255,.22);padding:12px 14px;border-radius:8px;text-decoration:none;transition:background .2s,border-color .2s}
-.proj-link:hover{background:rgba(41,151,255,.18);border-color:rgba(41,151,255,.4)}
-.proj-link svg{flex-shrink:0;transition:transform .2s}
-.proj-link:hover svg{transform:translateX(3px)}
-.proj-card.hub:hover .proj-cover img{transform:none}
-.proj-card.hub:hover{transform:none;border-color:var(--border);background:var(--bg2)}
-.metric.amber{background:rgba(255,179,0,.1);border-color:rgba(255,179,0,.22);color:#ffb300}
-.proj-cta svg{transition:transform .2s}
-.proj-card:hover .proj-cta svg{transform:translateX(3px)}
-#about{background:var(--bg2)}
-.about-wrap{display:grid;grid-template-columns:280px 1fr;gap:72px;align-items:start}
-.about-photo img{width:260px;height:320px;object-fit:cover;object-position:center 20%;border-radius:16px;filter:brightness(.95)}
-.about-status{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border2);border-radius:14px;padding:10px 16px;font-size:12px;font-weight:500;color:var(--text2);margin-top:16px;max-width:260px;line-height:1.45}
-.about-p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:16px;font-weight:300}
-.about-p strong{color:var(--text);font-weight:500}
-.about-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.about-badge{font-size:12px;font-weight:500;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:7px 14px;border-radius:8px}
-.about-resume{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:14px;font-weight:500;color:#fff;background:var(--accent);padding:11px 22px;border-radius:980px;text-decoration:none;transition:opacity .2s}
-.about-resume:hover{opacity:.85}
-#skills{background:var(--bg)}
-.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
-.skill-col{background:var(--bg2);padding:26px 22px}
-.skill-col-title{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-.skill-items{display:flex;flex-direction:column;gap:8px}
-.skill-item{font-size:13px;color:var(--text2);display:flex;align-items:center;gap:8px;font-weight:300}
-.skill-item::before{content:'';width:4px;height:4px;background:var(--text4);border-radius:50%;flex-shrink:0}
-#experience{background:var(--bg2)}
-.exp-list{display:flex;flex-direction:column;gap:10px;max-width:880px}
-.exp-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
-.exp-hdr{width:100%;padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;transition:background .2s;background:none;border:0;font-family:inherit;text-align:left;color:inherit}
-.exp-main{display:block}
-.exp-role,.exp-org,.exp-date{display:block}
-.exp-hdr:hover{background:rgba(255,255,255,.02)}
-.exp-role{font-size:16px;font-weight:600;color:var(--text);letter-spacing:-.02em;margin-bottom:3px}
-.exp-org{font-size:13px;font-weight:500;color:var(--accent)}
-.exp-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
-.exp-date{font-size:12px;color:var(--text3);white-space:nowrap}
-.exp-tog{width:24px;height:24px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:16px;line-height:1;transition:transform .25s,background .2s}
-.exp-card.open .exp-tog{transform:rotate(45deg);background:var(--accent2);color:var(--accent)}
-.exp-body{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
-.exp-card.open .exp-body{max-height:800px}
-.exp-body-inner{padding:0 26px 24px;border-top:1px solid var(--border)}
-.exp-sub{margin-top:14px;padding:14px 18px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)}
-.exp-sub-title{font-size:10px;font-weight:600;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
-.exp-buls{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:14px}
-.exp-buls li{font-size:13.5px;color:var(--text2);line-height:1.65;padding-left:16px;position:relative;font-weight:300}
-.exp-buls li::before{content:'\2013';position:absolute;left:0;color:var(--text4)}
-.exp-buls li strong{color:var(--text);font-weight:500}
-#contact{background:var(--bg)}
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-.c-links{display:flex;flex-direction:column;gap:10px}
-.c-link{display:flex;align-items:center;gap:16px;padding:18px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);text-decoration:none;transition:border-color .2s,background .2s}
-.c-link:hover{border-color:var(--accent);background:rgba(41,151,255,.04)}
-.c-icon{width:38px;height:38px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.c-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
-.c-val{font-size:14px;color:var(--text)}
-.c-form{display:flex;flex-direction:column;gap:14px;justify-content:center}
-.c-panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px}
-.c-panel-title{font-size:18px;font-weight:600;color:var(--text);letter-spacing:-.02em;margin-bottom:8px}
-.c-panel-p{font-size:14px;color:var(--text2);line-height:1.7;font-weight:300;margin-bottom:20px}
-.c-panel-btns{display:flex;flex-wrap:wrap;gap:10px}
-.c-panel-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;padding:12px 20px;border-radius:980px;text-decoration:none;transition:opacity .2s}
-.c-panel-btn:hover{opacity:.85}
-.c-panel-btn.out{background:rgba(255,255,255,.07);color:var(--text);border:1px solid var(--border2)}
-.c-panel-btn.out:hover{background:rgba(255,255,255,.12)}
-.nav-links.open{display:flex;position:fixed;top:52px;left:0;right:0;background:rgba(0,0,0,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);flex-direction:column;padding:16px 24px 20px;gap:4px;z-index:199;list-style:none}
-.nav-links.open li{width:100%}
-.nav-links.open a{display:block;padding:12px 0;font-size:15px;color:var(--text2);text-decoration:none;border-bottom:1px solid var(--border)}
-.nav-links.open li:last-child a{border-bottom:none}
-footer{padding:28px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-footer p{font-size:12px;color:var(--text3)}
-.fade{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
-.fade.in{opacity:1;transform:translateY(0)}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
-  .fade{opacity:1 !important;transform:none !important}
-}
-@media(max-width:1100px){.proj-grid{grid-template-columns:1fr}.proj-card.featured{grid-column:span 1}.skills-grid{grid-template-columns:repeat(2,1fr)}.about-wrap{grid-template-columns:1fr;gap:40px}.contact-wrap{grid-template-columns:1fr;gap:40px}nav{padding:0 24px}section{padding:72px 24px}}
-@media(max-width:640px){.nav-cta{display:none}}
-@media(max-width:640px){.nav-links:not(.open){display:none}.nav-toggle{display:flex;align-items:center;justify-content:center}.intro-bar{flex-wrap:wrap;padding:18px}.intro-actions{width:100%}.impact-strip{flex-direction:column}.impact-item{border-right:none;border-bottom:1px solid var(--border)}.impact-item:last-child{border-bottom:none}.skills-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=hero-crossfade-fast">
 </head>
 <body>
-<a href="#projects" class="skip-link">Skip to content</a>
+<a href="#work" class="skip-link">Skip to content</a>
 <nav>
-  <a href="#projects" class="nav-logo">Luis Garcia</a>
+  <a href="#work" class="nav-logo">Luis Garcia</a>
   <ul class="nav-links" id="navMenu">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
   <a href="#contact" class="nav-cta">Get in Touch</a>
 </nav>
 
-<section id="projects">
-  <div class="s-hdr fade">
-    <div class="intro-bar">
-      <img src="images/luis-garcia.jpg" alt="Luis Garcia" class="intro-avatar" width="64" height="64" fetchpriority="high">
-      <div class="intro-text">
-        <h1 class="intro-name">Luis Garcia</h1>
-        <div class="intro-role">Mechanical Engineer · WashU McKelvey · Manufacturing &amp; Robotics</div>
-      </div>
-      <div class="intro-actions">
-        <a href="images/resume.pdf?v=2026-09" class="intro-btn secondary" download="Luis_Garcia_Resume.pdf">Resume</a>
-        <a href="#contact" class="intro-btn primary">Contact</a>
-      </div>
+<header class="home-hero" id="top">
+  <div class="home-hero-media" aria-hidden="true" data-hero-crossfade>
+    <div class="home-hero-layer home-hero-layer-base is-active">
+      <picture>
+        <source srcset="images/hero-nasa-launch-poster.jpg" media="(prefers-reduced-motion: reduce)">
+        <img
+          class="home-hero-motion"
+          src="images/hero-nasa-launch.gif"
+          alt=""
+          width="480"
+          height="270"
+          fetchpriority="high"
+          decoding="async"
+          data-poster="images/hero-nasa-launch-poster.jpg"
+        >
+      </picture>
     </div>
-    <div class="s-chip">Portfolio</div>
-    <h2 class="s-title">Engineering Work</h2>
-    <p class="s-sub">Production robotics, manufacturing optimization, and simulation — selected projects with technical breakdowns.</p>
-    <div class="impact-strip fade">
-      <div class="impact-item"><div class="impact-num"><b>10s</b></div><div class="impact-lbl">Cycle time cut</div></div>
-      <div class="impact-item"><div class="impact-num">$<b>88K</b></div><div class="impact-lbl">OEM alt. path</div></div>
-      <div class="impact-item"><div class="impact-num"><b>20</b></div><div class="impact-lbl">Stations mounted</div></div>
-      <div class="impact-item"><div class="impact-num"><b>1000×</b></div><div class="impact-lbl">CFD speedup</div></div>
+    <div class="home-hero-layer home-hero-layer-overlay">
+      <picture>
+        <source srcset="images/hero-roadster-kickflip-poster.jpg" media="(prefers-reduced-motion: reduce)">
+        <img
+          class="home-hero-motion home-hero-overlay-img"
+          src="images/hero-roadster-kickflip.gif"
+          alt=""
+          width="480"
+          height="270"
+          decoding="async"
+          data-poster="images/hero-roadster-kickflip-poster.jpg"
+        >
+      </picture>
     </div>
   </div>
+  <div class="home-hero-scrim" aria-hidden="true"></div>
+  <div class="home-hero-inner">
+    <p class="home-brand">Luis Garcia</p>
+    <h1 class="home-headline">Manufacturing &amp; robotics engineering for the production floor.</h1>
+    <p class="home-support">WashU · Tesla Fremont · seeking Summer 2027</p>
+    <div class="home-ctas">
+      <a href="images/resume.pdf?v=2026-09" class="btn btn-primary" download="Luis_Garcia_Resume.pdf">Resume <span class="btn-arrow" aria-hidden="true">→</span></a>
+      <a href="#contact" class="btn btn-ghost">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="s-hdr fade">
+    <div class="s-chip">Selected work</div>
+    <h2 class="s-title">Engineering projects</h2>
+    <p class="s-sub">Production robotics, manufacturing optimization, and simulation — with technical breakdowns.</p>
+  </div>
+
+  <div class="outcomes fade" aria-label="Selected outcomes">
+    <div class="outcome"><div class="outcome-num"><b>10s</b></div><div class="outcome-lbl">Cycle time cut</div></div>
+    <div class="outcome"><div class="outcome-num">$<b>88K</b></div><div class="outcome-lbl">OEM alt. path</div></div>
+    <div class="outcome"><div class="outcome-num"><b>20</b></div><div class="outcome-lbl">Stations mounted</div></div>
+    <div class="outcome"><div class="outcome-num"><b>1000×</b></div><div class="outcome-lbl">CFD speedup</div></div>
+  </div>
+
   <div class="filter-bar" role="group" aria-label="Filter projects by discipline">
     <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
     <button type="button" class="filter-chip" data-filter="manufacturing" aria-pressed="false">Manufacturing</button>
@@ -222,16 +99,17 @@ footer p{font-size:12px;color:var(--text3)}
     <button type="button" class="filter-chip" data-filter="aerospace" aria-pressed="false">Aerospace</button>
     <button type="button" class="filter-chip" data-filter="design" aria-pressed="false">Design &amp; CAD</button>
   </div>
+
   <div class="proj-grid">
 
-    <article class="proj-card hub featured fade" data-cat="manufacturing robotics">
-      <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Model 3 body-in-white manufacturing" fetchpriority="high"><div class="proj-cover-overlay"></div></div>
+    <article class="proj-card hub featured fade reveal-img" data-cat="manufacturing robotics">
+      <div class="proj-cover letterbox"><img src="images/biw.jpg" alt="Model 3 body-in-white manufacturing" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">01 — Featured · Tesla Fremont · Jan – Aug 2026</div>
         <h3 class="proj-name">Model 3 Body-in-White Manufacturing</h3>
         <p class="proj-desc">Welding cell cycle-time optimization, OEM fixture reverse-engineering, and EOAT locating hardware on the live Model 3 body-in-white line — designed, machined, installed, and validated in production.</p>
         <div class="proj-metrics"><span class="metric">↓ 10s cycle time</span><span class="metric">$88K OEM path</span><span class="metric">6-DOF restored</span><span class="metric">In production</span></div>
-        <div class="proj-tags"><span class="tag">CATIA V5</span><span class="tag">FANUC</span><span class="tag">NAAMS</span><span class="tag">GD&amp;T</span><span class="tag">17-4 PH S.S.</span><span class="tag">In-House Machining</span></div>
+        <div class="proj-tags"><span class="tag">CATIA V5</span><span class="tag">FANUC</span><span class="tag">NAAMS</span><span class="tag">GD&amp;T</span></div>
         <div class="proj-links">
           <a class="proj-link" href="project-biw.html">All five BIW workstreams — what shipped and what didn't<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a class="proj-link" href="project-eoat.html">Bowl feeder EOAT locating feature<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -239,7 +117,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </article>
 
-    <article class="proj-card hub fade" data-cat="robotics manufacturing">
+    <article class="proj-card hub fade reveal-img" data-cat="robotics manufacturing">
       <div class="proj-cover portrait"><img src="images/optimus.jpg" alt="Optimus humanoid robot on the training facility floor" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">02 · Tesla Fremont · Jan – Aug 2026</div>
@@ -251,7 +129,7 @@ footer p{font-size:12px;color:var(--text3)}
           <span class="metric">40-station facility</span>
         </div>
         <div class="proj-tags">
-          <span class="tag">CATIA V5</span><span class="tag">AutoCAD</span><span class="tag">Modular Design</span><span class="tag">Cable Management</span><span class="tag">80/20</span><span class="tag">Facility Design</span>
+          <span class="tag">CATIA V5</span><span class="tag">AutoCAD</span><span class="tag">Modular Design</span><span class="tag">80/20</span>
         </div>
         <div class="proj-links">
           <a class="proj-link" href="project-trios.html">Modular camera system for training data<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -260,7 +138,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </article>
 
-    <a class="proj-card fade" data-cat="robotics design manufacturing" href="project-automation-cell.html">
+    <a class="proj-card fade reveal-img" data-cat="robotics design manufacturing" href="project-automation-cell.html">
       <div class="proj-cover portrait"><img src="images/arm-cover.jpg?v=revd" alt="Isometric SolidWorks render of the Revision D 4-DOF servo arm prototype with its modular parallel gripper" loading="lazy"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">03 · Personal Project · Jun 2026 – Present</div>
@@ -272,13 +150,13 @@ footer p{font-size:12px;color:var(--text3)}
           <span class="metric">4 actuated DOF</span>
         </div>
         <div class="proj-tags">
-          <span class="tag">SolidWorks 2026</span><span class="tag">SolidWorks API</span><span class="tag">3D Printing</span><span class="tag">Servo Sizing</span><span class="tag">Parallel Gripper</span><span class="tag">Micro820 PLC</span>
+          <span class="tag">SolidWorks 2026</span><span class="tag">Servo Sizing</span><span class="tag">Parallel Gripper</span><span class="tag">Micro820 PLC</span>
         </div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
 
-    <a class="proj-card fade" data-cat="aerospace design" href="project-winch.html">
+    <a class="proj-card fade reveal-img" data-cat="aerospace design" href="project-winch.html">
       <div class="proj-cover portrait"><img src="images/m3-system-cover.jpg" alt="SolidWorks render of the whole bench system: winch frames and green gear train on wooden strips, the yellow tether running to the red bellmouth, and the sensor docked under it" loading="lazy" style="object-position:center"><div class="proj-cover-overlay"></div></div>
       <div class="proj-body">
         <div class="proj-num">04 · MEMS 4110 Design Project · Fall 2026</div>
@@ -290,13 +168,13 @@ footer p{font-size:12px;color:var(--text3)}
           <span class="metric">7 → 2 parts</span>
         </div>
         <div class="proj-tags">
-          <span class="tag">SolidWorks</span><span class="tag">Mechanism Design</span><span class="tag">Design for Assembly</span><span class="tag">3D Printing</span><span class="tag">Arduino</span>
+          <span class="tag">SolidWorks</span><span class="tag">Mechanism Design</span><span class="tag">Design for Assembly</span><span class="tag">Arduino</span>
         </div>
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
 
-    <a class="proj-card fade" data-cat="aerospace design" href="project-dbf.html">
+    <a class="proj-card fade reveal-img" data-cat="aerospace design" href="project-dbf.html">
       <div class="proj-cover whitebg"><img src="images/dbf-cover.jpg" alt="Design-Build-Fly competition aircraft with 72 inch composite wingspan" loading="lazy"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
         <div class="proj-num">05 · WashU AIAA · Aug 2024 – Present</div>
@@ -307,7 +185,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" data-cat="simulation" href="project-cfd.html">
+    <a class="proj-card fade reveal-img" data-cat="simulation" href="project-cfd.html">
       <div class="proj-cover portrait" style="position:relative;overflow:hidden">
         <video id="cfdVideo" autoplay loop muted playsinline poster="images/cfd-cover.jpg" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
           <source src="images/cfd-sim.mp4" type="video/mp4">
@@ -324,7 +202,7 @@ footer p{font-size:12px;color:var(--text3)}
       </div>
     </a>
 
-    <a class="proj-card fade" data-cat="design" href="project-cad.html">
+    <a class="proj-card fade reveal-img" data-cat="design" href="project-cad.html">
       <div class="proj-cover whitebg"><img src="images/cad-assembly.jpg" alt="SolidWorks assembly drawing from the CAD portfolio" loading="lazy"><div class="proj-cover-overlay" style="opacity:0"></div></div>
       <div class="proj-body">
         <div class="proj-num">07 · CAD Portfolio · SolidWorks &amp; GD&amp;T</div>
@@ -334,7 +212,6 @@ footer p{font-size:12px;color:var(--text3)}
         <div class="proj-cta">View project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </a>
-
 
   </div>
 </section>
@@ -349,7 +226,7 @@ footer p{font-size:12px;color:var(--text3)}
     <div class="fade">
       <p class="about-p"><strong>Mechanical Engineering student at Washington University in St. Louis</strong> (McKelvey School of Engineering, expected Dec 2027). GPA: 3.79 · Dean's List · HSF Scholar · Kessler Scholar.</p>
       <p class="about-p">Completed an extended co-op at <strong>Tesla Fremont</strong> (Jan–Aug 2026) across Model 3 body-in-white manufacturing, humanoid training-data hardware deployment, and the Optimus Academy facility layout program.</p>
-      <p class="about-p">Currently building an <strong><a href="project-automation-cell.html" style="color:var(--accent);text-decoration:none">automated pick cell</a></strong> end to end on my own — 4-DOF arm design, motion control, and PLC supervisory logic — to own the layers of an automation cell I didn't own on the floor.</p>
+      <p class="about-p">Currently building an <strong><a href="project-automation-cell.html">automated pick cell</a></strong> end to end on my own — 4-DOF arm design, motion control, and PLC supervisory logic — to own the layers of an automation cell I didn't own on the floor.</p>
       <p class="about-p">My approach is physics-first — designs that are manufacturable, measurable, and maintainable on a production floor, not just on paper.</p>
       <div class="about-badges">
         <span class="about-badge">HSF Scholar</span><span class="about-badge">Kessler Scholar</span><span class="about-badge">CSWA — SolidWorks</span>
@@ -374,7 +251,7 @@ footer p{font-size:12px;color:var(--text3)}
 </section>
 
 <section id="experience">
-  <div class="s-hdr fade"><div class="s-chip">Experience</div><h2 class="s-title">Work History</h2><p class="s-sub">Expanded detail on select roles — full timeline on my <a href="images/resume.pdf?v=2026-09" style="color:var(--accent);text-decoration:none">resume</a>.</p></div>
+  <div class="s-hdr fade"><div class="s-chip">Experience</div><h2 class="s-title">Work History</h2><p class="s-sub">Expanded detail on select roles — full timeline on my <a href="images/resume.pdf?v=2026-09">resume</a>.</p></div>
   <div class="exp-list">
     <div class="exp-card open fade" id="e0">
       <button class="exp-hdr" type="button" aria-expanded="false" aria-controls="e0-body" onclick="toggleExp('e0')">
@@ -448,62 +325,7 @@ footer p{font-size:12px;color:var(--text3)}
   <p>ME · WashU McKelvey · <span style="color:var(--text4)">Updated October 2026</span></p>
 </footer>
 
-<script>
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const s=Array.from(e.target.parentElement?.children||[]).filter(c=>c.classList.contains('fade'));
-      const i=Math.min(s.indexOf(e.target),4);
-      setTimeout(()=>e.target.classList.add('in'),i*80);
-      obs.unobserve(e.target);
-    }
-  });
-},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade').forEach(el=>{
-  const r=el.getBoundingClientRect();
-  if(r.top<window.innerHeight){el.classList.add('in');}else{obs.observe(el);}
-});
-function toggleExp(id){
-  const card=document.getElementById(id);
-  const open=card.classList.toggle('open');
-  card.querySelector('.exp-hdr').setAttribute('aria-expanded',open);
-}
-document.querySelectorAll('.exp-card').forEach(c=>
-  c.querySelector('.exp-hdr').setAttribute('aria-expanded',c.classList.contains('open')));
-const navToggle=document.getElementById('navToggle');
-const navMenu=document.getElementById('navMenu');
-navToggle?.addEventListener('click',()=>{
-  const open=navMenu.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded',open);
-  navToggle.textContent=open?'✕':'☰';
-});
-navMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-  navMenu.classList.remove('open');
-  navToggle.setAttribute('aria-expanded','false');
-  navToggle.textContent='☰';
-}));
-
-const cfd=document.getElementById('cfdVideo');
-if(cfd&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  cfd.removeAttribute('autoplay');cfd.pause();cfd.removeAttribute('loop');
-}
-
-const chips=document.querySelectorAll('.filter-chip');
-const cards=document.querySelectorAll('.proj-card');
-chips.forEach(chip=>chip.addEventListener('click',()=>{
-  const cat=chip.dataset.filter;
-  chips.forEach(c=>{
-    const on=c===chip;
-    c.classList.toggle('active',on);
-    c.setAttribute('aria-pressed',on);
-  });
-  cards.forEach(card=>{
-    const show=cat==='all'||(card.dataset.cat||'').split(' ').includes(cat);
-    card.hidden=!show;
-    if(show)card.classList.add('in');
-  });
-}));
-</script>
+<script src="js/site.js" defer></script>
 
 <script type="application/ld+json">
 {
