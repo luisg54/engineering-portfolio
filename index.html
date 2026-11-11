@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=hero-crossfade-fast">
+<link rel="stylesheet" href="css/site.css?v=hero-hd-media">
 </head>
 <body>
 <a href="#work" class="skip-link">Skip to content</a>
@@ -36,33 +36,58 @@
 <header class="home-hero" id="top">
   <div class="home-hero-media" aria-hidden="true" data-hero-crossfade>
     <div class="home-hero-layer home-hero-layer-base is-active">
-      <picture>
-        <source srcset="images/hero-nasa-launch-poster.jpg" media="(prefers-reduced-motion: reduce)">
+      <picture class="home-hero-static">
         <img
           class="home-hero-motion"
-          src="images/hero-nasa-launch.gif"
+          src="images/hero-nasa-launch-poster.jpg"
           alt=""
-          width="480"
-          height="270"
-          fetchpriority="high"
+          width="1920"
+          height="1080"
           decoding="async"
-          data-poster="images/hero-nasa-launch-poster.jpg"
         >
       </picture>
+      <video
+        class="home-hero-video home-hero-motion"
+        poster="images/hero-nasa-launch-poster.jpg"
+        width="1920"
+        height="1080"
+        muted
+        autoplay
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src="images/hero-nasa-launch.webm" type="video/webm">
+        <source src="images/hero-nasa-launch.mp4" type="video/mp4">
+        <img src="images/hero-nasa-launch.gif" alt="" width="480" height="270">
+      </video>
     </div>
     <div class="home-hero-layer home-hero-layer-overlay">
-      <picture>
-        <source srcset="images/hero-roadster-kickflip-poster.jpg" media="(prefers-reduced-motion: reduce)">
+      <picture class="home-hero-static">
         <img
           class="home-hero-motion home-hero-overlay-img"
-          src="images/hero-roadster-kickflip.gif"
+          src="images/hero-roadster-kickflip-poster.jpg"
           alt=""
-          width="480"
-          height="270"
+          width="1920"
+          height="1080"
           decoding="async"
-          data-poster="images/hero-roadster-kickflip-poster.jpg"
         >
       </picture>
+      <video
+        class="home-hero-video home-hero-motion home-hero-overlay-img"
+        poster="images/hero-roadster-kickflip-poster.jpg"
+        width="1920"
+        height="1080"
+        muted
+        autoplay
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src="images/hero-roadster-kickflip.webm" type="video/webm">
+        <source src="images/hero-roadster-kickflip.mp4" type="video/mp4">
+        <img src="images/hero-roadster-kickflip.gif" alt="" width="480" height="270">
+      </video>
     </div>
   </div>
   <div class="home-hero-scrim" aria-hidden="true"></div>
