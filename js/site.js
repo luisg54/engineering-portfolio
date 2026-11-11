@@ -59,8 +59,7 @@
     });
   }
 
-  /* Homepage hero: HD video crossfade; posters under reduced motion */
-  var heroLayers = document.querySelectorAll('.home-hero-layer');
+  /* Homepage hero: single muted looping HD clip; poster under reduced motion */
   var heroVideos = document.querySelectorAll('.home-hero-video');
   if (reduceMotion) {
     heroVideos.forEach(function (v) {
@@ -70,25 +69,10 @@
       v.removeAttribute('src');
       while (v.firstChild) v.removeChild(v.firstChild);
     });
-    if (heroLayers.length) {
-      heroLayers.forEach(function (layer, i) {
-        layer.classList.toggle('is-active', i === 0);
-      });
-    }
-  } else if (heroLayers.length > 1) {
-    /* Full-bleed NASA ↔ Roadster timed crossfade (~2.9s dwell / 0.6s fade) */
-    var heroIndex = 0;
-    heroLayers[0].classList.add('is-active');
+  } else {
     heroVideos.forEach(function (v) {
       try { v.play(); } catch (e) { /* autoplay may be blocked */ }
     });
-    setInterval(function () {
-      heroLayers[heroIndex].classList.remove('is-active');
-      heroIndex = (heroIndex + 1) % heroLayers.length;
-      heroLayers[heroIndex].classList.add('is-active');
-    }, 3500);
-  } else if (heroLayers.length === 1) {
-    heroLayers[0].classList.add('is-active');
   }
 
   /* Other autoplay videos (e.g. CFD): respect reduced motion */

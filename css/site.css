@@ -139,38 +139,23 @@ nav{
   position:absolute;inset:0;z-index:0;
   width:100%;height:100%;
   margin:0;padding:0;border:0;border-radius:0;
-  background:var(--bg);
+  background:#0c1016;
   overflow:hidden
 }
-.home-hero-layer{
-  position:absolute;inset:0;overflow:hidden;
-  width:100%;height:100%;
-  margin:0;padding:0;border:0;border-radius:0;
-  background:#0c1016;
-  opacity:0;
-  transition:opacity .6s ease-in-out;
-  z-index:0
-}
-.home-hero-layer.is-active{
-  opacity:1;z-index:1
-}
-.home-hero-layer picture,
-.home-hero-layer img,
-.home-hero-layer video{
+.home-hero-media picture,
+.home-hero-media img,
+.home-hero-media video{
   width:100%;height:100%;display:block;
   border:0;border-radius:0
 }
-.home-hero-layer img,
-.home-hero-layer video{
-  object-fit:cover;object-position:center;
+.home-hero-media img,
+.home-hero-media video{
+  object-fit:cover;
+  /* NASA pad liftoff (medium): keep plume/rocket present on tall crops */
+  object-position:center 48%;
   /* Subtle mute so brand type stays primary — no warm/copper wash */
   filter:saturate(.86) brightness(.9)
 }
-/* NASA pad liftoff (medium): keep plume/rocket present on tall crops */
-.home-hero-layer-base img,
-.home-hero-layer-base video{object-position:center 48%}
-.home-hero-layer-overlay img,
-.home-hero-layer-overlay video{object-position:center 45%}
 .home-hero-static{
   position:absolute;inset:0;display:none;width:100%;height:100%
 }
@@ -179,7 +164,7 @@ nav{
 }
 .home-hero-scrim{
   position:absolute;inset:0;z-index:2;
-  /* Bottom-weighted graphite for brand/CTAs over full-bleed crossfade */
+  /* Bottom-weighted graphite for brand/CTAs over full-bleed NASA clip */
   background:
     linear-gradient(to top,rgba(12,16,22,.94) 0%,rgba(12,16,22,.5) 36%,rgba(12,16,22,.18) 64%,rgba(12,16,22,.28) 100%),
     linear-gradient(90deg,rgba(12,16,22,.42) 0%,transparent 55%);
@@ -191,9 +176,6 @@ nav{
   padding:calc(var(--nav-h) + 28px) 44px 72px;max-width:640px
 }
 @media(prefers-reduced-motion:reduce){
-  .home-hero-layer{transition:none}
-  .home-hero-layer-overlay{display:none}
-  .home-hero-layer-base{opacity:1;z-index:1}
   .home-hero-video{display:none}
   .home-hero-static{display:block}
 }
