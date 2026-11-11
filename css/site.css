@@ -129,14 +129,17 @@ nav{
 }
 .home-hero-media{
   position:absolute;inset:0;z-index:0;
-  display:flex;background:var(--bg)
+  background:var(--bg)
 }
 .home-hero-layer{
-  position:relative;flex:1 1 50%;width:50%;height:100%;overflow:hidden;
-  background:#0c1016
+  position:absolute;inset:0;overflow:hidden;
+  background:#0c1016;
+  opacity:0;
+  transition:opacity 1.4s ease-in-out;
+  z-index:0
 }
-.home-hero-layer + .home-hero-layer{
-  border-left:1px solid rgba(200,210,220,0.12)
+.home-hero-layer.is-active{
+  opacity:1;z-index:1
 }
 .home-hero-layer picture,
 .home-hero-layer img{
@@ -150,15 +153,21 @@ nav{
 .home-hero-layer-base img{object-position:center 42%}
 .home-hero-layer-overlay img{object-position:center 45%}
 .home-hero-scrim{
-  position:absolute;inset:0;z-index:1;
-  /* Bottom-weighted graphite for brand/CTAs across the 50/50 split */
+  position:absolute;inset:0;z-index:2;
+  /* Bottom-weighted graphite for brand/CTAs over full-bleed crossfade */
   background:
-    linear-gradient(to top,rgba(12,16,22,.96) 0%,rgba(12,16,22,.62) 34%,rgba(12,16,22,.18) 62%,rgba(12,16,22,.28) 100%);
+    linear-gradient(to top,rgba(12,16,22,.96) 0%,rgba(12,16,22,.55) 38%,rgba(12,16,22,.2) 68%,rgba(12,16,22,.32) 100%),
+    linear-gradient(90deg,rgba(12,16,22,.45) 0%,transparent 55%);
   pointer-events:none
 }
 .home-hero-inner{
-  position:relative;z-index:2;width:100%;
-  padding:0 44px 72px;max-width:720px
+  position:relative;z-index:3;width:100%;
+  padding:0 44px 72px;max-width:640px
+}
+@media(prefers-reduced-motion:reduce){
+  .home-hero-layer{transition:none}
+  .home-hero-layer-overlay{display:none}
+  .home-hero-layer-base{opacity:1;z-index:1}
 }
 .home-brand{
   font-family:var(--font-display);
@@ -884,11 +893,10 @@ a.status-row:hover{background:var(--bg3)}
 }
 @media(max-width:768px){
   .home-hero-inner{padding-bottom:56px}
-  .home-hero-media{flex-direction:column}
-  .home-hero-layer{width:100%;flex:1 1 50%;min-height:50%}
-  .home-hero-layer + .home-hero-layer{border-left:0;border-top:1px solid rgba(200,210,220,0.12)}
   .home-hero-scrim{
-    background:linear-gradient(to top,rgba(12,16,22,.97) 0%,rgba(12,16,22,.7) 42%,rgba(12,16,22,.25) 100%)
+    background:
+      linear-gradient(to top,rgba(12,16,22,.97) 0%,rgba(12,16,22,.62) 42%,rgba(12,16,22,.28) 100%),
+      linear-gradient(90deg,rgba(12,16,22,.4) 0%,transparent 60%)
   }
   .hero-video-wrap{height:320px}
   .gallery,.gallery.cols3,.compare,.img-grid.cols2,.img-grid.cols3,.img-2col{grid-template-columns:1fr}
