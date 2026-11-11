@@ -142,16 +142,26 @@ nav{
   opacity:1;z-index:1
 }
 .home-hero-layer picture,
-.home-hero-layer img{
+.home-hero-layer img,
+.home-hero-layer video{
   width:100%;height:100%;display:block
 }
-.home-hero-layer img{
+.home-hero-layer img,
+.home-hero-layer video{
   object-fit:cover;object-position:center;
   /* Subtle mute so brand type stays primary — no warm/copper wash */
   filter:saturate(.84) brightness(.9)
 }
-.home-hero-layer-base img{object-position:center 42%}
-.home-hero-layer-overlay img{object-position:center 45%}
+.home-hero-layer-base img,
+.home-hero-layer-base video{object-position:center 42%}
+.home-hero-layer-overlay img,
+.home-hero-layer-overlay video{object-position:center 45%}
+.home-hero-static{
+  position:absolute;inset:0;display:none
+}
+.home-hero-video{
+  position:absolute;inset:0
+}
 .home-hero-scrim{
   position:absolute;inset:0;z-index:2;
   /* Bottom-weighted graphite for brand/CTAs over full-bleed crossfade */
@@ -168,6 +178,8 @@ nav{
   .home-hero-layer{transition:none}
   .home-hero-layer-overlay{display:none}
   .home-hero-layer-base{opacity:1;z-index:1}
+  .home-hero-video{display:none}
+  .home-hero-static{display:block}
 }
 .home-brand{
   font-family:var(--font-display);
@@ -525,7 +537,8 @@ footer p{font-family:var(--font-ui);font-size:12px;color:var(--text3)}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .fade{opacity:1 !important;transform:none !important}
-  .home-hero-media img{transform:none !important;filter:saturate(.8) brightness(.88)}
+  .home-hero-media img,
+  .home-hero-media video{transform:none !important;filter:saturate(.8) brightness(.88)}
   .reveal-img .proj-cover img,
   .reveal-img .proj-cover video{clip-path:none !important}
 }
