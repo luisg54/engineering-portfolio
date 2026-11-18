@@ -41,9 +41,9 @@
   --fs-ui:15px;
   --fs-body:17px;
   --fs-body-lg:18px;
-  --fs-card:1.5rem; /* 24px project titles */
-  --fs-section:clamp(2.125rem,4.6vw,3.125rem); /* ~34–50 */
-  --fs-display:clamp(3rem,7.5vw,5.25rem);
+  --fs-card:1.75rem; /* 28px project titles */
+  --fs-section:clamp(2.25rem,4.8vw,3.25rem); /* ~36–52 */
+  --fs-display:clamp(3.25rem,8vw,5.5rem);
   --lh-body:1.7;
   --lh-ui:1.45;
   --measure:62ch;
@@ -345,7 +345,7 @@ section{padding:88px 44px}
   text-wrap:balance
 }
 .proj-desc{
-  font-family:var(--font-ui);font-size:var(--fs-ui);font-weight:400;color:var(--text2);
+  font-family:var(--font-ui);font-size:var(--fs-body);font-weight:400;color:var(--text2);
   line-height:var(--lh-body);margin-bottom:16px;max-width:var(--measure);text-wrap:pretty
 }
 .proj-metrics{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
