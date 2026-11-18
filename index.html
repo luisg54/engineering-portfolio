@@ -173,9 +173,68 @@ footer p{font-size:12px;color:var(--text3)}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .fade{opacity:1 !important;transform:none !important}
 }
-@media(max-width:1100px){.proj-grid{grid-template-columns:1fr}.proj-card.featured{grid-column:span 1}.skills-grid{grid-template-columns:repeat(2,1fr)}.about-wrap{grid-template-columns:1fr;gap:40px}.contact-wrap{grid-template-columns:1fr;gap:40px}nav{padding:0 24px}section{padding:72px 24px}}
+/* Full-bleed NASA ↔ Roadster dual-video hero (kept on original chrome) */
+.home-hero{
+  position:relative;width:100%;
+  min-height:100vh;min-height:100dvh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;margin:0;padding:0;border:0;border-radius:0;
+  isolation:isolate;background:var(--bg)
+}
+.home-hero-media{
+  position:absolute;inset:0;z-index:0;width:100%;height:100%;
+  margin:0;padding:0;border:0;border-radius:0;background:var(--bg);overflow:hidden
+}
+.home-hero-layer{
+  position:absolute;inset:0;overflow:hidden;width:100%;height:100%;
+  margin:0;padding:0;border:0;border-radius:0;background:#0a0a0a;
+  opacity:0;transition:opacity .6s ease-in-out;z-index:0
+}
+.home-hero-layer.is-active{opacity:1;z-index:1}
+.home-hero-layer picture,.home-hero-layer img,.home-hero-layer video{
+  width:100%;height:100%;display:block;border:0;border-radius:0
+}
+.home-hero-layer img,.home-hero-layer video{
+  object-fit:cover;object-position:center;filter:saturate(.9) brightness(.88)
+}
+.home-hero-layer-base img,.home-hero-layer-base video{object-position:center 48%}
+.home-hero-layer-overlay img,.home-hero-layer-overlay video{object-position:center 45%}
+.home-hero-static{position:absolute;inset:0;display:none;width:100%;height:100%}
+.home-hero-video{position:absolute;inset:0;width:100%;height:100%}
+.home-hero-scrim{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.48) 36%,rgba(0,0,0,.18) 64%,rgba(0,0,0,.3) 100%),
+    linear-gradient(90deg,rgba(0,0,0,.4) 0%,transparent 55%)
+}
+.home-hero-inner{
+  position:relative;z-index:3;width:100%;
+  padding:calc(52px + 28px) 44px 72px;max-width:640px
+}
+.home-brand{
+  font-size:clamp(42px,7vw,76px);font-weight:600;
+  letter-spacing:-0.04em;line-height:1;color:var(--text);margin-bottom:18px
+}
+.home-headline{
+  font-size:clamp(18px,2.4vw,24px);font-weight:400;
+  letter-spacing:-0.02em;line-height:1.35;color:var(--text);
+  max-width:34ch;margin-bottom:12px
+}
+.home-support{
+  font-size:14px;font-weight:300;color:var(--text2);
+  margin-bottom:28px;letter-spacing:.01em
+}
+.home-ctas{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+@media(prefers-reduced-motion:reduce){
+  .home-hero-layer{transition:none}
+  .home-hero-layer-overlay{display:none}
+  .home-hero-layer-base{opacity:1;z-index:1}
+  .home-hero-video{display:none}
+  .home-hero-static{display:block}
+}
+@media(max-width:1100px){.proj-grid{grid-template-columns:1fr}.proj-card.featured{grid-column:span 1}.skills-grid{grid-template-columns:repeat(2,1fr)}.about-wrap{grid-template-columns:1fr;gap:40px}.contact-wrap{grid-template-columns:1fr;gap:40px}nav{padding:0 24px}section{padding:72px 24px}.home-hero-inner{padding-left:24px;padding-right:24px}}
 @media(max-width:640px){.nav-cta{display:none}}
-@media(max-width:640px){.nav-links:not(.open){display:none}.nav-toggle{display:flex;align-items:center;justify-content:center}.intro-bar{flex-wrap:wrap;padding:18px}.intro-actions{width:100%}.impact-strip{flex-direction:column}.impact-item{border-right:none;border-bottom:1px solid var(--border)}.impact-item:last-child{border-bottom:none}.skills-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}}
+@media(max-width:640px){.nav-links:not(.open){display:none}.nav-toggle{display:flex;align-items:center;justify-content:center}.intro-bar{flex-wrap:wrap;padding:18px}.intro-actions{width:100%}.impact-strip{flex-direction:column}.impact-item{border-right:none;border-bottom:1px solid var(--border)}.impact-item:last-child{border-bottom:none}.skills-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}.home-hero-inner{padding-bottom:56px;max-width:100%}.home-hero-scrim{background:linear-gradient(to top,rgba(0,0,0,.94) 0%,rgba(0,0,0,.55) 42%,rgba(0,0,0,.22) 100%)}}
 </style>
 </head>
 <body>
@@ -191,19 +250,43 @@ footer p{font-size:12px;color:var(--text3)}
   <a href="#contact" class="nav-cta">Get in Touch</a>
 </nav>
 
+<header class="home-hero" id="top">
+  <div class="home-hero-media" aria-hidden="true" data-hero-crossfade>
+    <div class="home-hero-layer home-hero-layer-base is-active">
+      <picture class="home-hero-static">
+        <img class="home-hero-motion" src="images/hero-nasa-launch-poster.jpg?v=medium" alt="" width="1920" height="1080" decoding="async">
+      </picture>
+      <video class="home-hero-video home-hero-motion" poster="images/hero-nasa-launch-poster.jpg?v=medium" width="1920" height="1080" muted autoplay loop playsinline preload="metadata">
+        <source src="images/hero-nasa-launch.webm?v=medium" type="video/webm">
+        <source src="images/hero-nasa-launch.mp4?v=medium" type="video/mp4">
+        <img src="images/hero-nasa-launch.gif?v=medium" alt="" width="400" height="225">
+      </video>
+    </div>
+    <div class="home-hero-layer home-hero-layer-overlay">
+      <picture class="home-hero-static">
+        <img class="home-hero-motion home-hero-overlay-img" src="images/hero-roadster-kickflip-poster.jpg" alt="" width="1920" height="1080" decoding="async">
+      </picture>
+      <video class="home-hero-video home-hero-motion home-hero-overlay-img" poster="images/hero-roadster-kickflip-poster.jpg" width="1920" height="1080" muted autoplay loop playsinline preload="metadata">
+        <source src="images/hero-roadster-kickflip.webm" type="video/webm">
+        <source src="images/hero-roadster-kickflip.mp4" type="video/mp4">
+        <img src="images/hero-roadster-kickflip.gif" alt="" width="480" height="270">
+      </video>
+    </div>
+  </div>
+  <div class="home-hero-scrim" aria-hidden="true"></div>
+  <div class="home-hero-inner">
+    <p class="home-brand">Luis Garcia</p>
+    <h1 class="home-headline">Mechanical Engineer · WashU McKelvey · Manufacturing &amp; Robotics</h1>
+    <p class="home-support">WashU · Tesla Fremont · seeking Summer 2027</p>
+    <div class="home-ctas">
+      <a href="images/resume.pdf?v=2026-09" class="intro-btn secondary" download="Luis_Garcia_Resume.pdf">Resume</a>
+      <a href="#contact" class="intro-btn primary">Contact</a>
+    </div>
+  </div>
+</header>
+
 <section id="projects">
   <div class="s-hdr fade">
-    <div class="intro-bar">
-      <img src="images/luis-garcia.jpg" alt="Luis Garcia" class="intro-avatar" width="64" height="64" fetchpriority="high">
-      <div class="intro-text">
-        <h1 class="intro-name">Luis Garcia</h1>
-        <div class="intro-role">Mechanical Engineer · WashU McKelvey · Manufacturing &amp; Robotics</div>
-      </div>
-      <div class="intro-actions">
-        <a href="images/resume.pdf?v=2026-09" class="intro-btn secondary" download="Luis_Garcia_Resume.pdf">Resume</a>
-        <a href="#contact" class="intro-btn primary">Contact</a>
-      </div>
-    </div>
     <div class="s-chip">Portfolio</div>
     <h2 class="s-title">Engineering Work</h2>
     <p class="s-sub">Production robotics, manufacturing optimization, and simulation — selected projects with technical breakdowns.</p>
@@ -483,8 +566,31 @@ navMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   navToggle.textContent='☰';
 }));
 
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const heroLayers=document.querySelectorAll('.home-hero-layer');
+const heroVideos=document.querySelectorAll('.home-hero-video');
+if(reduceMotion){
+  heroVideos.forEach(v=>{
+    v.pause();v.removeAttribute('autoplay');v.removeAttribute('loop');
+    v.removeAttribute('src');
+    while(v.firstChild)v.removeChild(v.firstChild);
+  });
+  heroLayers.forEach((layer,i)=>layer.classList.toggle('is-active',i===0));
+}else if(heroLayers.length>1){
+  let heroIndex=0;
+  heroLayers[0].classList.add('is-active');
+  heroVideos.forEach(v=>{try{v.play();}catch(e){}});
+  setInterval(()=>{
+    heroLayers[heroIndex].classList.remove('is-active');
+    heroIndex=(heroIndex+1)%heroLayers.length;
+    heroLayers[heroIndex].classList.add('is-active');
+  },3500);
+}else if(heroLayers.length===1){
+  heroLayers[0].classList.add('is-active');
+}
+
 const cfd=document.getElementById('cfdVideo');
-if(cfd&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+if(cfd&&reduceMotion){
   cfd.removeAttribute('autoplay');cfd.pause();cfd.removeAttribute('loop');
 }
 
