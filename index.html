@@ -15,8 +15,15 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Barlow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Instrument+Sans:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css?v=hero-medium-crop">
+<link rel="stylesheet" href="css/theme-options.css?v=theme-explore-1">
+<script>
+  (function () {
+    var t = new URLSearchParams(location.search).get('theme') || 'cool-steel';
+    if (t && t !== 'current') document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
 </head>
 <body>
 <a href="#work" class="skip-link">Skip to content</a>
@@ -350,6 +357,7 @@
   <p>ME · WashU McKelvey · <span style="color:var(--text4)">Updated October 2026</span></p>
 </footer>
 
+<script src="js/theme-prototype.js" defer></script>
 <script src="js/site.js" defer></script>
 
 <script type="application/ld+json">

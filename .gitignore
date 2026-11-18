@@ -1,0 +1,3 @@
+# Local Impeccable skills/hooks (installed via npx impeccable install; not required to ship)
+.cursor/
+.impeccable/
