@@ -115,11 +115,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <a href="index.html#contact" class="nav-cta">Contact</a>
 </nav>
 
-<div class="proj-hero" style="margin-top:52px;position:relative;overflow:hidden;background:#0a0a0a">
-  <img src="images/m3-system-hero.jpg" alt="SolidWorks render of the whole bench system: the black winch frames and green gear train on wooden stand strips, the yellow tether running to the red bellmouth, and the black sensor docked under it" style="width:100%;max-height:560px;object-fit:cover;object-position:62% center;display:block" fetchpriority="high">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.92) 100%)"></div>
-  <div class="hero-badge" style="position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:980px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:.04em;backdrop-filter:blur(8px)">Bench prototype · AIAA DBF 2026–27, Mission 3</div>
-  <div class="proj-hero-title">
+<div class="proj-hero" style="margin-top:52px;position:relative;overflow:hidden;background:#fff">
+  <img src="images/m3-system-hero.jpg" alt="SolidWorks isometric of the compact winch module, revision O: black printed frames, grey gear train and yellow tether on the drum, the controller breadboard on its deck, and the orange rev E2 sensor docked under the bellmouth" width="1800" height="690" style="width:100%;max-width:1400px;margin:0 auto;aspect-ratio:1800/690;height:auto;object-fit:contain;display:block" fetchpriority="high">
+  <div class="hero-badge" style="position:absolute;bottom:16px;left:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.1);border-radius:980px;padding:5px 12px;font-size:11px;color:#55555a;letter-spacing:.04em">Latest CAD · module rev O with sensor rev E2 · not built yet</div>
+</div>
+<div style="background:linear-gradient(to bottom,#0a0a0a,#000);border-bottom:1px solid var(--border)">
+  <div class="proj-hero-title" style="position:static;background:none;max-width:960px;margin:0 auto;padding:28px clamp(20px,4.6vw,44px) 30px">
     <div class="proj-hero-label">04 · MEMS 4110 Design Project · Fall 2026</div>
     <h1 class="proj-hero-name">Towed-Sensor Winch &amp; Light Sensor</h1>
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
@@ -179,8 +180,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <figcaption class="shot-cap"><b>Drum and gear train.</b> Motor pinion to a 48-tooth idler to a 48-tooth drum gear, with the tether wound on the drum.</figcaption>
       </figure>
       <figure class="shot cad">
-        <img src="images/m3-winch-cad.jpg" alt="SolidWorks render of the winch on its wooden stand strips, with the red bellmouth funnel at one end and the drum and gears at the other" loading="lazy">
-        <figcaption class="shot-cap"><b>CAD — winch on its stand.</b> The cable runs from the drum, over a pulley, and down through the bellmouth (red), which funnels the cable head back into its seat when it docks.</figcaption>
+        <img src="images/m3-winch-cad.jpg" alt="SolidWorks isometric of the compact winch module from the drum end: tether wound on the drum, the gear train on the outer frame, the controller deck, and the orange sensor docked under the bellmouth" loading="lazy">
+        <figcaption class="shot-cap"><b>Latest CAD — the compact module (rev O).</b> The cable runs from the drum, over a pulley, and down through the bellmouth, which funnels the cable head back into its seat when it docks. Every wire is modelled at its real diameter. CAD only: not built yet.</figcaption>
       </figure>
       <figure class="shot glance">
         <div class="glance-title">How it works</div>
@@ -229,8 +230,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <figcaption class="shot-cap"><span class="tagline old">Before</span><br><b>The first body — seven printed parts.</b> Front cup, main body, nose cone, tail hatch and two fill plugs, plus a clip-on fin added in version 2. Ten screws to close.</figcaption>
       </figure>
       <figure class="shot cad">
-        <img src="images/m3-sensor-after.jpg" alt="See-through CAD view of the redesigned sensor: one streamlined tub with a swept fin and the electronics laid out in one open bay" loading="lazy">
-        <figcaption class="shot-cap"><span class="tagline new">After</span><br><b>Version 3 — one tub, one lid.</b> The whole electronics bay opens in one plane; weights sit in sealed pockets at the two ends.</figcaption>
+        <img src="images/m3-sensor-after.jpg" alt="SolidWorks isometric of the latest sensor, rev E2: an orange streamlined tub with a swept fin, the side lid and battery door, a screw-on nose canister and a three-screw tail cover" loading="lazy">
+        <figcaption class="shot-cap"><span class="tagline new">After</span><br><b>One tub, one side lid — shown as the latest revision, E2 (CAD).</b> The whole electronics bay opens in one plane. E2 adds a screw-on nose canister and a tail cover that seal the ballast.</figcaption>
       </figure>
     </div>
     <div class="solution-box">
@@ -266,6 +267,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         </div>
       </div>
     </div>
+    <div class="gallery">
+      <figure class="shot cad">
+        <img src="images/m3-sensor-e2-open.jpg" alt="SolidWorks view of sensor rev E2 with the side lid, battery door and nose canister removed: the battery and boards in the open bay, the sealed tail compartment behind a solid wall, and the spigot ring the nose canister screws onto" loading="lazy">
+        <figcaption class="shot-cap"><b>Rev E2 opened (CAD).</b> Lid, door and nose canister off. The tail is a closed ring behind a solid wall, so the ballast stays put when the bay is open.</figcaption>
+      </figure>
+      <figure class="shot glance">
+        <div class="glance-title">Why there is a rev E2</div>
+        <div class="glance-list">
+          <div><b>The problem:</b> at the first ballast load on a printed rev E, only about 300 g of the planned ~700 g of steel BBs fitted. Bagged and padded with foam, the nose and tail pockets held roughly half their volume.</div>
+          <div><b>The change:</b> 20 mm longer nose and 10 mm longer tail. The nose became a screw-on canister you fill on the scale. The tail became its own sealed compartment with a three-screw cover. Loose BBs, no bags.</div>
+          <div><b>In CAD:</b> 832 g of capacity against a ~700 g need, zero interferences, still clears the winch's guides at ±12° of twist.</div>
+        </div>
+        <div class="glance-note">Status: CAD and print files only. E2 is not printed or weighed yet; the 1.007 kg above was measured on an earlier printed version.</div>
+      </figure>
+    </div>
     <p class="proj-p">One call worth showing: I first specified PETG because the LED boards run warm. When the printer with the shortest queue only had PLA loaded, I checked instead of waiting — a star board settles around 50–60 °C, close to where PLA softens, but the ledge it sits on carries no load and the walls see about 0.03 MPa. <strong>PLA was fine</strong>, and it printed that day.</p>
     <div class="gallery">
       <figure class="shot">
@@ -288,6 +304,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 
   <div class="proj-section fade">
+    <div class="proj-section-label">Wiring</div>
+    <p class="proj-p">Both schematics come from the build guide I wrote for the team: every wire is numbered and has a cut length, so anyone on the team can build it the same way. The guide's two hard rules are visible in the winch diagram. Battery voltage never goes into a breadboard hole: it lands on screw terminals and soldered joints, and the header legs under them are clipped. And there is exactly one ground link between the motor driver and the Nano.</p>
+    <figure class="shot" style="margin-bottom:12px">
+      <img src="images/m3-wiring-winch.png" alt="Pin-level schematic of the winch controller: 3S battery through an XT30 socket and a 5 A fuse to the MPM3610 5 V regulator and the DRV8871 motor driver; the Arduino Nano driving the driver, the SG90 lock servo, the QTR-1A drum counter and the light plug through a 330 ohm resistor; every wire numbered with its length" width="1600" height="1210" loading="lazy" style="height:auto;aspect-ratio:1600/1210;object-fit:contain;background:#1b1d22">
+      <figcaption class="shot-cap"><b>Winch controller, pin by pin.</b> A 3S pack through a 5 A fuse feeds the motor driver and a 5 V regulator. The Nano runs the motor, the servo lock and the optical drum counter, and sends the light command down the plug. Dashed: the slip-ring run through the drum, which comes later. This is the plan for the compact module; its firmware is written and compiles but hasn't run on it yet.</figcaption>
+    </figure>
+    <figure class="shot" style="margin-bottom:12px">
+      <img src="images/m3-wiring-sensor.png" alt="Schematic of the sensor lights: the winch Nano's D10 through 330 ohms and the light plug to the sensor Nano's D2 through 1 kilohm; the sensor's own 3S 450 mAh pack through a 5 A fuse to the Nano and three PT4115 LED drivers, each running a 1 W star light (forward, centre, aft)" width="1600" height="755" loading="lazy" style="height:auto;aspect-ratio:1600/755;object-fit:contain;background:#1b1d22">
+      <figcaption class="shot-cap"><b>Sensor lights.</b> The sensor carries its own 3S pack and a Nano that drives three 1 W lights through PT4115 drivers. The winch sends off / solid / flashing as a signal down the cable. The lights already run in demo mode; switching them on command is the next test.</figcaption>
+    </figure>
+    <div class="gallery">
+      <figure class="shot cad">
+        <img src="images/m3-wiring-deck.jpg" alt="Close-up SolidWorks render of the controller deck: half-size breadboard with the Nano, the blue motor driver and purple regulator, the fuse board and XT30, with modelled wires running to the motor, the servo and the light plug" loading="lazy">
+        <figcaption class="shot-cap"><b>The same wiring in CAD (rev O).</b> Every run is modelled at its real diameter and bend radius, so lengths and clearances can be checked before anything is cut.</figcaption>
+      </figure>
+      <figure class="shot glance">
+        <div class="glance-title">What the wiring model checked</div>
+        <div class="glance-list">
+          <div><b>Clearance:</b> the tether passes about 100 mm above the board; the nearest wire to the moving line is 11 mm away.</div>
+          <div><b>Lock sweep:</b> the servo arm stays at least 26 mm from every wire and strap through its full swing.</div>
+          <div><b>Interference:</b> no unintended collisions, with the sensor stowed or let out 3 m.</div>
+        </div>
+        <div class="glance-note">CAD checks, not bench measurements.</div>
+      </figure>
+    </div>
+  </div>
+
+  <div class="proj-section fade">
     <div class="proj-section-label">Results So Far</div>
     <p class="proj-p">The goals were written so a video can prove them. Where a result is partial, it says so.</p>
     <table class="phase-table">
@@ -299,7 +343,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <tr><td><b>Lights</b></td><td>Off, solid and flashing on command over the cable</td><td><span class="st part">Shown, demo mode</span><br>All three modes ran on their own. The on-command test is next.</td></tr>
       </tbody>
     </table>
-    <p class="proj-p"><strong>Next:</strong> the final prototype — a compact winch module, the light command sent down the cable, and a drive chosen from the test data — then the full goal trials, filmed.</p>
+    <p class="proj-p"><strong>Next:</strong> build the final prototype — the compact module now complete in CAD (rev O, top of this page), with sensor rev E2 and the light command sent down the cable — then the full goal trials, filmed.</p>
   </div>
 
   <div class="proj-section fade">
